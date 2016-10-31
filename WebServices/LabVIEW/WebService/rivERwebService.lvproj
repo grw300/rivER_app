@@ -26,9 +26,10 @@
 			<Item Name="RoomBeaconToIndex.vi" Type="VI" URL="../../../../LVClasses/Room/RoomBeaconToIndex.vi"/>
 		</Item>
 		<Item Name="Tests" Type="Folder">
+			<Item Name="TestFGVFlag Status.vi" Type="VI" URL="../Test/TestFGVFlag Status.vi"/>
 			<Item Name="TestFGV.vi" Type="VI" URL="../Test/TestFGV.vi"/>
 		</Item>
-		<Item Name="HopstitalFGV.vi" Type="VI" URL="../HopstitalFGV.vi"/>
+		<Item Name="RoomsFGV.vi" Type="VI" URL="../RoomsFGV.vi"/>
 		<Item Name="WebService1" Type="Web Service">
 			<Property Name="Bld_buildSpecName" Type="Str"></Property>
 			<Property Name="Bld_version.build" Type="Int">4</Property>
@@ -83,7 +84,7 @@
 					<Property Name="ws.useHeaders" Type="Bool">true</Property>
 					<Property Name="ws.useStandardURL" Type="Bool">true</Property>
 				</Item>
-				<Item Name="UpdateFlag.vi" Type="VI" URL="../UpdateFlag.vi">
+				<Item Name="UpdateFlagState.vi" Type="VI" URL="../UpdateFlagState.vi">
 					<Property Name="ws.buffered" Type="Bool">true</Property>
 					<Property Name="ws.includeNameInURL" Type="Bool">true</Property>
 					<Property Name="ws.keepInMemory" Type="Bool">true</Property>
@@ -100,7 +101,8 @@
 				</Item>
 			</Item>
 		</Item>
-		<Item Name="TestFGVFlag Status.vi" Type="VI" URL="../Test/TestFGVFlag Status.vi"/>
+		<Item Name="PersonnelFGV.vi" Type="VI" URL="../PersonnelFGV.vi"/>
+		<Item Name="PersonnelActions.ctl" Type="VI" URL="../TypeDef/PersonnelActions.ctl"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
