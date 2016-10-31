@@ -11,11 +11,12 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
-		<Item Name="New Folder" Type="Folder"/>
-		<Item Name="ActionEnum.ctl" Type="VI" URL="../ActionEnum.ctl"/>
-		<Item Name="GetBedStatus.vi" Type="VI" URL="../../GetBedStatus.vi"/>
+		<Item Name="TypeDef" Type="Folder">
+			<Item Name="StateCluster.ctl" Type="VI" URL="../TypeDef/StateCluster.ctl"/>
+		</Item>
+		<Item Name="ActionEnum.ctl" Type="VI" URL="../TypeDef/ActionEnum.ctl"/>
+		<Item Name="GetBedStatus.vi" Type="VI" URL="../Helpers/GetBedStatus.vi"/>
 		<Item Name="HopstitalFGV.vi" Type="VI" URL="../HopstitalFGV.vi"/>
-		<Item Name="StateCluster.ctl" Type="VI" URL="../StateCluster.ctl"/>
 		<Item Name="TestFGV.vi" Type="VI" URL="../Test/TestFGV.vi"/>
 		<Item Name="temp Room.ctl" Type="VI" URL="../temp Room.ctl"/>
 		<Item Name="WebService1" Type="Web Service">
@@ -91,14 +92,14 @@
 		</Item>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
-				<Item Name="Check if File or Folder Exists.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Check if File or Folder Exists.vi"/>
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
-				<Item Name="LabVIEWHTTPClient.lvlib" Type="Library" URL="/&lt;vilib&gt;/httpClient/LabVIEWHTTPClient.lvlib"/>
-				<Item Name="NI_FileType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/lvfile.llb/NI_FileType.lvlib"/>
+				<Item Name="NI_WebServices.lvlib" Type="Library" URL="/&lt;vilib&gt;/wsapi/NI_WebServices.lvlib"/>
 				<Item Name="NI_PackedLibraryUtility.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/LVLibp/NI_PackedLibraryUtility.lvlib"/>
+				<Item Name="NI_FileType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/lvfile.llb/NI_FileType.lvlib"/>
+				<Item Name="Check if File or Folder Exists.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Check if File or Folder Exists.vi"/>
+				<Item Name="LabVIEWHTTPClient.lvlib" Type="Library" URL="/&lt;vilib&gt;/httpClient/LabVIEWHTTPClient.lvlib"/>
 				<Item Name="Path To Command Line String.vi" Type="VI" URL="/&lt;vilib&gt;/AdvancedString/Path To Command Line String.vi"/>
 				<Item Name="PathToUNIXPathString.vi" Type="VI" URL="/&lt;vilib&gt;/Platform/CFURL.llb/PathToUNIXPathString.vi"/>
-				<Item Name="NI_WebServices.lvlib" Type="Library" URL="/&lt;vilib&gt;/wsapi/NI_WebServices.lvlib"/>
 			</Item>
 			<Item Name="ws_runtime.dll" Type="Document" URL="ws_runtime.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>

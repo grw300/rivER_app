@@ -11,8 +11,9 @@
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="Classes" Type="Folder">
-			<Item Name="Flags.lvclass" Type="LVClass" URL="../Classes/Flags/Flags.lvclass"/>
-			<Item Name="Room.lvclass" Type="LVClass" URL="../Classes/Room/Room.lvclass"/>
+			<Item Name="Flags.lvclass" Type="LVClass" URL="../../LVClasses/Flags/Flags.lvclass"/>
+			<Item Name="Personnel.lvclass" Type="LVClass" URL="../../LVClasses/Personnel/Personnel.lvclass"/>
+			<Item Name="Room.lvclass" Type="LVClass" URL="../../LVClasses/Room/Room.lvclass"/>
 		</Item>
 		<Item Name="Helpers" Type="Folder">
 			<Item Name="CreateEvents.vi" Type="VI" URL="../Helpers/CreateEvents.vi"/>
@@ -20,11 +21,8 @@
 			<Item Name="Get Room State.vi" Type="VI" URL="../Helpers/Get Room State.vi"/>
 			<Item Name="Refresh UI Event.vi" Type="VI" URL="../Helpers/Refresh UI Event.vi"/>
 		</Item>
-		<Item Name="Tests" Type="Folder">
-			<Item Name="FlagStateToColorTest.vi" Type="VI" URL="../Tests/FlagStateToColorTest.vi"/>
-		</Item>
+		<Item Name="Tests" Type="Folder"/>
 		<Item Name="TypeDef" Type="Folder">
-			<Item Name="ColorFlags.ctl" Type="VI" URL="../TypeDef/ColorFlags.ctl"/>
 			<Item Name="EventsReference.ctl" Type="VI" URL="../TypeDef/EventsReference.ctl"/>
 			<Item Name="SelectedRoom.ctl" Type="VI" URL="../TypeDef/SelectedRoom.ctl"/>
 			<Item Name="State Cluster.ctl" Type="VI" URL="../TypeDef/State Cluster.ctl"/>
