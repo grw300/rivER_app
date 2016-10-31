@@ -13,11 +13,14 @@
 		<Item Name="Tests" Type="Folder">
 			<Item Name="FlagJasonTest.vi" Type="VI" URL="../Tests/FlagJasonTest.vi"/>
 			<Item Name="FlagStateToColorTest.vi" Type="VI" URL="../Tests/FlagStateToColorTest.vi"/>
+			<Item Name="RoomJasonTest.vi" Type="VI" URL="../Tests/RoomJasonTest.vi"/>
 		</Item>
 		<Item Name="Flags.lvclass" Type="LVClass" URL="../Flags/Flags.lvclass"/>
 		<Item Name="Personnel.lvclass" Type="LVClass" URL="../Personnel/Personnel.lvclass"/>
 		<Item Name="Room.lvclass" Type="LVClass" URL="../Room/Room.lvclass"/>
-		<Item Name="Dependencies" Type="Dependencies"/>
+		<Item Name="Dependencies" Type="Dependencies">
+			<Item Name="SelectedRoom.ctl" Type="VI" URL="../../NurseStation/TypeDef/SelectedRoom.ctl"/>
+		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
 </Project>
