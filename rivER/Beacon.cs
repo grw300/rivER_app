@@ -1,9 +1,8 @@
 ﻿using System;
 namespace rivER
 {
-	public enum BeaconType
+	public abstract class Beacon
 	{
-		Room,
-		Personnel
+		public abstract string Value { get; protected set;}
 	}
 }

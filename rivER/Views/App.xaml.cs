@@ -1,5 +1,6 @@
 ﻿using Xamarin.Forms;
 using BottomBar.XamarinForms;
+using System;
 
 namespace rivER
 {
@@ -22,12 +23,29 @@ namespace rivER
 
 				FileImageSource icon = (FileImageSource)FileImageSource.FromFile(string.Format("{0}.png", title.ToLowerInvariant()));
 
-				// create tab page
-				var tabPage = new rivERPage()
+				Type pageType = Type.GetType(string.Format("rivER.{0}Page", tabTitles[i]), true);
+
+				ContentPage tabPage;
+
+				switch (tabTitles[i])
 				{
-					Title = title,
-					Icon = icon
-				};
+					case "Home":
+						tabPage = new HomePage();
+						break;
+					case "Pager":
+						tabPage = new PagerPage();
+						break;
+					case "Timer":
+						tabPage = new TimerPage();
+						break;
+					default:
+						throw new Exception("You're trying to create a page that hasn't been defined");
+				}
+
+				// create tab page
+
+				tabPage.Title = title;
+				tabPage.Icon = icon;
 
 				// set tab color
 				if (tabColor != null)
@@ -36,7 +54,7 @@ namespace rivER
 				}
 
 				// set label based on title
-				tabPage.UpdateLabel();
+				//tabPage.UpdateLabel();
 
 				// add tab pag to tab control
 				bottomBarPage.Children.Add(tabPage);

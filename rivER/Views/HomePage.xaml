@@ -1,8 +1,50 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	x:Class="rivER.HomePage">
 	<ContentPage.Content>
+		<StackLayout
+			Padding="0,20,0,0"
+			VerticalOptions="StartAndExpand">
+			<Label
+				Text="{Binding CurrentRoom}"
+				Margin="10"
+				FontSize="50"
+				HeightRequest="100"
+				BackgroundColor="Aqua"
+				Opacity="75"
+				Style="{DynamicResource TitleStyle}"
+				VerticalTextAlignment="Center" />
+			<ListView
+				x:Name="roomView"
+				ItemsSource="{Binding Rooms}"
+				SeparatorVisibility="None">
+				<!--<ListView.HeaderTemplate>
+					<DataTemplate>
+						<StackLayout
+							Orientation="Horizontal"
+							Padding="10,5,5,10"
+							BackgroundColor="Aqua"
+							HeightRequest="100">
+							<Label
+								FontSize="50"
+								Text="{Binding .}" />
+						</StackLayout>
+					</DataTemplate>
+				</ListView.HeaderTemplate>-->
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<Frame
+							OutlineColor="Silver">
+							<TextCell
+								Text="{Binding Name}"
+								Detail="{Binding State}">
+							</TextCell>
+						</Frame>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

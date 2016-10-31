@@ -10,6 +10,8 @@ namespace rivER
 		public HomePage()
 		{
 			InitializeComponent();
+
+			BindingContext = new RoomViewModel();
 		}
 	}
 }

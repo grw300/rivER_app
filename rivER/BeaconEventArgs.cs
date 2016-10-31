@@ -1,10 +1,13 @@
 ﻿using System;
 namespace rivER
 {
-	public class BeaconEventArgs
+	public class BeaconEventArgs : EventArgs
 	{
-		public BeaconEventArgs()
+		public Beacon beacon;
+
+		public BeaconEventArgs(Beacon beacon)
 		{
+			this.beacon = beacon;
 		}
 	}
 }

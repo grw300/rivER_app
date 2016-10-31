@@ -1,10 +1,8 @@
 ﻿using System;
 namespace rivER
 {
-	public class PersonnelBeacon
+	public class PersonnelBeacon : Beacon
 	{
-		public PersonnelBeacon()
-		{
-		}
+		public override string Value { get; protected set;}
 	}
 }

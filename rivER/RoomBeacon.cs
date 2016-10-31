@@ -1,10 +1,12 @@
 ﻿using System;
 namespace rivER
 {
-	public class RoomBeacon
+	sealed public class RoomBeacon : Beacon
 	{
-		public RoomBeacon()
+		public RoomBeacon(string room)
 		{
+			Value = room;
 		}
+		public override string Value { get; protected set; }
 	}
 }
