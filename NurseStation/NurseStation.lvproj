@@ -18,7 +18,6 @@
 		<Item Name="Helpers" Type="Folder">
 			<Item Name="CreateEvents.vi" Type="VI" URL="../Helpers/CreateEvents.vi"/>
 			<Item Name="Get Clicked Array Index.vi" Type="VI" URL="../Helpers/Get Clicked Array Index.vi"/>
-			<Item Name="Get Room State.vi" Type="VI" URL="../Helpers/Get Room State.vi"/>
 			<Item Name="Refresh UI Event.vi" Type="VI" URL="../Helpers/Refresh UI Event.vi"/>
 		</Item>
 		<Item Name="Tests" Type="Folder"/>

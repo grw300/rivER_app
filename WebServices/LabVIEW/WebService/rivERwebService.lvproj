@@ -13,12 +13,22 @@
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="TypeDef" Type="Folder">
 			<Item Name="StateCluster.ctl" Type="VI" URL="../TypeDef/StateCluster.ctl"/>
+			<Item Name="ActionEnum.ctl" Type="VI" URL="../TypeDef/ActionEnum.ctl"/>
 		</Item>
-		<Item Name="ActionEnum.ctl" Type="VI" URL="../TypeDef/ActionEnum.ctl"/>
-		<Item Name="GetBedStatus.vi" Type="VI" URL="../Helpers/GetBedStatus.vi"/>
+		<Item Name="Classes" Type="Folder">
+			<Item Name="Flags.lvclass" Type="LVClass" URL="../../../../LVClasses/Flags/Flags.lvclass"/>
+			<Item Name="Personnel.lvclass" Type="LVClass" URL="../../../../LVClasses/Personnel/Personnel.lvclass"/>
+			<Item Name="Room.lvclass" Type="LVClass" URL="../../../../LVClasses/Room/Room.lvclass"/>
+		</Item>
+		<Item Name="Helpers" Type="Folder">
+			<Item Name="GetBedStatus.vi" Type="VI" URL="../Helpers/GetBedStatus.vi"/>
+			<Item Name="RoomNumbertoIndex.vi" Type="VI" URL="../../../../LVClasses/Room/RoomNumbertoIndex.vi"/>
+			<Item Name="RoomBeaconToIndex.vi" Type="VI" URL="../../../../LVClasses/Room/RoomBeaconToIndex.vi"/>
+		</Item>
+		<Item Name="Tests" Type="Folder">
+			<Item Name="TestFGV.vi" Type="VI" URL="../Test/TestFGV.vi"/>
+		</Item>
 		<Item Name="HopstitalFGV.vi" Type="VI" URL="../HopstitalFGV.vi"/>
-		<Item Name="TestFGV.vi" Type="VI" URL="../Test/TestFGV.vi"/>
-		<Item Name="temp Room.ctl" Type="VI" URL="../temp Room.ctl"/>
 		<Item Name="WebService1" Type="Web Service">
 			<Property Name="Bld_buildSpecName" Type="Str"></Property>
 			<Property Name="Bld_version.build" Type="Int">4</Property>
@@ -90,6 +100,7 @@
 				</Item>
 			</Item>
 		</Item>
+		<Item Name="TestFGVFlag Status.vi" Type="VI" URL="../Test/TestFGVFlag Status.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
