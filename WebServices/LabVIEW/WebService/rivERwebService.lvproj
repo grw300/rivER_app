@@ -115,6 +115,7 @@
 			<Item Name="ws_runtime.dll" Type="Document" URL="ws_runtime.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
+			<Item Name="SelectedRoom.ctl" Type="VI" URL="../../../../NurseStation/TypeDef/SelectedRoom.ctl"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
