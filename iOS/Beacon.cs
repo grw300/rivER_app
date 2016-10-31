@@ -24,8 +24,9 @@ namespace rivER.iOS
 			beaconRegion.NotifyOnExit = true;
 
 			locationManager.RequestAlwaysAuthorization();
+            locationManager.DistanceFilter = 0.5;
 
-			locationManager.RegionEntered += (object sender, CLRegionEventArgs e) =>
+            locationManager.RegionEntered += (object sender, CLRegionEventArgs e) =>
 			{
 				//This can be used for firing events when personnel come into hospitals.
 			};
@@ -35,12 +36,18 @@ namespace rivER.iOS
 				if (e?.Beacons.Length > 0)
 				{
 					var beacon = e.Beacons.FirstOrDefault();
-					switch (beacon.Proximity)
+                    var roomBeacon = new RoomBeacon();
+
+                    switch (beacon.Proximity)
 					{
+
 						case CLProximity.Far:
-							
-						default:
-							var roomBeacon = new RoomBeacon(beacon.Minor.ToString());
+                        case CLProximity.Unknown:
+                            roomBeacon.Value = "Not in a room.";
+                            OnDidRangeBeacons(new BeaconEventArgs(roomBeacon));
+                            break;
+                        default:
+                            roomBeacon.Value = beacon.Minor.StringValue;
 							OnDidRangeBeacons(new BeaconEventArgs(roomBeacon));
 							break;
 					}
