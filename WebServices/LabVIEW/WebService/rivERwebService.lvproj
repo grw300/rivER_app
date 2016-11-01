@@ -13,7 +13,9 @@
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="TypeDef" Type="Folder">
 			<Item Name="StateCluster.ctl" Type="VI" URL="../TypeDef/StateCluster.ctl"/>
-			<Item Name="ActionEnum.ctl" Type="VI" URL="../TypeDef/ActionEnum.ctl"/>
+			<Item Name="RoomsActionEnum.ctl" Type="VI" URL="../TypeDef/RoomsActionEnum.ctl"/>
+			<Item Name="PersonnelActions.ctl" Type="VI" URL="../TypeDef/PersonnelActions.ctl"/>
+			<Item Name="FGVAction.ctl" Type="VI" URL="../../../../LVRestAPI/FGVAction.ctl"/>
 		</Item>
 		<Item Name="Classes" Type="Folder">
 			<Item Name="Flags.lvclass" Type="LVClass" URL="../../../../LVClasses/Flags/Flags.lvclass"/>
@@ -31,9 +33,10 @@
 			<Item Name="RestApi.lvlib" Type="Library" URL="../../../../LVRestAPI/RestApi.lvlib"/>
 		</Item>
 		<Item Name="RoomsFGV.vi" Type="VI" URL="../RoomsFGV.vi"/>
+		<Item Name="PersonnelFGV.vi" Type="VI" URL="../PersonnelFGV.vi"/>
 		<Item Name="WebService1" Type="Web Service">
 			<Property Name="Bld_buildSpecName" Type="Str"></Property>
-			<Property Name="Bld_version.build" Type="Int">6</Property>
+			<Property Name="Bld_version.build" Type="Int">11</Property>
 			<Property Name="ws.autoIncrementVersion" Type="Bool">true</Property>
 			<Property Name="ws.disconnectInline" Type="Bool">true</Property>
 			<Property Name="ws.disconnectTypeDefs" Type="Bool">false</Property>
@@ -45,7 +48,7 @@
 			<Property Name="ws.serveDefaultDoc" Type="Bool">true</Property>
 			<Property Name="ws.SSE2" Type="Bool">true</Property>
 			<Property Name="ws.static_permissions" Type="Str"></Property>
-			<Property Name="ws.version.build" Type="Int">6</Property>
+			<Property Name="ws.version.build" Type="Int">11</Property>
 			<Property Name="ws.version.fix" Type="Int">0</Property>
 			<Property Name="ws.version.major" Type="Int">1</Property>
 			<Property Name="ws.version.minor" Type="Int">0</Property>
@@ -102,9 +105,7 @@
 				</Item>
 			</Item>
 		</Item>
-		<Item Name="PersonnelFGV.vi" Type="VI" URL="../PersonnelFGV.vi"/>
-		<Item Name="PersonnelActions.ctl" Type="VI" URL="../TypeDef/PersonnelActions.ctl"/>
-		<Item Name="FGVAction.ctl" Type="VI" URL="../../../../LVRestAPI/FGVAction.ctl"/>
+		<Item Name="RoomsFGVLocalErrorH.vi" Type="VI" URL="../../../../LVRestAPI/RoomsFGVLocalErrorH.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
