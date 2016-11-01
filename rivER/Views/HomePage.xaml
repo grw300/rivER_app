@@ -2,10 +2,11 @@
 <ContentPage
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-	x:Class="rivER.HomePage">
+	x:Class="rivER.HomePage"
+	BackgroundColor="White"
+	ControlTemplate="{StaticResource TitleTemplate}">
 	<ContentPage.Content>
 		<StackLayout
-			Padding="0,20,0,0"
 			VerticalOptions="StartAndExpand">
 			<Label
 				Text="{Binding CurrentRoom}"
@@ -20,19 +21,6 @@
 				x:Name="roomView"
 				ItemsSource="{Binding Rooms}"
 				SeparatorVisibility="None">
-				<!--<ListView.HeaderTemplate>
-					<DataTemplate>
-						<StackLayout
-							Orientation="Horizontal"
-							Padding="10,5,5,10"
-							BackgroundColor="Aqua"
-							HeightRequest="100">
-							<Label
-								FontSize="50"
-								Text="{Binding .}" />
-						</StackLayout>
-					</DataTemplate>
-				</ListView.HeaderTemplate>-->
 				<ListView.ItemTemplate>
 					<DataTemplate>
 						<Frame

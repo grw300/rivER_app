@@ -1,9 +1,45 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Application
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	x:Class="rivER.App">
 	<Application.Resources>
-		<!-- Application resource dictionary -->
+		<ResourceDictionary>
+			<ControlTemplate
+				x:Key="TitleTemplate">
+				<Grid
+					Padding="0,20,0,0">
+					<Grid.RowDefinitions>
+						<RowDefinition
+							Height="0.1*"
+							/>
+						<RowDefinition
+							Height="0.9*" />
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition
+							Width="0.9*" />
+						<ColumnDefinition
+							Width="0.1*"/>
+					</Grid.ColumnDefinitions>
+					<Label
+						Grid.Column="0"
+						Text="rivER"
+						VerticalOptions="Center"
+						HorizontalOptions="CenterAndExpand"/>
+					<Button
+							Grid.Column="1"
+							Image="settings.png"
+							BackgroundColor="White"
+							BorderColor="White"
+							Command="{TemplateBinding SettingsCommand}"
+							VerticalOptions="CenterAndExpand"
+							HorizontalOptions="CenterAndExpand"/>
+					<ContentPresenter
+						Grid.Row="1"
+						Grid.ColumnSpan="2" />
+				</Grid>
+			</ControlTemplate>
+		</ResourceDictionary>
 	</Application.Resources>
 </Application>

@@ -23,8 +23,6 @@ namespace rivER
 
 				FileImageSource icon = (FileImageSource)FileImageSource.FromFile(string.Format("{0}.png", title.ToLowerInvariant()));
 
-				Type pageType = Type.GetType(string.Format("rivER.{0}Page", tabTitles[i]), true);
-
 				ContentPage tabPage;
 
 				switch (tabTitles[i])

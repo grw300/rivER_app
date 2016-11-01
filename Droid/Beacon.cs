@@ -35,17 +35,38 @@ namespace rivER.Droid
                 //This can be used for firing events when personnel come into hospitals.
             };
 
-            rangeNotifier.DidRangeBeaconsInRegionComplete += (object sender, RangeEventArgs e) =>
-            {
-                var beacon = e.Beacons.Aggregate((b1, b2) => b1.Distance < b2.Distance ? b1 : b2);
-                var roomBeacon = new RoomBeacon();
-                roomBeacon.Value = beacon.Id3.ToString();
-                OnDidRangeBeacons(new BeaconEventArgs(roomBeacon));
-            };
+			rangeNotifier.DidRangeBeaconsInRegionComplete += (object sender, RangeEventArgs e) =>
+			{
+				if (e.Beacons.Count > 0)
+				{
+					var beacon = (e.Beacons.Count > 1) ?
+						e?.Beacons.Aggregate((b1, b2) => b1.Distance < b2.Distance ? b1 : b2) : e.Beacons.FirstOrDefault();
+					
+					var roomBeacon = new RoomBeacon();
 
+					if (isBetween(beacon.Distance, 0, 7))
+					{
+						roomBeacon.Value = beacon.Id3.ToString();
+
+					}
+					else
+					{
+						roomBeacon.Value = "Not in a room.";
+					}
+
+
+					roomBeacon.Value = beacon.Id3.ToString();
+					OnDidRangeBeacons(new BeaconEventArgs(roomBeacon));
+				}
+			};
             beaconManager.SetBackgroundMode(false);
             beaconManager.Bind((IBeaconConsumer)Xamarin.Forms.Forms.Context);
         }
+
+		public static bool isBetween(double x, double lower, double upper)
+		{
+			return lower <= x && x <= upper;
+		}
 
         public void AltBeaconStart()
         {

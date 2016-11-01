@@ -11,5 +11,13 @@ namespace rivER
 		{
 			InitializeComponent();
 		}
+
+		public Command SettingsCommand
+		{
+			get
+			{
+				return new Command(() => Navigation.PushModalAsync(new SettingsPage()));
+			}
+		}
 	}
 }
