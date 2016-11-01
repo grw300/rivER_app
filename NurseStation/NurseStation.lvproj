@@ -18,6 +18,7 @@
 		<Item Name="Helpers" Type="Folder">
 			<Item Name="CreateEvents.vi" Type="VI" URL="../Helpers/CreateEvents.vi"/>
 			<Item Name="Get Clicked Array Index.vi" Type="VI" URL="../Helpers/Get Clicked Array Index.vi"/>
+			<Item Name="Get Clicked Flag Index.vi" Type="VI" URL="../Helpers/Get Clicked Flag Index.vi"/>
 			<Item Name="Refresh UI Event.vi" Type="VI" URL="../Helpers/Refresh UI Event.vi"/>
 		</Item>
 		<Item Name="Tests" Type="Folder"/>
@@ -31,6 +32,7 @@
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="LVPoint32TypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVPoint32TypeDef.ctl"/>
 			</Item>
+			<Item Name="RoomSelForMap.ctl" Type="VI" URL="../TypeDef/RoomSelForMap.ctl"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
