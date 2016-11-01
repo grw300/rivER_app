@@ -60,8 +60,9 @@ namespace Flag
                 HttpResponseMessage urlContents = await client.PostAsync(urlString, postContent);
                 //jresponse= JsonConvert .DeserializeObject
                 //CText.Text = jresponse.c;
-                ResponseText.Text = urlContents.Content.ToString();
-            }
+                var urlbody = await urlContents.Content.ReadAsStringAsync();
+                ResponseText.Text = urlbody.ToString();
+                    }
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine(@"				ERROR {0}", ex.Message);
