@@ -21,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/editTextA"
-            android:text="1" />
+            android:text="102" />
         <TextView
             android:text="Flags"
             android:textAppearance="?android:attr/textAppearanceLarge"
@@ -45,14 +45,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/readButton" />
-    <EditText
-        android:inputType="number"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editTextC" />
     <TextView
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editTextResponse" />
+        android:layout_height="match_parent"
+        android:id="@+id/editTextResponse"
+        android:scrollbars="vertical"
+        android:scrollbarStyle="insideOverlay"
+        android:scrollbarThumbVertical="@drawable/icon" />
 </LinearLayout>

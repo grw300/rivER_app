@@ -67,10 +67,7 @@ namespace Flag
 			public const int editTextB = 2131034116;
 			
 			// aapt resource value: 0x7f050007
-			public const int editTextC = 2131034119;
-			
-			// aapt resource value: 0x7f050008
-			public const int editTextResponse = 2131034120;
+			public const int editTextResponse = 2131034119;
 			
 			// aapt resource value: 0x7f050000
 			public const int linearLayout1 = 2131034112;
