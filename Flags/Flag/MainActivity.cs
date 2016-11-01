@@ -53,8 +53,8 @@ namespace Flag
                 //Local
             //string urlString = "http://127.0.0.1:8001/WebService1/UpdateFlagState";
             string json = "Room=" + AText.Text + "&FlagState=" + BText.Text;
-                var postContent = new StringContent(json, Encoding.UTF8, "application/json");
-                //var postContent = new StringContent(json);
+                //var postContent = new StringContent(json, Encoding.UTF8, "application/json");
+                var postContent = new StringContent(json, Encoding.UTF8, "application/x-www-form-urlencoded");
                 //"http://192.168.0.117:8080/WebService1/UpdateFlag?Room=0&FlagIn=3"
                 //Task<string> getStringTask = client.GetStringAsync(urlString);
                 HttpResponseMessage urlContents = await client.PostAsync(urlString, postContent);
