@@ -103,6 +103,10 @@
 					<Property Name="ws.useHeaders" Type="Bool">true</Property>
 					<Property Name="ws.useStandardURL" Type="Bool">true</Property>
 				</Item>
+				<Item Name="RoomPost.vi" Type="VI" URL="../Methods/RoomPost.vi">
+					<Property Name="ws.method" Type="Int">1</Property>
+					<Property Name="ws.type" Type="Int">1</Property>
+				</Item>
 			</Item>
 		</Item>
 		<Item Name="RoomsFGVLocalErrorH.vi" Type="VI" URL="../../../../LVRestAPI/RoomsFGVLocalErrorH.vi"/>
