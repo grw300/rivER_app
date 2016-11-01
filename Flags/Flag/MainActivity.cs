@@ -26,6 +26,7 @@ namespace Flag
         private string serverIP = "192.168.0.117";
         //private string port = "8080";
         private string port = "8001";
+        private string WebService = "WebService1";
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -46,22 +47,15 @@ namespace Flag
         private async void UpdateButtonClickOn(object sender, EventArgs e)
         {
             try { 
-            //string serverIP = "192.168.0.117";
-            //string port = "8080";
-            string WebService = "WebService1";
+            
             string urlString = "http://" + serverIP + ":" + port + "/" + WebService + "/" + "UpdateFlagState";
-                //Local
             //string urlString = "http://127.0.0.1:8001/WebService1/UpdateFlagState";
             string json = "Room=" + AText.Text + "&FlagState=" + BText.Text;
-                //var postContent = new StringContent(json, Encoding.UTF8, "application/json");
-                var postContent = new StringContent(json, Encoding.UTF8, "application/x-www-form-urlencoded");
-                //"http://192.168.0.117:8080/WebService1/UpdateFlag?Room=0&FlagIn=3"
-                //Task<string> getStringTask = client.GetStringAsync(urlString);
-                HttpResponseMessage urlContents = await client.PostAsync(urlString, postContent);
-                //jresponse= JsonConvert .DeserializeObject
-                //CText.Text = jresponse.c;
-                var urlbody = await urlContents.Content.ReadAsStringAsync();
-                ResponseText.Text = urlbody.ToString();
+            //var postContent = new StringContent(json, Encoding.UTF8, "application/json");
+            var postContent = new StringContent(json, Encoding.UTF8, "application/x-www-form-urlencoded");
+            HttpResponseMessage urlContents = await client.PostAsync(urlString, postContent);
+            var urlbody = await urlContents.Content.ReadAsStringAsync();
+            ResponseText.Text = urlbody.ToString();
                     }
             catch (Exception ex)
             {
@@ -71,18 +65,23 @@ namespace Flag
 
         private async void ReadButtonClickOn(object sender, EventArgs e)
         {
-           
-            //string serverIP = "192.168.0.117";
-            //string port = "8080";
-            string WebService = "WebService1";
-            string urlString = "http://" + serverIP + ":" + port + "/" + WebService + "/" + "ReadFlag?Room=" + AText.Text;
-                        //"http://192.168.0.117:8080/WebService1/Add?b=2&a=9"
-            //http://192.168.0.117:8080/WebService1/ReadFlag?Room=0
-            Task<string> getStringTask = client.GetStringAsync(urlString);
-            string urlContents = await getStringTask;
-            //jresponse= JsonConvert .DeserializeObject
-            //CText.Text = jresponse.c;
-            ResponseText.Text = urlContents;
+            try
+            {
+
+                string WebService = "WebService1";
+                string urlString = "http://" + serverIP + ":" + port + "/" + WebService + "/" + "ReadFlag?Room=" + AText.Text;
+                //"http://192.168.0.117:8080/WebService1/Add?b=2&a=9"
+                //http://192.168.0.117:8080/WebService1/ReadFlag?Room=0
+                Task<string> getStringTask = client.GetStringAsync(urlString);
+                string urlContents = await getStringTask;
+
+                ResponseText.Text = urlContents;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(@"				ERROR {0}", ex.Message);
+            }
+        
         }
 
 
