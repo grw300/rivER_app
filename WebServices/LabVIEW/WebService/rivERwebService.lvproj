@@ -31,6 +31,7 @@
 		<Item Name="Tests" Type="Folder">
 			<Item Name="TestFGVFlag Status.vi" Type="VI" URL="../Test/TestFGVFlag Status.vi"/>
 			<Item Name="TestFGVBedVacant.vi" Type="VI" URL="../Test/TestFGVBedVacant.vi"/>
+			<Item Name="TestFGVRoom.vi" Type="VI" URL="../Test/TestFGVRoom.vi"/>
 			<Item Name="TestFGV.vi" Type="VI" URL="../Test/TestFGV.vi"/>
 			<Item Name="RestApi.lvlib" Type="Library" URL="../../../../LVRestAPI/RestApi.lvlib"/>
 		</Item>

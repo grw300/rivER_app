@@ -23,7 +23,7 @@ namespace Flag
         private TextView ResponseText;
         private Button UpdateButton;
         private Button ReadButton;
-        private string serverIP = "192.168.0.117";
+        private string serverIP = "192.168.2.6";
         //private string port = "8080";
         private string port = "8001";
         private string WebService = "RivERWebService";
@@ -67,9 +67,9 @@ namespace Flag
         {
             try
             {
-
+                string Command = "ReadFlag";
                 string WebService = "WebService1";
-                string urlString = "http://" + serverIP + ":" + port + "/" + WebService + "/" + "ReadFlag?Room=" + AText.Text;
+                string urlString = "http://" + serverIP + ":" + port + "/" + WebService + "/" + "GetRoom?Room=" + AText.Text + "Command=" +Command;
                 //"http://192.168.0.117:8080/WebService1/Add?b=2&a=9"
                 //http://192.168.0.117:8080/WebService1/ReadFlag?Room=0
                 Task<string> getStringTask = client.GetStringAsync(urlString);
