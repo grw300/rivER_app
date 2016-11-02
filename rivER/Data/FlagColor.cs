@@ -1,11 +1,8 @@
 ﻿using System;
 namespace rivER
 {
-	public enum FlagColor
+	public class FlagColor 
 	{
-		Red,
-		Blue,
-		Green,
-		Yellow
+		public string Color { get; set; }
 	}
 }

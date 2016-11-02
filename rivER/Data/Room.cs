@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace rivER
 {
@@ -6,5 +8,7 @@ namespace rivER
 	{
 		public string Name { get; set; }
 		public Flag Flag { get; set; }
+
 	}
 }
+

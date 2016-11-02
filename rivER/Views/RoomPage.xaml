@@ -9,19 +9,33 @@
 		<StackLayout
 			VerticalOptions="StartAndExpand">
 			<StackLayout
-				Orientation="Vertical"
+				Orientation="Horizontal"
 				HorizontalOptions="FillAndExpand">
 				<Label
-					Text="{Binding CurrentRoom}"
+					Text="{Binding CurrentRoomName}"
 					Margin="10"
 					FontSize="50"
-					HeightRequest="100"
+					HeightRequest="80"
 					BackgroundColor="Aqua"
 					Opacity="75"
 					Style="{DynamicResource TitleStyle}"
 					VerticalTextAlignment="Center" />
-				<Label
-					Text="{Binding CurrentRoomState}" />
+				<ListView
+					x:Name="roomState"
+					ItemsSource="{Binding FlagColors, Mode=OneWay}"
+					SeparatorVisibility="None"
+					Rotation="270"
+					HeightRequest="80"
+					WidthRequest="10">
+					<ListView.ItemTemplate>
+						<DataTemplate>
+							<ViewCell>
+								<BoxView
+									Color="{Binding Color}" />
+							</ViewCell>
+						</DataTemplate>
+					</ListView.ItemTemplate>
+				</ListView>
 			</StackLayout>
 			<ListView
 				x:Name="roomView"

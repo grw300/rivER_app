@@ -6,6 +6,9 @@ using Xamarin.Forms;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Collections;
+using System.Linq;
 
 namespace rivER
 {
@@ -15,8 +18,8 @@ namespace rivER
 
 		HttpClient client = new HttpClient();
 
-		string currentRoom;
-		bool currentRoomState;
+		string currentRoomName;
+		Room currentRoom;
 		List<Room> rooms;
 		IBeacon beacon;
 
@@ -26,29 +29,31 @@ namespace rivER
 
 			beacon.DidRangeBeacons += (object sender, BeaconEventArgs e) =>
 			{
-				this.CurrentRoom = e.beacon.Value;
+				this.CurrentRoomName = e.beacon.Value;
 			};
 
 			beacon.StartMonitoring("487C659C-1FE2-4D2A-A289-130BBD7E534F", "ER-Rooms");
 		}
 
-		public string CurrentRoom
+		public string CurrentRoomName
 		{
 			get
 			{
-				return currentRoom;
+				return currentRoomName;
 			}
 			set
 			{
-				if (currentRoom != value)
+				if (currentRoomName != value)
 				{
-					currentRoom = value;
+					currentRoomName = value;
 
 					try
 					{
 						var result = JsonConvert.DeserializeObject<Flag>(GetRoomStateAsync().Result);
 
-						this.CurrentRoomState = result.FlagState[0];
+						this.CurrentRoom = new Room();
+
+						this.CurrentRoom.Flag = result;
 					}
 					catch (AggregateException ae)
 					{
@@ -66,26 +71,35 @@ namespace rivER
 						}
 					}
 
-					OnPropertyChanged("CurrentRoom");
+					OnPropertyChanged("CurrentRoomName");
 				}
 			}
 		}
 
-		public bool CurrentRoomState
+		public Room CurrentRoom
 		{
 			get
 			{
-				return currentRoomState;
+				return currentRoom;
 			}
 			set
 			{
-				if (currentRoomState != value)
+				if (currentRoom != value)
 				{
-					currentRoomState = value;
+					currentRoom = value;
 					OnPropertyChanged("CurrentRoomState");
 				}
 			}
 		}
+
+		public List<FlagColor> FlagColors
+		{
+			get
+			{
+				return currentRoom.Flag.FlagColor.ToList();
+			}
+		}
+
 
 		public List<Room> Rooms
 		{
