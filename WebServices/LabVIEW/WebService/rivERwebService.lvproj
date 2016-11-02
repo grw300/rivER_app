@@ -138,6 +138,8 @@
 				</Item>
 			</Item>
 		</Item>
+		<Item Name="GedBedsStatus.vi" Type="VI" URL="../../../../NurseStation/Helpers/GedBedsStatus.vi"/>
+		<Item Name="BedStateCluster.ctl" Type="VI" URL="../TypeDef/BedStateCluster.ctl"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
