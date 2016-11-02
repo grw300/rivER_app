@@ -26,7 +26,7 @@ namespace Flag
         private string serverIP = "192.168.0.117";
         //private string port = "8080";
         private string port = "8001";
-        private string WebService = "WebService1";
+        private string WebService = "RivERWebService";
 
         protected override void OnCreate(Bundle bundle)
         {
