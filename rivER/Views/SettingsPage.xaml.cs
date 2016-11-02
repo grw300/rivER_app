@@ -10,10 +10,14 @@ namespace rivER
 		public SettingsPage()
 		{
 			InitializeComponent();
+
+			BindingContext = new SettingsViewModel();
 		}
 
 		public void OnOKClicked(object sender, EventArgs args)
 		{
+			Helpers.Settings.ServerAddress = ServerAddress.Text;
+			Helpers.Settings.PersonnelID = PersonnelID.Text;
 			Navigation.PopModalAsync();
 		}
 	}

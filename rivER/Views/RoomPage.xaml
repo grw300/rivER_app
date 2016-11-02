@@ -2,21 +2,27 @@
 <ContentPage
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-	x:Class="rivER.HomePage"
+	x:Class="rivER.RoomPage"
 	BackgroundColor="White"
 	ControlTemplate="{StaticResource TitleTemplate}">
 	<ContentPage.Content>
 		<StackLayout
 			VerticalOptions="StartAndExpand">
-			<Label
-				Text="{Binding CurrentRoom}"
-				Margin="10"
-				FontSize="50"
-				HeightRequest="100"
-				BackgroundColor="Aqua"
-				Opacity="75"
-				Style="{DynamicResource TitleStyle}"
-				VerticalTextAlignment="Center" />
+			<StackLayout
+				Orientation="Vertical"
+				HorizontalOptions="FillAndExpand">
+				<Label
+					Text="{Binding CurrentRoom}"
+					Margin="10"
+					FontSize="50"
+					HeightRequest="100"
+					BackgroundColor="Aqua"
+					Opacity="75"
+					Style="{DynamicResource TitleStyle}"
+					VerticalTextAlignment="Center" />
+				<Label
+					Text="{Binding CurrentRoomState}" />
+			</StackLayout>
 			<ListView
 				x:Name="roomView"
 				ItemsSource="{Binding Rooms}"

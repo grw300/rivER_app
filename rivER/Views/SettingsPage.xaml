@@ -4,6 +4,21 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	x:Class="rivER.SettingsPage">
 	<ContentPage.Content>
-		<Button Text="OK" Clicked="OnOKClicked" />
+		<StackLayout
+				Padding="20,100,20,0">
+			<Label
+				Text="Server Address:" />
+			<Entry
+				x:Name="ServerAddress"
+				Text="{Binding ServerAddress}" />
+			<Label
+				Text="Personnel ID:" />
+			<Entry
+				x:Name="PersonnelID"
+				Text="{Binding PersonnelID}" />
+			<Button
+				Text="OK"
+				Clicked="OnOKClicked" />
+		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

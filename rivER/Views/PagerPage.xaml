@@ -6,10 +6,24 @@
 	BackgroundColor="White"
 	ControlTemplate="{StaticResource TitleTemplate}">
 	<ContentPage.Content>
-		<Label
-			x:Name="Label"
-			Text="rivER Pager"
-			VerticalOptions="Center"
-			HorizontalOptions="Center" />
+		<StackLayout
+			VerticalOptions="StartAndExpand">
+			<ListView
+				x:Name="pagerView"
+				ItemsSource="{Binding Pages}"
+				SeparatorVisibility="None">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<Frame
+							OutlineColor="Silver">
+							<TextCell
+								Text="{Binding From}"
+								Detail="{Binding Message}">
+							</TextCell>
+						</Frame>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

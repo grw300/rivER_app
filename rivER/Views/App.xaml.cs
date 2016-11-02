@@ -13,7 +13,7 @@ namespace rivER
 			BottomBarPage bottomBarPage = new BottomBarPage();
 			bottomBarPage.BarBackgroundColor = Color.Aqua;
 
-			string[] tabTitles = { "Home", "Pager", "Timer" };
+			string[] tabTitles = { "Room", "Pager", "Timer" };
 			string[] tabColors = { null, "#5D4037", "#7B1FA2" };
 
 			for (int i = 0; i < tabTitles.Length; ++i)
@@ -27,8 +27,8 @@ namespace rivER
 
 				switch (tabTitles[i])
 				{
-					case "Home":
-						tabPage = new HomePage();
+					case "Room":
+						tabPage = new RoomPage();
 						break;
 					case "Pager":
 						tabPage = new PagerPage();

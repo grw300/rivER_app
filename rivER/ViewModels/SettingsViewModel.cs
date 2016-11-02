@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace rivER
 {
-	public class SettingsButtonViewModel : INotifyPropertyChanged
+	public class SettingsViewModel : INotifyPropertyChanged
 	{
 		public string ServerAddress
 		{
