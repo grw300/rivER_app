@@ -1,8 +1,13 @@
 ﻿using System;
+
 namespace rivER
 {
-	public class FlagColor 
+	public class FlagColor
 	{
-		public string Color { get; set; }
+        public FlagColor(bool state, int color)
+        {
+            this.Color = Tuple.Create(state, color);
+        }
+		public Tuple<bool, int> Color { get; private set; }
 	}
 }

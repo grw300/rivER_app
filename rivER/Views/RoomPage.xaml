@@ -1,58 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage
-	xmlns="http://xamarin.com/schemas/2014/forms"
-	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-	x:Class="rivER.RoomPage"
-	BackgroundColor="White"
-	ControlTemplate="{StaticResource TitleTemplate}">
-	<ContentPage.Content>
-		<StackLayout
-			VerticalOptions="StartAndExpand">
-			<StackLayout
-				Orientation="Horizontal"
-				HorizontalOptions="FillAndExpand">
-				<Label
-					Text="{Binding CurrentRoomName}"
-					Margin="10"
-					FontSize="50"
-					HeightRequest="80"
-					BackgroundColor="Aqua"
-					Opacity="75"
-					Style="{DynamicResource TitleStyle}"
-					VerticalTextAlignment="Center" />
-				<ListView
-					x:Name="roomState"
-					ItemsSource="{Binding FlagColors, Mode=OneWay}"
-					SeparatorVisibility="None"
-					Rotation="270"
-					HeightRequest="80"
-					WidthRequest="10">
-					<ListView.ItemTemplate>
-						<DataTemplate>
-							<ViewCell>
-								<BoxView
-									Color="{Binding Color}" />
-							</ViewCell>
-						</DataTemplate>
-					</ListView.ItemTemplate>
-				</ListView>
-			</StackLayout>
-			<ListView
-				x:Name="roomView"
-				ItemsSource="{Binding Rooms}"
-				SeparatorVisibility="None">
-				<ListView.ItemTemplate>
-					<DataTemplate>
-						<Frame
-							OutlineColor="Silver">
-							<TextCell
-								Text="{Binding Name}"
-								Detail="{Binding State}">
-							</TextCell>
-						</Frame>
-					</DataTemplate>
-				</ListView.ItemTemplate>
-			</ListView>
-		</StackLayout>
-	</ContentPage.Content>
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:rivER;assembly=rivER"
+    x:Class="rivER.RoomPage"
+    BackgroundColor="White"
+    ControlTemplate="{StaticResource TitleTemplate}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:FlagColorToColorConverter x:Key="flagColorToColorConverter"/>
+            <local:OccupiedToColorConverter x:Key="occupiedToColorConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout
+            VerticalOptions="StartAndExpand">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <BoxView
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Color="Aqua"
+                    Opacity="0.75"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"/>
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Text="{Binding CurrentRoomName}"
+                    Margin="10"
+                    FontSize="50"
+                    Style="{DynamicResource TitleStyle}"
+                    VerticalTextAlignment="Center"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="StartAndExpand"/>
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    BorderRadius="1"
+                    BackgroundColor="{Binding CurrentRoomOccupied, Converter={StaticResource occupiedToColorConverter}}"/>
+                <ListView
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    RowHeight="20"
+                    ItemsSource="{Binding CurrentRoomFlagColors}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <BoxView
+                                    Color="{Binding Color, Converter={StaticResource flagColorToColorConverter}}"/>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+            <ListView
+                x:Name="roomView"
+                ItemsSource="{Binding NextRooms}"
+                SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame
+                            OutlineColor="Silver">
+                            <TextCell
+                                Text="{Binding Name}"
+                                Detail="{Binding State}">
+                            </TextCell>
+                        </Frame>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

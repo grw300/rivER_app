@@ -6,10 +6,25 @@
 	BackgroundColor="White"
 	ControlTemplate="{StaticResource TitleTemplate}">
 	<ContentPage.Content>
-		<Label
-			x:Name="Label"
-			Text="rivER Timer"
-			VerticalOptions="Center"
-			HorizontalOptions="Center" />
+        <StackLayout
+            VerticalOptions="StartAndExpand">
+            <Label
+                Text="Timer Page" />
+            <!--<ListView
+                ItemsSource="{Binding TimerHistory}"
+                SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame
+                            OutlineColor="Silver">
+                            <TextCell
+                                Text="{Binding Where}"
+                                Detail="{Binding When}">
+                            </TextCell>
+                        </Frame>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>-->
+        </StackLayout>
 	</ContentPage.Content>
 </ContentPage>

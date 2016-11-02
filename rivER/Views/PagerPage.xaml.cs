@@ -10,7 +10,9 @@ namespace rivER
 		public PagerPage()
 		{
 			InitializeComponent();
-		}
+
+            BindingContext = new PagerViewModel();
+        }
 
 
 		public Command SettingsCommand

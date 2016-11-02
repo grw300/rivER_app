@@ -11,7 +11,7 @@ namespace rivER
 		{
 			InitializeComponent();
 
-			BindingContext = new RoomViewModel();
+            BindingContext = new RoomViewModel();
 		}
 
 		public Command SettingsCommand
