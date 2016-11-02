@@ -5,9 +5,9 @@ using Xamarin.Forms;
 
 namespace rivER
 {
-	public partial class HomePage : ContentPage
+	public partial class RoomPage : ContentPage
 	{
-		public HomePage()
+		public RoomPage()
 		{
 			InitializeComponent();
 
