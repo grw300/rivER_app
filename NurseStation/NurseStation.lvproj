@@ -17,6 +17,7 @@
 		</Item>
 		<Item Name="Helpers" Type="Folder">
 			<Item Name="Add Request To Server.vi" Type="VI" URL="../Helpers/Add Request To Server.vi"/>
+			<Item Name="BundleFlagRoomNumber.vi" Type="VI" URL="../Helpers/BundleFlagRoomNumber.vi"/>
 			<Item Name="CreateEvents.vi" Type="VI" URL="../Helpers/CreateEvents.vi"/>
 			<Item Name="Get Clicked Array Index.vi" Type="VI" URL="../Helpers/Get Clicked Array Index.vi"/>
 			<Item Name="Get Clicked Flag Index.vi" Type="VI" URL="../Helpers/Get Clicked Flag Index.vi"/>
@@ -27,6 +28,7 @@
 		<Item Name="Tests" Type="Folder"/>
 		<Item Name="TypeDef" Type="Folder">
 			<Item Name="EventsReference.ctl" Type="VI" URL="../TypeDef/EventsReference.ctl"/>
+			<Item Name="Flags_RoomNumber.ctl" Type="VI" URL="../TypeDef/Flags_RoomNumber.ctl"/>
 			<Item Name="RoomSelFromMap.ctl" Type="VI" URL="../TypeDef/RoomSelFromMap.ctl"/>
 			<Item Name="SelectedRoom.ctl" Type="VI" URL="../TypeDef/SelectedRoom.ctl"/>
 			<Item Name="State Cluster.ctl" Type="VI" URL="../TypeDef/State Cluster.ctl"/>
