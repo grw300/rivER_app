@@ -15,7 +15,7 @@
 			<Item Name="StateCluster.ctl" Type="VI" URL="../TypeDef/StateCluster.ctl"/>
 			<Item Name="RoomsActionEnum.ctl" Type="VI" URL="../TypeDef/RoomsActionEnum.ctl"/>
 			<Item Name="PersonnelActions.ctl" Type="VI" URL="../TypeDef/PersonnelActions.ctl"/>
-			<Item Name="FGVAction.ctl" Type="VI" URL="../../../../LVRestAPI/FGVAction.ctl"/>
+			<Item Name="FGVAction.ctl" Type="VI" URL="../../../../LVRestAPI/TypeDef/FGVAction.ctl"/>
 		</Item>
 		<Item Name="Classes" Type="Folder">
 			<Item Name="Flags.lvclass" Type="LVClass" URL="../../../../LVClasses/Flags/Flags.lvclass"/>
@@ -26,6 +26,7 @@
 			<Item Name="GetBedStatus.vi" Type="VI" URL="../Helpers/GetBedStatus.vi"/>
 			<Item Name="RoomNumbertoIndex.vi" Type="VI" URL="../../../../LVClasses/Room/RoomNumbertoIndex.vi"/>
 			<Item Name="RoomBeaconToIndex.vi" Type="VI" URL="../../../../LVClasses/Room/RoomBeaconToIndex.vi"/>
+			<Item Name="RoomsFGVLocalErrorH.vi" Type="VI" URL="../../../../LVRestAPI/RoomsFGVLocalErrorH.vi"/>
 		</Item>
 		<Item Name="Tests" Type="Folder">
 			<Item Name="TestFGVFlag Status.vi" Type="VI" URL="../Test/TestFGVFlag Status.vi"/>
@@ -34,7 +35,7 @@
 		</Item>
 		<Item Name="RoomsFGV.vi" Type="VI" URL="../RoomsFGV.vi"/>
 		<Item Name="PersonnelFGV.vi" Type="VI" URL="../PersonnelFGV.vi"/>
-		<Item Name="WebService1" Type="Web Service">
+		<Item Name="RivERWebService" Type="Web Service">
 			<Property Name="Bld_buildSpecName" Type="Str"></Property>
 			<Property Name="Bld_version.build" Type="Int">11</Property>
 			<Property Name="ws.autoIncrementVersion" Type="Bool">true</Property>
@@ -88,6 +89,21 @@
 					<Property Name="ws.useHeaders" Type="Bool">true</Property>
 					<Property Name="ws.useStandardURL" Type="Bool">true</Property>
 				</Item>
+				<Item Name="GetRoom.vi" Type="VI" URL="../Methods/GetRoom.vi">
+					<Property Name="ws.buffered" Type="Bool">true</Property>
+					<Property Name="ws.includeNameInURL" Type="Bool">true</Property>
+					<Property Name="ws.keepInMemory" Type="Bool">true</Property>
+					<Property Name="ws.loadAtStartup" Type="Bool">true</Property>
+					<Property Name="ws.method" Type="Int">1</Property>
+					<Property Name="ws.outputFormat" Type="Int">4</Property>
+					<Property Name="ws.outputType" Type="Int">0</Property>
+					<Property Name="ws.permissions" Type="Str"></Property>
+					<Property Name="ws.requireAPIKey" Type="Bool">false</Property>
+					<Property Name="ws.type" Type="Int">1</Property>
+					<Property Name="ws.uri" Type="Str"></Property>
+					<Property Name="ws.useHeaders" Type="Bool">true</Property>
+					<Property Name="ws.useStandardURL" Type="Bool">true</Property>
+				</Item>
 				<Item Name="UpdateFlagState.vi" Type="VI" URL="../UpdateFlagState.vi">
 					<Property Name="ws.buffered" Type="Bool">true</Property>
 					<Property Name="ws.includeNameInURL" Type="Bool">true</Property>
@@ -103,13 +119,23 @@
 					<Property Name="ws.useHeaders" Type="Bool">true</Property>
 					<Property Name="ws.useStandardURL" Type="Bool">true</Property>
 				</Item>
-				<Item Name="RoomPost.vi" Type="VI" URL="../Methods/RoomPost.vi">
-					<Property Name="ws.method" Type="Int">1</Property>
+				<Item Name="PostRoom.vi" Type="VI" URL="../Methods/PostRoom.vi">
+					<Property Name="ws.buffered" Type="Bool">true</Property>
+					<Property Name="ws.includeNameInURL" Type="Bool">true</Property>
+					<Property Name="ws.keepInMemory" Type="Bool">true</Property>
+					<Property Name="ws.loadAtStartup" Type="Bool">true</Property>
+					<Property Name="ws.method" Type="Int">3</Property>
+					<Property Name="ws.outputFormat" Type="Int">4</Property>
+					<Property Name="ws.outputType" Type="Int">0</Property>
+					<Property Name="ws.permissions" Type="Str"></Property>
+					<Property Name="ws.requireAPIKey" Type="Bool">false</Property>
 					<Property Name="ws.type" Type="Int">1</Property>
+					<Property Name="ws.uri" Type="Str"></Property>
+					<Property Name="ws.useHeaders" Type="Bool">true</Property>
+					<Property Name="ws.useStandardURL" Type="Bool">true</Property>
 				</Item>
 			</Item>
 		</Item>
-		<Item Name="RoomsFGVLocalErrorH.vi" Type="VI" URL="../../../../LVRestAPI/RoomsFGVLocalErrorH.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
