@@ -11,10 +11,12 @@
 		<Item Name="GetRoomCommands.ctl" Type="VI" URL="../TypeDef/GetRoomCommands.ctl"/>
 		<Item Name="PostRoomCommands.ctl" Type="VI" URL="../TypeDef/PostRoomCommands.ctl"/>
 	</Item>
+	<Item Name="AddPersonnel.vi" Type="VI" URL="../AddPersonnel.vi"/>
 	<Item Name="AddRequest.vi" Type="VI" URL="../AddRequest.vi"/>
 	<Item Name="GetRoom.vi" Type="VI" URL="../GetRoom.vi"/>
 	<Item Name="PostRoom.vi" Type="VI" URL="../PostRoom.vi"/>
 	<Item Name="ReadFlag.vi" Type="VI" URL="../ReadFlag.vi"/>
+	<Item Name="RemovePersonnel.vi" Type="VI" URL="../RemovePersonnel.vi"/>
 	<Item Name="RemoveRequest.vi" Type="VI" URL="../RemoveRequest.vi"/>
 	<Item Name="RestURLFGV.vi" Type="VI" URL="../RestURLFGV.vi"/>
 	<Item Name="UpdateFlagState.vi" Type="VI" URL="../UpdateFlagState.vi"/>
