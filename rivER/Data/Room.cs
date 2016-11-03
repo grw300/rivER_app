@@ -8,7 +8,7 @@ namespace rivER
 	{
 		public string Name { get; set; }
 		public Flag Flag { get; set; }
-        public bool Occupied { get; set; } = false;
+        public bool Occupied { get; set; }
 
 	}
 }

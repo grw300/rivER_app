@@ -18,7 +18,7 @@ namespace rivER
                 int i;
                 if (int.TryParse(value, out i))
                 {
-                    this.value = string.Format("Room {0}", value);
+					this.value = value;
                 }
                 else
                 {

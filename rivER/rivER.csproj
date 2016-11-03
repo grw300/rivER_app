@@ -75,6 +75,7 @@
     <Compile Include="Data\Flag.cs" />
     <Compile Include="Data\Room.cs" />
     <Compile Include="Views\FlagColorToColorConverter.cs" />
+    <Compile Include="Data\Personnel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
