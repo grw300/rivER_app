@@ -15,6 +15,7 @@
 	<Item Name="GetRoom.vi" Type="VI" URL="../GetRoom.vi"/>
 	<Item Name="PostRoom.vi" Type="VI" URL="../PostRoom.vi"/>
 	<Item Name="ReadFlag.vi" Type="VI" URL="../ReadFlag.vi"/>
+	<Item Name="RemoveRequest.vi" Type="VI" URL="../RemoveRequest.vi"/>
 	<Item Name="RestURLFGV.vi" Type="VI" URL="../RestURLFGV.vi"/>
 	<Item Name="UpdateFlagState.vi" Type="VI" URL="../UpdateFlagState.vi"/>
 </Library>
