@@ -22,6 +22,7 @@
 			<Item Name="Get Clicked Array Index.vi" Type="VI" URL="../Helpers/Get Clicked Array Index.vi"/>
 			<Item Name="Get Clicked Flag Index.vi" Type="VI" URL="../Helpers/Get Clicked Flag Index.vi"/>
 			<Item Name="Refresh UI Event.vi" Type="VI" URL="../Helpers/Refresh UI Event.vi"/>
+			<Item Name="Remove Request From Server.vi" Type="VI" URL="../Helpers/Remove Request From Server.vi"/>
 			<Item Name="Update Flags To Server.vi" Type="VI" URL="../Helpers/Update Flags To Server.vi"/>
 			<Item Name="Update Room From Server.vi" Type="VI" URL="../Helpers/Update Room From Server.vi"/>
 		</Item>
