@@ -142,6 +142,7 @@
 		<Item Name="BedStateCluster.ctl" Type="VI" URL="../TypeDef/BedStateCluster.ctl"/>
 		<Item Name="TestRoomFGVRequests.vi" Type="VI" URL="../Test/TestRoomFGVRequests.vi"/>
 		<Item Name="TestRoomFGVPersonnel.vi" Type="VI" URL="../Test/TestRoomFGVPersonnel.vi"/>
+		<Item Name="TestFGVBedURL.vi" Type="VI" URL="../Test/TestFGVBedURL.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
