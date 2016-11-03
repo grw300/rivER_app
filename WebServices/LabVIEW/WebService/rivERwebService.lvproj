@@ -39,7 +39,7 @@
 		<Item Name="PersonnelFGV.vi" Type="VI" URL="../PersonnelFGV.vi"/>
 		<Item Name="RivERWebService" Type="Web Service">
 			<Property Name="Bld_buildSpecName" Type="Str"></Property>
-			<Property Name="Bld_version.build" Type="Int">16</Property>
+			<Property Name="Bld_version.build" Type="Int">18</Property>
 			<Property Name="ws.autoIncrementVersion" Type="Bool">true</Property>
 			<Property Name="ws.disconnectInline" Type="Bool">true</Property>
 			<Property Name="ws.disconnectTypeDefs" Type="Bool">false</Property>
@@ -51,7 +51,7 @@
 			<Property Name="ws.serveDefaultDoc" Type="Bool">true</Property>
 			<Property Name="ws.SSE2" Type="Bool">true</Property>
 			<Property Name="ws.static_permissions" Type="Str"></Property>
-			<Property Name="ws.version.build" Type="Int">16</Property>
+			<Property Name="ws.version.build" Type="Int">18</Property>
 			<Property Name="ws.version.fix" Type="Int">0</Property>
 			<Property Name="ws.version.major" Type="Int">1</Property>
 			<Property Name="ws.version.minor" Type="Int">0</Property>
@@ -140,6 +140,8 @@
 		</Item>
 		<Item Name="GedBedsStatus.vi" Type="VI" URL="../../../../NurseStation/Helpers/GedBedsStatus.vi"/>
 		<Item Name="BedStateCluster.ctl" Type="VI" URL="../TypeDef/BedStateCluster.ctl"/>
+		<Item Name="TestRoomFGVRequests.vi" Type="VI" URL="../Test/TestRoomFGVRequests.vi"/>
+		<Item Name="TestRoomFGVPersonnel.vi" Type="VI" URL="../Test/TestRoomFGVPersonnel.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
@@ -150,6 +152,7 @@
 				<Item Name="LabVIEWHTTPClient.lvlib" Type="Library" URL="/&lt;vilib&gt;/httpClient/LabVIEWHTTPClient.lvlib"/>
 				<Item Name="Path To Command Line String.vi" Type="VI" URL="/&lt;vilib&gt;/AdvancedString/Path To Command Line String.vi"/>
 				<Item Name="PathToUNIXPathString.vi" Type="VI" URL="/&lt;vilib&gt;/Platform/CFURL.llb/PathToUNIXPathString.vi"/>
+				<Item Name="Clear Errors.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Clear Errors.vi"/>
 			</Item>
 			<Item Name="ws_runtime.dll" Type="Document" URL="ws_runtime.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
