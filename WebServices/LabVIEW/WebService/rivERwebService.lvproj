@@ -41,6 +41,7 @@
 				<Item Name="TestFGV.vi" Type="VI" URL="../Test/TestFGV.vi"/>
 			</Item>
 			<Item Name="RestApi.lvlib" Type="Library" URL="../../../../LVRestAPI/RestApi.lvlib"/>
+			<Item Name="API Test.vi" Type="VI" URL="../Test/API Test.vi"/>
 		</Item>
 		<Item Name="RoomsFGV.vi" Type="VI" URL="../RoomsFGV.vi"/>
 		<Item Name="PersonnelFGV.vi" Type="VI" URL="../PersonnelFGV.vi"/>
