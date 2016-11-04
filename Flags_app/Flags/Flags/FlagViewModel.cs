@@ -173,7 +173,7 @@ namespace Flags
                 "PostRoom"};
             string urlString = string.Format(RIVER_WEBSERVICE_URL_FORMAT, urlStringParams);
 
-            var postString = string.Format("Room={0}&Data={1}&Command=WriteFlagState",
+            var postString = string.Format("Room={0}&Data={1}&Command=WriteFlag",
                                             Helpers.Settings.Room,
                                             JsonConvert.SerializeObject(flag));
 
