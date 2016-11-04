@@ -22,6 +22,22 @@ namespace Flags
             }
         }
 
+        public string ServerPort
+        {
+            get
+            {
+                return Helpers.Settings.ServerPort;
+            }
+            set
+            {
+                if (Helpers.Settings.ServerPort != value)
+                {
+                    Helpers.Settings.ServerPort = value;
+                    OnPropertyChanged("ServerPort");
+                }
+            }
+        }
+
         public string Room
         {
             get
