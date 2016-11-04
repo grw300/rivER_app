@@ -68,6 +68,7 @@
 						<DataTemplate>
 							<ViewCell>
 								<BoxView
+                                    Margin="1"
 									BackgroundColor="{Binding Color, Converter={StaticResource flagColorToColorConverter}}"/>
 							</ViewCell>
 						</DataTemplate>

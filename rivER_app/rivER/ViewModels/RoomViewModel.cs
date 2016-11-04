@@ -231,8 +231,15 @@ namespace rivER
 
 			this.CurrentRoom = new Room();
 			this.Personnel = new PersonnelID();
+            this.CurrentRoomFlagColors = new List<FlagColor>()
+            {
+                new FlagColor(false,-1),
+                new FlagColor(false,-1),
+                new FlagColor(false,-1),
+                new FlagColor(false,-1)
+            };
 
-			PropertyChanged += RoomViewModel_PropertyChanged;
+            PropertyChanged += RoomViewModel_PropertyChanged;
 
 			beacon.DidRangeBeacons += (object sender, BeaconEventArgs e) =>
 			{
