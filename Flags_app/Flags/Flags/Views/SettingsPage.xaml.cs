@@ -17,6 +17,7 @@ namespace Flags
 		public void OnOKClicked(object sender, EventArgs args)
 		{
 			Helpers.Settings.ServerAddress = ServerAddress.Text;
+            Helpers.Settings.ServerPort = ServerPort.Text;
 			Helpers.Settings.Room = Room.Text;
 			Navigation.PopModalAsync();
 		}

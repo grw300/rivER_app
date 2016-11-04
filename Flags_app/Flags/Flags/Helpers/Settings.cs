@@ -24,6 +24,9 @@ namespace Flags.Helpers
         private const string ServerAddressKey = "server_address";
         private static readonly string ServerAddressDefault = string.Empty;
 
+        private const string ServerPortKey = "server_port";
+        private static readonly string ServerPortDefault = string.Empty;
+
         private const string RoomKey = "room";
         private static readonly string RoomDefault = string.Empty;
 
@@ -39,6 +42,18 @@ namespace Flags.Helpers
             set
             {
                 AppSettings.AddOrUpdateValue<string>(ServerAddressKey, value);
+            }
+        }
+
+        public static string ServerPort
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault<string>(ServerPortKey, ServerPortDefault);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue<string>(ServerPortKey, value);
             }
         }
 

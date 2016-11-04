@@ -15,7 +15,7 @@ namespace Flags
 {
     class FlagViewModel : INotifyPropertyChanged
     {
-        private static readonly string RIVER_WEBSERVICE_URL_FORMAT = "http://{0}/{1}/{2}";
+        private static readonly string RIVER_WEBSERVICE_URL_FORMAT = "http://{0}:{1}/{2}/{3}";
 
         private HttpClient client = new HttpClient();
 
@@ -23,12 +23,6 @@ namespace Flags
         private Tuple<bool, int> currentRoomFlag1Color;
         private Tuple<bool, int> currentRoomFlag2Color;
         private Tuple<bool, int> currentRoomFlag3Color;
-
-        //public object this[string propertyName]
-        //{
-        //    get { return this.GetType().GetProperty(propertyName).GetValue(this, null); }
-        //    set { this.GetType().GetProperty(propertyName).SetValue(this, value, null); }
-        //}
 
         public Tuple<bool, int> CurrentRoomFlag0Color
         {
@@ -113,6 +107,7 @@ namespace Flags
              */
             string[] urlStringParams = new string[] {
                 Helpers.Settings.ServerAddress,
+                Helpers.Settings.ServerPort,
                 "RivERWebService",
                 string.Format("GetRoom?Room={0}&Command=ReadRoom",  Helpers.Settings.Room)};
             string urlString = string.Format(RIVER_WEBSERVICE_URL_FORMAT, urlStringParams);
@@ -138,8 +133,11 @@ namespace Flags
 
                 }
             }
-            catch (WebException e)
+            catch (Exception e)
             {
+                /*
+                 * TODO: this is way too broad; tighten up on the actual exceptions that can be thrown
+                 */
                 System.Diagnostics.Debug.WriteLine(@"WEB ERROR {0}", e.Message);
             }
         }
@@ -170,11 +168,12 @@ namespace Flags
 
             string[] urlStringParams = new string[] {
                 Helpers.Settings.ServerAddress,
+                Helpers.Settings.ServerPort,
                 "RivERWebService",
                 "PostRoom"};
             string urlString = string.Format(RIVER_WEBSERVICE_URL_FORMAT, urlStringParams);
 
-            var postString = string.Format("Room={0}&Data={1}&Command=UpdateFlagState",
+            var postString = string.Format("Room={0}&Data={1}&Command=WriteFlagState",
                                             Helpers.Settings.Room,
                                             JsonConvert.SerializeObject(flag));
 
@@ -192,8 +191,11 @@ namespace Flags
 					 */
                 }
             }
-            catch (WebException e)
+            catch (Exception e)
             {
+                /*
+                 * TODO: this is way too broad; tighten up on the actual exceptions that can be thrown
+                 */
                 System.Diagnostics.Debug.WriteLine(@"WEB ERROR {0}", e.Message);
             }
         }

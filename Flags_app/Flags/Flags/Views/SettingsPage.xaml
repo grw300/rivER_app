@@ -3,22 +3,27 @@
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	x:Class="Flags.SettingsPage">
-	<ContentPage.Content>
-		<StackLayout
+    <ContentPage.Content>
+        <StackLayout
 				Padding="20,100,20,0">
-			<Label
+            <Label
 				Text="Server Address:" />
-			<Entry
+            <Entry
 				x:Name="ServerAddress"
 				Text="{Binding ServerAddress}" />
-			<Label
+            <Label
+                Text="Server Port:" />
+            <Entry
+				x:Name="ServerPort"
+				Text="{Binding ServerPort}" />
+            <Label
 				Text="Room:" />
-			<Entry
+            <Entry
 				x:Name="Room"
 				Text="{Binding Room}" />
-			<Button
+            <Button
 				Text="OK"
 				Clicked="OnOKClicked" />
-		</StackLayout>
-	</ContentPage.Content>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>
