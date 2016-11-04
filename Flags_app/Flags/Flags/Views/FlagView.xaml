@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Flags"
+             x:Class="Flags.FlagView"
+	         ControlTemplate="{StaticResource TitleTemplate}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:FlagColorToColorConverter
+				x:Key="flagColorToColorConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid
+    Padding="0,20,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition
+                Height="*"/>
+            <RowDefinition
+                Height="*" />
+            <RowDefinition
+                Height="*" />
+            <RowDefinition
+                Height="*" />
+            <RowDefinition
+                Height="*" />
+            <RowDefinition
+                Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition
+                Width="*" />
+        </Grid.ColumnDefinitions>
+        <Button
+            Grid.Row="0"
+            x:Name="Flag0"
+            HorizontalOptions="Fill"
+			VerticalOptions="Fill"
+            Command="{Binding FlagClick}"
+            CommandParameter="CurrentRoomFlag0Color"
+            BackgroundColor="{Binding CurrentRoomFlag0Color, Converter={StaticResource flagColorToColorConverter}}"/>
+        <Button
+            Grid.Row="1"
+            x:Name="Flag1"
+            HorizontalOptions="Fill"
+			VerticalOptions="Fill"
+            Command="{Binding FlagClick}"
+            CommandParameter="CurrentRoomFlag1Color"
+            BackgroundColor="{Binding CurrentRoomFlag1Color, Converter={StaticResource flagColorToColorConverter}}"/>
+        <Button
+            Grid.Row="2"
+            x:Name="Flag2"
+            Command="{Binding FlagClick}"
+            HorizontalOptions="Fill"
+			VerticalOptions="Fill"
+            CommandParameter="CurrentRoomFlag2Color"
+            BackgroundColor="{Binding CurrentRoomFlag2Color, Converter={StaticResource flagColorToColorConverter}}"/>
+        <Button
+            Grid.Row="3"
+            x:Name="Flag3"
+            HorizontalOptions="Fill"
+			VerticalOptions="Fill"
+            Command="{Binding FlagClick}"
+            CommandParameter="CurrentRoomFlag3Color"
+            BackgroundColor="{Binding CurrentRoomFlag3Color, Converter={StaticResource flagColorToColorConverter}}"/>
+        <Button
+            Grid.Row="4"
+            HorizontalOptions="Fill"
+            Text="Update"
+            Command="{Binding OnUpdateClicked}"/>
+        <Button
+            Grid.Row="5"
+            HorizontalOptions="Fill"
+            Text="Read"
+            Command="{Binding OnReadClicked}"/>
+    </Grid>
+</ContentPage>
