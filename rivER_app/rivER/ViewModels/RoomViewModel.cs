@@ -14,19 +14,24 @@ using System.Text;
 
 namespace rivER
 {
-	public class RoomViewModel : INotifyPropertyChanged
+	public class RoomViewModel : BaseViewModel
 	{
+		#region TODO: this stuff and its methods should be in a Model!
 		private static readonly string RIVER_WEBSERVICE_URL_FORMAT = "http://{0}/{1}/{2}";
 
 		private HttpClient client = new HttpClient();
 		private Tuple<string, StringContent> leaveRoom;
 
-		private IEnumerable<FlagColor> currentRoomFlagColors;
-		private List<Room> nextRooms;
-		private IBeacon beacon;
-
 		public Room CurrentRoom { get; set; }
 		public PersonnelID Personnel { get; set; }
+
+		private IBeacon beacon;
+		#endregion
+
+		private IEnumerable<FlagColor> currentRoomFlagColors;
+		private List<Room> nextRooms;
+
+
 
 		public IEnumerable<FlagColor> CurrentRoomFlagColors
 		{
@@ -123,10 +128,6 @@ namespace rivER
 					this.CurrentRoomOccupied = !(bool)token.SelectToken("BedVacant");
 				}
 			}
-			catch (WebException e)
-			{
-				System.Diagnostics.Debug.WriteLine(@"WEB ERROR {0}", e.Message);
-			}
 			catch (AggregateException ae)
 			{
 				foreach (var e in ae.InnerExceptions)
@@ -142,6 +143,10 @@ namespace rivER
 						throw;
 					}
 				}
+			}
+			catch (Exception e)
+			{
+				System.Diagnostics.Debug.WriteLine(@"WEB ERROR {0}", e.Message);
 			}
 		}
 
@@ -156,10 +161,11 @@ namespace rivER
 			var postString = string.Format("Room={0}&Data={1}&Command=AddPersonnel",
 										CurrentRoom.Name,
 										JsonConvert.SerializeObject(this.Personnel));
-			var postContent = new StringContent(postString, Encoding.UTF8, "application/x-www-form-urlencoded");
 
 			try
 			{
+				var postContent = new StringContent(postString, Encoding.UTF8, "application/x-www-form-urlencoded");
+
 				HttpResponseMessage response = await client.PostAsync(urlString, postContent);
 
 				if (response.IsSuccessStatusCode)
@@ -169,10 +175,6 @@ namespace rivER
 					 * TODO: Verify the personnel ID was posted with content
 					 */
 				}
-			}
-			catch (WebException e)
-			{
-				System.Diagnostics.Debug.WriteLine(@"WEB ERROR {0}", e.Message);
 			}
 			catch (AggregateException ae)
 			{
@@ -189,6 +191,10 @@ namespace rivER
 						throw;
 					}
 				}
+			}
+			catch (Exception e)
+			{
+				System.Diagnostics.Debug.WriteLine(@"WEB ERROR {0}", e.Message);
 			}
 		}
 
@@ -215,53 +221,49 @@ namespace rivER
 											CurrentRoom.Name,
 											JsonConvert.SerializeObject(this.Personnel));
 
-				var postContent = new StringContent(postString, Encoding.UTF8, "application/x-www-form-urlencoded");
+				try
+				{
+					var postContent = new StringContent(postString, Encoding.UTF8, "application/x-www-form-urlencoded");
 
-				this.leaveRoom = new Tuple<string, StringContent>(
-					urlString,
-					postContent
-				);
+					this.leaveRoom = new Tuple<string, StringContent>(
+						urlString,
+						postContent
+					);
+				}
+				catch (Exception ex)
+				{
+					System.Diagnostics.Debug.WriteLine(@"WEB ERROR {0}", ex.Message);
+				}
 			}
 
 		}
 
-		public RoomViewModel()
+		public RoomViewModel(INavigation navigation) : base(navigation)
 		{
 			beacon = DependencyService.Get<IBeacon>();
 
 			this.CurrentRoom = new Room();
 			this.Personnel = new PersonnelID();
-            this.CurrentRoomFlagColors = new List<FlagColor>()
-            {
-                new FlagColor(false,-1),
-                new FlagColor(false,-1),
-                new FlagColor(false,-1),
-                new FlagColor(false,-1)
-            };
+			this.CurrentRoomFlagColors = new List<FlagColor>()
+			{
+				new FlagColor(false,-1),
+				new FlagColor(false,-1),
+				new FlagColor(false,-1),
+				new FlagColor(false,-1)
+			};
 
-            PropertyChanged += RoomViewModel_PropertyChanged;
+			var test = this.Commands;
+
+			PropertyChanged += RoomViewModel_PropertyChanged;
 
 			beacon.DidRangeBeacons += (object sender, BeaconEventArgs e) =>
 			{
 				this.CurrentRoomName = e.beacon.Value;
 			};
 
+
+
 			beacon.StartMonitoring("B9407F30-F5F8-466E-AFF9-25556B57FE6D", "ER-Rooms");
 		}
-
-		#region INotifyPropertyChanged implementation
-
-		public event PropertyChangedEventHandler PropertyChanged;
-
-		protected virtual void OnPropertyChanged(string propertyName)
-		{
-			var changed = PropertyChanged;
-			if (changed != null)
-			{
-				PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-
-		#endregion
 	}
 }

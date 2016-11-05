@@ -11,16 +11,7 @@ namespace rivER
 		{
 			InitializeComponent();
 
-            BindingContext = new PagerViewModel();
-        }
-
-
-		public Command SettingsCommand
-		{
-			get
-			{
-				return new Command(() => Navigation.PushModalAsync(new SettingsPage()));
-			}
+			BindingContext = new PagerViewModel(Navigation);
 		}
 	}
 }

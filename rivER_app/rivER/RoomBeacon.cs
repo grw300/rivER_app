@@ -1,5 +1,4 @@
-﻿using System;
-namespace rivER
+﻿namespace rivER
 {
     sealed public class RoomBeacon : Beacon
     {
@@ -22,7 +21,7 @@ namespace rivER
                 }
                 else
                 {
-                    this.value = " -";
+                    this.value = " - ";
                 }
             }
         }

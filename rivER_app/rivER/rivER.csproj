@@ -54,8 +54,6 @@
     <Compile Include="Beacon.cs" />
     <Compile Include="RoomBeacon.cs" />
     <Compile Include="PersonnelBeacon.cs" />
-    <Compile Include="Views\FlagColorToColorConverter.cs" />
-    <Compile Include="Views\OccupiedToColorConverter.cs" />
     <Compile Include="Views\RoomPage.xaml.cs">
       <DependentUpon>RoomPage.xaml</DependentUpon>
     </Compile>
@@ -76,6 +74,11 @@
     <Compile Include="Data\Flag.cs" />
     <Compile Include="Data\Room.cs" />
     <Compile Include="Data\Personnel.cs" />
+    <Compile Include="Views\Converters\FlagColorToColorConverter.cs" />
+    <Compile Include="Views\Converters\OccupiedToColorConverter.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\ObservableProperty.cs" />
+    <Compile Include="ViewModels\TimerViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

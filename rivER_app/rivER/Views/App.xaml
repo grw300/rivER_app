@@ -7,37 +7,45 @@
 		<ResourceDictionary>
 			<ControlTemplate
 				x:Key="TitleTemplate">
-				<Grid
-					Padding="0,20,0,0">
+				<Grid>
+					<Grid.Padding>
+					<OnPlatform
+						x:TypeArguments="Thickness"
+						iOS="0, 20, 0, 0" />
+					</Grid.Padding>
 					<Grid.RowDefinitions>
 						<RowDefinition
-							Height="0.1*"
-							/>
+							Height="*" />
 						<RowDefinition
-							Height="0.9*" />
+							Height="9*" />
 					</Grid.RowDefinitions>
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition
-							Width="0.9*" />
+							Width="9*" />
 						<ColumnDefinition
-							Width="0.1*"/>
+							Width="*" />
+						<ColumnDefinition
+							Width="5" />
 					</Grid.ColumnDefinitions>
 					<Label
 						Grid.Column="0"
 						Text="rivER"
 						VerticalOptions="Center"
-						HorizontalOptions="CenterAndExpand"/>
-					<Button
-							Grid.Column="1"
-							Image="settings.png"
-							BackgroundColor="White"
-							BorderColor="White"
-							Command="{TemplateBinding SettingsCommand}"
-							VerticalOptions="CenterAndExpand"
-							HorizontalOptions="CenterAndExpand"/>
+						HorizontalOptions="CenterAndExpand" />
+					<Image
+						Grid.Column="1"
+						VerticalOptions="Fill"
+						HorizontalOptions="Fill"
+						Source="settings.png">
+						<Image.GestureRecognizers>
+							<TapGestureRecognizer
+								BindingContext="{TemplateBinding BindingContext}"
+								Command="{TemplateBinding BindingContext.Commands[SettingsPageCommand]}" />
+						</Image.GestureRecognizers>
+					</Image>
 					<ContentPresenter
 						Grid.Row="1"
-						Grid.ColumnSpan="2" />
+						Grid.ColumnSpan="3" />
 				</Grid>
 			</ControlTemplate>
 		</ResourceDictionary>

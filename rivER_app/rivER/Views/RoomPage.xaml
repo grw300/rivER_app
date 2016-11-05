@@ -4,7 +4,6 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	xmlns:local="clr-namespace:rivER;assembly=rivER"
 	x:Class="rivER.RoomPage"
-	BackgroundColor="White"
 	ControlTemplate="{StaticResource TitleTemplate}">
 	<ContentPage.Resources>
 		<ResourceDictionary>
@@ -16,7 +15,7 @@
 	</ContentPage.Resources>
 	<ContentPage.Content>
 		<StackLayout
-			VerticalOptions="StartAndExpand">
+			VerticalOptions="FillAndExpand">
 			<Grid>
 				<Grid.RowDefinitions>
 					<RowDefinition
@@ -61,15 +60,21 @@
 					Grid.Row="0"
 					Grid.Column="3"
 					HorizontalOptions="StartAndExpand"
-					VerticalOptions="StartAndExpand"
+					VerticalOptions="CenterAndExpand"
+					HeightRequest="80"
 					RowHeight="20"
+					SeparatorVisibility="None"
+					ItemTapped="HandleItemTapped"
 					ItemsSource="{Binding CurrentRoomFlagColors}">
 					<ListView.ItemTemplate>
 						<DataTemplate>
-							<ViewCell>
+							<ViewCell
+								Height="19">
 								<BoxView
-                                    Margin="1"
-									BackgroundColor="{Binding Color, Converter={StaticResource flagColorToColorConverter}}"/>
+									Margin="1"
+									VerticalOptions="Center"
+									BackgroundColor="{Binding Color, Converter={StaticResource flagColorToColorConverter}}">
+								</BoxView>
 							</ViewCell>
 						</DataTemplate>
 					</ListView.ItemTemplate>

@@ -44,7 +44,7 @@ namespace rivER.Droid
 					
 					var roomBeacon = new RoomBeacon();
 
-					if (isBetween(beacon.Distance, 0, 7))
+					if (isBetween(beacon.Distance, 0, 2))
 					{
 						roomBeacon.Value = beacon.Id3.ToString();
 

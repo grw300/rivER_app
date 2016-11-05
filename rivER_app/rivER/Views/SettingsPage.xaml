@@ -5,7 +5,7 @@
 	x:Class="rivER.SettingsPage">
 	<ContentPage.Content>
 		<StackLayout
-				Padding="20,100,20,0">
+			Padding="20,100,20,0">
 			<Label
 				Text="Server Address:" />
 			<Entry
@@ -18,7 +18,7 @@
 				Text="{Binding PersonnelID}" />
 			<Button
 				Text="OK"
-				Clicked="OnOKClicked" />
+				Command="{Binding Commands[SetSettings]}" />
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

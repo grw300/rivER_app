@@ -1,5 +1,4 @@
-﻿using System;
-namespace rivER
+﻿namespace rivER
 {
 	public class PersonnelBeacon : Beacon
 	{

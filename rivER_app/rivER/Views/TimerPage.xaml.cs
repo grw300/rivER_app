@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace rivER
 {
@@ -10,14 +7,8 @@ namespace rivER
 		public TimerPage()
 		{
 			InitializeComponent();
-		}
 
-		public Command SettingsCommand
-		{
-			get
-			{
-				return new Command(() => Navigation.PushModalAsync(new SettingsPage()));
-			}
+			BindingContext = new TimerViewModel(Navigation);
 		}
 	}
 }

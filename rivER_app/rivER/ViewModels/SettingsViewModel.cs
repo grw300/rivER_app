@@ -1,10 +1,12 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace rivER
 {
-    public class SettingsViewModel : INotifyPropertyChanged
+	public class SettingsViewModel : BaseViewModel
     {
         public string ServerAddress
         {
@@ -38,19 +40,16 @@ namespace rivER
             }
         }
 
-        #region INotifyPropertyChanged implementation
+		public SettingsViewModel(INavigation navigation) : base(navigation)
+		{
+			Commands.Add("SetSettings", new Command(SetSettings));
+		}
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            var changed = PropertyChanged;
-            if (changed != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-
-        #endregion
-    }
+		void SetSettings()
+		{
+			Helpers.Settings.ServerAddress = ServerAddress;
+			Helpers.Settings.PersonnelID = PersonnelID;
+			Navigation.PopModalAsync();
+		}
+	}
 }

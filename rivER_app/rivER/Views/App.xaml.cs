@@ -1,6 +1,6 @@
-﻿using Xamarin.Forms;
+﻿using System;
 using BottomBar.XamarinForms;
-using System;
+using Xamarin.Forms;
 
 namespace rivER
 {
@@ -10,18 +10,16 @@ namespace rivER
         {
             InitializeComponent();
 
-            BottomBarPage bottomBarPage = new BottomBarPage();
+            var bottomBarPage = new BottomBarPage();
             bottomBarPage.BarBackgroundColor = Color.Aqua;
 
             string[] tabTitles = { "Room", "Pager", "Timer" };
-            string[] tabColors = { null, "#5D4037", "#7B1FA2" };
 
             for (int i = 0; i < tabTitles.Length; ++i)
             {
                 string title = tabTitles[i];
-                string tabColor = tabColors[i];
 
-                FileImageSource icon = (FileImageSource)FileImageSource.FromFile(string.Format("{0}.png", title.ToLowerInvariant()));
+                var icon = (FileImageSource)ImageSource.FromFile(string.Format("{0}.png", title.ToLowerInvariant()));
 
                 ContentPage tabPage;
 
@@ -44,16 +42,9 @@ namespace rivER
                 tabPage.Title = title;
                 tabPage.Icon = icon;
 
-                // set tab color
-                if (tabColor != null)
-                {
-                    tabPage.SetTabColor(Color.FromHex(tabColor));
-                }
-
                 // add tab pag to tab control
                 bottomBarPage.Children.Add(tabPage);
             }
-
 
             /* 
              * TODO: push settings if there's no Server Address set

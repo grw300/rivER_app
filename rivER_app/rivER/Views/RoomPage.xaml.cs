@@ -1,25 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows.Input;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace rivER
 {
 	public partial class RoomPage : ContentPage
 	{
+		void HandleItemTapped(object sender, ItemTappedEventArgs e)
+		{
+			if (e.Item == null) return;
+			((ListView)sender).SelectedItem = null;
+		}
+
 		public RoomPage()
 		{
 			InitializeComponent();
 
-            BindingContext = new RoomViewModel();
-		}
-
-		public Command SettingsCommand
-		{
-			get
-			{
-				return new Command(() => Navigation.PushModalAsync(new SettingsPage()));
-			}
+			BindingContext = new RoomViewModel(Navigation);
 		}
 	}
 }
