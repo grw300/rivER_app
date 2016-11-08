@@ -12,7 +12,7 @@
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="TypeDef" Type="Folder">
-			<Item Name="StateCluster.ctl" Type="VI" URL="../TypeDef/StateCluster.ctl"/>
+			<Item Name="RoomsStateCluster.ctl" Type="VI" URL="../TypeDef/RoomsStateCluster.ctl"/>
 			<Item Name="RoomsActionEnum.ctl" Type="VI" URL="../TypeDef/RoomsActionEnum.ctl"/>
 			<Item Name="PersonnelActions.ctl" Type="VI" URL="../TypeDef/PersonnelActions.ctl"/>
 			<Item Name="FGVAction.ctl" Type="VI" URL="../../../../LVRestAPI/TypeDef/FGVAction.ctl"/>
@@ -22,10 +22,11 @@
 			<Item Name="Flags.lvclass" Type="LVClass" URL="../../../../LVClasses/Flags/Flags.lvclass"/>
 			<Item Name="Personnel.lvclass" Type="LVClass" URL="../../../../LVClasses/Personnel/Personnel.lvclass"/>
 			<Item Name="Room.lvclass" Type="LVClass" URL="../../../../LVClasses/Room/Room.lvclass"/>
+			<Item Name="Request.lvclass" Type="LVClass" URL="../../../../LVClasses/Request/Request.lvclass"/>
 		</Item>
 		<Item Name="Helpers" Type="Folder">
 			<Item Name="GetBedStatus.vi" Type="VI" URL="../Helpers/GetBedStatus.vi"/>
-			<Item Name="RoomNumbertoIndex.vi" Type="VI" URL="../../../../LVClasses/Room/RoomNumbertoIndex.vi"/>
+			<Item Name="RoomNumbertoIndex.vi" Type="VI" URL="../Helpers/RoomNumbertoIndex.vi"/>
 			<Item Name="RoomBeaconToIndex.vi" Type="VI" URL="../../../../LVClasses/Room/RoomBeaconToIndex.vi"/>
 			<Item Name="RoomsFGVLocalErrorH.vi" Type="VI" URL="../../../../LVRestAPI/RoomsFGVLocalErrorH.vi"/>
 			<Item Name="GedBedsStatus.vi" Type="VI" URL="../../../../NurseStation/Helpers/GedBedsStatus.vi"/>
@@ -47,7 +48,7 @@
 		<Item Name="PersonnelFGV.vi" Type="VI" URL="../PersonnelFGV.vi"/>
 		<Item Name="RivERWebService" Type="Web Service">
 			<Property Name="Bld_buildSpecName" Type="Str"></Property>
-			<Property Name="Bld_version.build" Type="Int">21</Property>
+			<Property Name="Bld_version.build" Type="Int">22</Property>
 			<Property Name="ws.autoIncrementVersion" Type="Bool">true</Property>
 			<Property Name="ws.disconnectInline" Type="Bool">true</Property>
 			<Property Name="ws.disconnectTypeDefs" Type="Bool">false</Property>
@@ -59,7 +60,7 @@
 			<Property Name="ws.serveDefaultDoc" Type="Bool">true</Property>
 			<Property Name="ws.SSE2" Type="Bool">true</Property>
 			<Property Name="ws.static_permissions" Type="Str"></Property>
-			<Property Name="ws.version.build" Type="Int">21</Property>
+			<Property Name="ws.version.build" Type="Int">22</Property>
 			<Property Name="ws.version.fix" Type="Int">0</Property>
 			<Property Name="ws.version.major" Type="Int">1</Property>
 			<Property Name="ws.version.minor" Type="Int">0</Property>
@@ -144,8 +145,21 @@
 					<Property Name="ws.useHeaders" Type="Bool">true</Property>
 					<Property Name="ws.useStandardURL" Type="Bool">true</Property>
 				</Item>
+				<Item Name="GetPersonnel.vi" Type="VI" URL="../Methods/GetPersonnel.vi">
+					<Property Name="ws.method" Type="Int">1</Property>
+					<Property Name="ws.type" Type="Int">1</Property>
+				</Item>
+				<Item Name="PostPersonnel.vi" Type="VI" URL="../Methods/PostPersonnel.vi">
+					<Property Name="ws.method" Type="Int">1</Property>
+					<Property Name="ws.type" Type="Int">1</Property>
+				</Item>
 			</Item>
 		</Item>
+		<Item Name="PersonnelState.ctl" Type="VI" URL="../TypeDef/PersonnelState.ctl"/>
+		<Item Name="PersonnelUIDtoIndex.vi" Type="VI" URL="../Helpers/PersonnelUIDtoIndex.vi"/>
+		<Item Name="RequestFGV.vi" Type="VI" URL="../RequestFGV.vi"/>
+		<Item Name="RequestActionEnum.ctl" Type="VI" URL="../TypeDef/RequestActionEnum.ctl"/>
+		<Item Name="RequestStateCluster.ctl" Type="VI" URL="../TypeDef/RequestStateCluster.ctl"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
