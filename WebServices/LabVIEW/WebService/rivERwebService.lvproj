@@ -47,6 +47,9 @@
 				</Item>
 				<Item Name="Personnel" Type="Folder">
 					<Item Name="TestPFGVRequests.vi" Type="VI" URL="../Test/TestPFGVRequests.vi"/>
+					<Item Name="TestPFGVReadUIDs.vi" Type="VI" URL="../Test/TestPFGVReadUIDs.vi"/>
+					<Item Name="TestPFGVName.vi" Type="VI" URL="../Test/TestPFGVName.vi"/>
+					<Item Name="TestPFGVRole.vi" Type="VI" URL="../Test/TestPFGVRole.vi"/>
 				</Item>
 			</Item>
 			<Item Name="RestApi.lvlib" Type="Library" URL="../../../../LVRestAPI/RestApi.lvlib"/>
@@ -166,7 +169,9 @@
 				</Item>
 			</Item>
 		</Item>
-		<Item Name="TestPFGVName.vi" Type="VI" URL="../Test/TestPFGVName.vi"/>
+		<Item Name="TestPFGVPersonnelManagment.vi" Type="VI" URL="../Test/TestPFGVPersonnelManagment.vi"/>
+		<Item Name="PDUsJasonToArray.vi" Type="VI" URL="../Helpers/PDUsJasonToArray.vi"/>
+		<Item Name="PDUJsonToString.vi" Type="VI" URL="../Helpers/PDUJsonToString.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
