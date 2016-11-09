@@ -1,6 +1,7 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
 <Project Type="Project" LVVersion="15008000">
 	<Item Name="My Computer" Type="My Computer">
+		<Property Name="NI.SortType" Type="Int">3</Property>
 		<Property Name="server.app.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="server.control.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="server.tcp.enabled" Type="Bool">false</Property>
@@ -10,6 +11,10 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
+		<Item Name="API" Type="Folder">
+			<Item Name="UpdateRequestRaw.vi" Type="VI" URL="../API/UpdateRequestRaw.vi"/>
+			<Item Name="InsertNewRequest.vi" Type="VI" URL="../API/InsertNewRequest.vi"/>
+		</Item>
 		<Item Name="DatabaseFiles" Type="Folder">
 			<Item Name="rivER_Database.mdb" Type="Document" URL="../DatabaseFiles/rivER_Database.mdb"/>
 			<Item Name="rivER_Database.udl" Type="Document" URL="../DatabaseFiles/rivER_Database.udl"/>
@@ -19,7 +24,10 @@
 			<Item Name="GetUDL_FilePath.vi" Type="VI" URL="../Helpers/GetUDL_FilePath.vi"/>
 		</Item>
 		<Item Name="TypeDef" Type="Folder">
-			<Item Name="RequestTable.ctl" Type="VI" URL="../TypeDef/RequestTable.ctl"/>
+			<Item Name="RequestsTableColumnNames.ctl" Type="VI" URL="../TypeDef/RequestsTableColumnNames.ctl"/>
+			<Item Name="RequestsTableColumnNamesRing.ctl" Type="VI" URL="../TypeDef/RequestsTableColumnNamesRing.ctl"/>
+			<Item Name="RequestsTableDbTableName.ctl" Type="VI" URL="../TypeDef/RequestsTableDbTableName.ctl"/>
+			<Item Name="RequestTableCluster.ctl" Type="VI" URL="../TypeDef/RequestTableCluster.ctl"/>
 		</Item>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
@@ -58,6 +66,8 @@
 				<Item Name="Three Button Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Three Button Dialog.vi"/>
 				<Item Name="Trim Whitespace.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Trim Whitespace.vi"/>
 				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
+				<Item Name="VariantType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/VariantDataType/VariantType.lvlib"/>
+				<Item Name="Space Constant.vi" Type="VI" URL="/&lt;vilib&gt;/dlg_ctls.llb/Space Constant.vi"/>
 			</Item>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
