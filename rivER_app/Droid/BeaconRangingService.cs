@@ -3,22 +3,22 @@ using Xamarin.Forms;
 using AltBeaconOrg.BoundBeacon;
 using System.Linq;
 
-[assembly: Dependency(typeof(rivER.Droid.Beacon))]
+[assembly: Dependency(typeof(rivER.Droid.BeaconRangingService))]
 namespace rivER.Droid
 {
-    public class Beacon : Java.Lang.Object, IBeacon
-    {
+    public class BeaconRangingService : Java.Lang.Object, IBeaconRangingService
+	{
 
         BeaconManager beaconManager;
         MonitorNotifier monitorNotifier;
         RangeNotifier rangeNotifier;
         Region beaconRegion;
 
-        public event EventHandler<BeaconEventArgs> DidRangeBeacons;
+		public event EventHandler<BeaconRangedEventArgs> DidRangeBeacons;
 
         public void StartMonitoring(string uuid, string id)
         {
-            beaconManager = BeaconManager.GetInstanceForApplication(Xamarin.Forms.Forms.Context.ApplicationContext);
+            beaconManager = BeaconManager.GetInstanceForApplication(Forms.Context.ApplicationContext);
             beaconManager.BeaconParsers.Add(new BeaconParser().
                                                 SetBeaconLayout("m:2-3=0215,i:4-19,i:20-21,i:22-23,p:24-24"));
 
@@ -42,28 +42,25 @@ namespace rivER.Droid
 					var beacon = (e.Beacons.Count > 1) ?
 						e?.Beacons.Aggregate((b1, b2) => b1.Distance < b2.Distance ? b1 : b2) : e.Beacons.FirstOrDefault();
 					
-					var roomBeacon = new RoomBeacon();
+					int? roomBeacon;
 
 					if (isBetween(beacon.Distance, 0, 2))
 					{
-						roomBeacon.Value = beacon.Id3.ToString();
-
+						roomBeacon = beacon.Id3.ToInt();
 					}
 					else
 					{
-						roomBeacon.Value = "Not in a room.";
+						roomBeacon = null;
 					}
 
-
-					roomBeacon.Value = beacon.Id3.ToString();
-					OnDidRangeBeacons(new BeaconEventArgs(roomBeacon));
+					OnDidRangeBeacons(new BeaconRangedEventArgs(roomBeacon));
 				}
 			};
             beaconManager.SetBackgroundMode(false);
-            beaconManager.Bind((IBeaconConsumer)Xamarin.Forms.Forms.Context);
+            beaconManager.Bind((IBeaconConsumer)Forms.Context);
         }
 
-		public static bool isBetween(double x, double lower, double upper)
+		static bool isBetween(double x, double lower, double upper)
 		{
 			return lower <= x && x <= upper;
 		}
@@ -73,7 +70,7 @@ namespace rivER.Droid
             beaconManager.StartMonitoringBeaconsInRegion(beaconRegion);
             beaconManager.StartRangingBeaconsInRegion(beaconRegion);
         }
-        protected virtual void OnDidRangeBeacons(BeaconEventArgs e)
+        protected virtual void OnDidRangeBeacons(BeaconRangedEventArgs e)
         {
             DidRangeBeacons?.Invoke(this, e);
         }

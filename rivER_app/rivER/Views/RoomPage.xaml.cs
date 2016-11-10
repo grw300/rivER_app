@@ -14,7 +14,7 @@ namespace rivER
 		{
 			InitializeComponent();
 
-			BindingContext = new RoomViewModel(Navigation);
+			BindingContext = new RoomsViewModel(Navigation);
 		}
 	}
 }

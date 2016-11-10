@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace rivER
 {
-    public class OccupiedToColorConverter : IValueConverter
+    public class BedVacantToColorConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -18,8 +18,8 @@ namespace rivER
              * 'occupied' (true) as Green and 
              * 'unoccupied' (false) as Gray.
              */
-            var valueAsBool = (bool)value;
-            return valueAsBool ? Color.Green : Color.Gray;
+            var valueAsBool = (bool?)value;
+			return valueAsBool.HasValue ? (valueAsBool.Value ? Color.Green : Color.Red) : Color.Gray ;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

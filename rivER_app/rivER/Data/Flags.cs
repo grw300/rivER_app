@@ -4,8 +4,7 @@ using Newtonsoft.Json;
 
 namespace rivER
 {
-	[JsonObject(MemberSerialization.OptOut)]
-	public class Flag
+	public class Flags
 	{
 		public IList<bool> State;
 		public IList<int> Color;

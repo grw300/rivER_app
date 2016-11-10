@@ -25,7 +25,7 @@ namespace rivER.Droid
 
 		public void OnBeaconServiceConnect()
 		{
-			var beaconService = Xamarin.Forms.DependencyService.Get<IBeacon>();
+			var beaconService = Xamarin.Forms.DependencyService.Get<IBeaconRangingService>();
 
 			if ((int)Build.VERSION.SdkInt < 23)
 			{

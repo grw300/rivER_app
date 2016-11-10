@@ -49,15 +49,10 @@
     <Compile Include="Views\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IBeacon.cs" />
-    <Compile Include="BeaconEventArgs.cs" />
-    <Compile Include="Beacon.cs" />
-    <Compile Include="RoomBeacon.cs" />
-    <Compile Include="PersonnelBeacon.cs" />
     <Compile Include="Views\RoomPage.xaml.cs">
       <DependentUpon>RoomPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\RoomViewModel.cs" />
+    <Compile Include="ViewModels\RoomsViewModel.cs" />
     <Compile Include="Views\PagerPage.xaml.cs">
       <DependentUpon>PagerPage.xaml</DependentUpon>
     </Compile>
@@ -71,14 +66,17 @@
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\PagerViewModel.cs" />
     <Compile Include="Data\FlagColor.cs" />
-    <Compile Include="Data\Flag.cs" />
+    <Compile Include="Data\Flags.cs" />
     <Compile Include="Data\Room.cs" />
-    <Compile Include="Data\Personnel.cs" />
     <Compile Include="Views\Converters\FlagColorToColorConverter.cs" />
-    <Compile Include="Views\Converters\OccupiedToColorConverter.cs" />
+    <Compile Include="Views\Converters\BedVacantToColorConverter.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\ObservableProperty.cs" />
     <Compile Include="ViewModels\TimerViewModel.cs" />
+    <Compile Include="Services\IRivERWebService.cs" />
+    <Compile Include="Services\RivERWebService.cs" />
+    <Compile Include="Services\BeaconRangedEventArgs.cs" />
+    <Compile Include="Services\IBeaconRangingService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
@@ -117,6 +115,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Converters\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />

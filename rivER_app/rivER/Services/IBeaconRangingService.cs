@@ -2,10 +2,10 @@
 
 namespace rivER
 {
-	public interface IBeacon
+	public interface IBeaconRangingService
 	{
 		void AltBeaconStart();
 		void StartMonitoring(string uuid, string id);
-		event EventHandler<BeaconEventArgs> DidRangeBeacons;
+		event EventHandler<BeaconRangedEventArgs> DidRangeBeacons;
 	}
 }

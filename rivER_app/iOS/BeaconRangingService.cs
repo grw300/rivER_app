@@ -4,15 +4,15 @@ using Xamarin.Forms;
 using CoreLocation;
 using System.Linq;
 
-[assembly: Dependency(typeof(rivER.iOS.Beacon))]
+[assembly: Dependency(typeof(rivER.iOS.BeaconRangingService))]
 namespace rivER.iOS
 {
-	public class Beacon : IBeacon
+	public class BeaconRangingService : IBeaconRangingService
 	{
 		CLLocationManager locationManager = new CLLocationManager();
 		CLBeaconRegion beaconRegion;
 
-		public event EventHandler<BeaconEventArgs> DidRangeBeacons;
+		public event EventHandler<BeaconRangedEventArgs> DidRangeBeacons;
 
 		public void StartMonitoring(string uuid, string id)
 		{
@@ -36,35 +36,35 @@ namespace rivER.iOS
 				if (e?.Beacons.Length > 0)
 				{
 					var beacon = e.Beacons.FirstOrDefault();
-                    var roomBeacon = new RoomBeacon();
+                    int? roomBeacon;
 
                     switch (beacon.Proximity)
 					{
 
 						case CLProximity.Far:
                         case CLProximity.Unknown:
-                            roomBeacon.Value = "Not in a room.";
-                            OnDidRangeBeacons(new BeaconEventArgs(roomBeacon));
+                            roomBeacon = null;
                             break;
                         default:
-                            roomBeacon.Value = beacon.Minor.StringValue;
-							OnDidRangeBeacons(new BeaconEventArgs(roomBeacon));
+							roomBeacon = beacon.Minor.Int32Value;
 							break;
 					}
+
+					OnDidRangeBeacons(new BeaconRangedEventArgs(roomBeacon));
 				}
 			};
 
 			locationManager.StartMonitoring(beaconRegion);
 			locationManager.StartRangingBeacons(beaconRegion);
 		}
-		protected virtual void OnDidRangeBeacons(BeaconEventArgs e)
+		protected virtual void OnDidRangeBeacons(BeaconRangedEventArgs e)
 		{
 			DidRangeBeacons?.Invoke(this, e);
 		}
 
 		public void AltBeaconStart()
 		{
-			throw new NotImplementedException("You should never call this in iOS, it's only to support AltBeacons");
+			throw new NotImplementedException("You should never call this in iOS, it's only to support AltBeacons on Android.");
 		}
 	}
 }

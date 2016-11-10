@@ -3,14 +3,15 @@
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	xmlns:local="clr-namespace:rivER;assembly=rivER"
+	BackgroundColor="White"
 	x:Class="rivER.RoomPage"
 	ControlTemplate="{StaticResource TitleTemplate}">
 	<ContentPage.Resources>
 		<ResourceDictionary>
 			<local:FlagColorToColorConverter
 				x:Key="flagColorToColorConverter" />
-			<local:OccupiedToColorConverter
-				x:Key="occupiedToColorConverter" />
+			<local:BedVacantToColorConverter
+				x:Key="bedVacantToColorConverter" />
 		</ResourceDictionary>
 	</ContentPage.Resources>
 	<ContentPage.Content>
@@ -43,19 +44,29 @@
 				<Label
 					Grid.Row="0"
 					Grid.Column="1"
-					Text="{Binding CurrentRoomName}"
+					Text="{Binding CurrentRoom.RoomNumber}"
 					Margin="10"
 					FontSize="50"
 					Style="{DynamicResource TitleStyle}"
 					VerticalTextAlignment="Center"
 					HorizontalOptions="StartAndExpand"
-					VerticalOptions="StartAndExpand" />
+					VerticalOptions="StartAndExpand">
+<!--					<Label.Triggers>
+						<DataTrigger
+							TargetType="Label"
+							Binding="{Binding CurrentRoomName}"
+							Value=" ">
+							<Setter
+								Property="Text"></Setter>
+						</DataTrigger>
+					</Label.Triggers>-->
+				</Label>
 				<BoxView
 					Grid.Row="0"
 					Grid.Column="2"
 					HorizontalOptions="Fill"
 					VerticalOptions="Fill"
-					Color="{Binding CurrentRoomOccupied, Converter={StaticResource occupiedToColorConverter}}" />
+					Color="{Binding CurrentRoom.BedVacant, Converter={StaticResource bedVacantToColorConverter}}" />
 				<ListView
 					Grid.Row="0"
 					Grid.Column="3"
@@ -65,7 +76,7 @@
 					RowHeight="20"
 					SeparatorVisibility="None"
 					ItemTapped="HandleItemTapped"
-					ItemsSource="{Binding CurrentRoomFlagColors}">
+					ItemsSource="{Binding CurrentRoom.FlagColors}">
 					<ListView.ItemTemplate>
 						<DataTemplate>
 							<ViewCell
