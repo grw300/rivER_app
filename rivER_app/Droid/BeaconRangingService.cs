@@ -13,6 +13,7 @@ namespace rivER.Droid
         MonitorNotifier monitorNotifier;
         RangeNotifier rangeNotifier;
         Region beaconRegion;
+        int? previousBeacon;
 
 		public event EventHandler<BeaconRangedEventArgs> DidRangeBeacons;
 
@@ -29,6 +30,8 @@ namespace rivER.Droid
 
             beaconManager.SetRangeNotifier(rangeNotifier);
             beaconManager.SetMonitorNotifier(monitorNotifier);
+
+            beaconManager.SetForegroundBetweenScanPeriod(1000);
 
             monitorNotifier.EnterRegionComplete += (object obj, MonitorEventArgs e) =>
             {
@@ -53,7 +56,11 @@ namespace rivER.Droid
 						roomBeacon = null;
 					}
 
-					OnDidRangeBeacons(new BeaconRangedEventArgs(roomBeacon));
+                    if (roomBeacon != previousBeacon)
+                    {
+                        OnDidRangeBeacons(new BeaconRangedEventArgs(roomBeacon));
+                    }
+                    previousBeacon = roomBeacon;
 				}
 			};
             beaconManager.SetBackgroundMode(false);

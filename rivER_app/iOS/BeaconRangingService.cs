@@ -11,6 +11,7 @@ namespace rivER.iOS
 	{
 		CLLocationManager locationManager = new CLLocationManager();
 		CLBeaconRegion beaconRegion;
+        int? previousBeacon;
 
 		public event EventHandler<BeaconRangedEventArgs> DidRangeBeacons;
 
@@ -50,8 +51,12 @@ namespace rivER.iOS
 							break;
 					}
 
-					OnDidRangeBeacons(new BeaconRangedEventArgs(roomBeacon));
-				}
+                    if (roomBeacon != previousBeacon)
+                    {
+                        OnDidRangeBeacons(new BeaconRangedEventArgs(roomBeacon));
+                    }
+                    previousBeacon = roomBeacon;
+                }
 			};
 
 			locationManager.StartMonitoring(beaconRegion);
