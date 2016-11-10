@@ -8,7 +8,9 @@
 
 </Property>
 	<Item Name="TypeDef" Type="Folder">
+		<Item Name="GetPersonnelCommands.ctl" Type="VI" URL="../TypeDef/GetPersonnelCommands.ctl"/>
 		<Item Name="GetRoomCommands.ctl" Type="VI" URL="../TypeDef/GetRoomCommands.ctl"/>
+		<Item Name="PostPersonnelCommands.ctl" Type="VI" URL="../TypeDef/PostPersonnelCommands.ctl"/>
 		<Item Name="PostRoomCommands.ctl" Type="VI" URL="../TypeDef/PostRoomCommands.ctl"/>
 	</Item>
 	<Item Name="AddPersonnel.vi" Type="VI" URL="../AddPersonnel.vi"/>
