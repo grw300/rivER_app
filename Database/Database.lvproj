@@ -12,8 +12,17 @@
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="API" Type="Folder">
-			<Item Name="UpdateRequestRaw.vi" Type="VI" URL="../API/UpdateRequestRaw.vi"/>
-			<Item Name="InsertNewRequest.vi" Type="VI" URL="../API/InsertNewRequest.vi"/>
+			<Item Name="Request" Type="Folder">
+				<Property Name="NI.SortType" Type="Int">0</Property>
+				<Item Name="FilterRequests.vi" Type="VI" URL="../API/Request/FilterRequests.vi"/>
+				<Item Name="InsertNewRequest.vi" Type="VI" URL="../API/Request/InsertNewRequest.vi"/>
+				<Item Name="ReadRequests.vi" Type="VI" URL="../API/Request/ReadRequests.vi"/>
+				<Item Name="UpdateRequestDescription.vi" Type="VI" URL="../API/Request/UpdateRequestDescription.vi"/>
+				<Item Name="UpdateRequestName.vi" Type="VI" URL="../API/Request/UpdateRequestName.vi"/>
+				<Item Name="UpdateRequestPersonnel.vi" Type="VI" URL="../API/Request/UpdateRequestPersonnel.vi"/>
+				<Item Name="UpdateRequestRaw.vi" Type="VI" URL="../API/Request/UpdateRequestRaw.vi"/>
+				<Item Name="UpdateRequestTime.vi" Type="VI" URL="../API/Request/UpdateRequestTime.vi"/>
+			</Item>
 		</Item>
 		<Item Name="DatabaseFiles" Type="Folder">
 			<Item Name="rivER_Database.mdb" Type="Document" URL="../DatabaseFiles/rivER_Database.mdb"/>
@@ -22,6 +31,8 @@
 		<Item Name="Helpers" Type="Folder">
 			<Item Name="CreateRequestTable.vi" Type="VI" URL="../Helpers/CreateRequestTable.vi"/>
 			<Item Name="GetUDL_FilePath.vi" Type="VI" URL="../Helpers/GetUDL_FilePath.vi"/>
+			<Item Name="DeleteRequestTable.vi" Type="VI" URL="../Helpers/DeleteRequestTable.vi"/>
+			<Item Name="DeleteRequestRow.vi" Type="VI" URL="../Helpers/DeleteRequestRow.vi"/>
 		</Item>
 		<Item Name="TypeDef" Type="Folder">
 			<Item Name="RequestsTableColumnNames.ctl" Type="VI" URL="../TypeDef/RequestsTableColumnNames.ctl"/>
@@ -68,6 +79,8 @@
 				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
 				<Item Name="VariantType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/VariantDataType/VariantType.lvlib"/>
 				<Item Name="Space Constant.vi" Type="VI" URL="/&lt;vilib&gt;/dlg_ctls.llb/Space Constant.vi"/>
+				<Item Name="ex_CorrectErrorChain.vi" Type="VI" URL="/&lt;vilib&gt;/express/express shared/ex_CorrectErrorChain.vi"/>
+				<Item Name="subDisplayMessage.vi" Type="VI" URL="/&lt;vilib&gt;/express/express output/DisplayMessageBlock.llb/subDisplayMessage.vi"/>
 			</Item>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
