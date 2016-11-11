@@ -33,6 +33,8 @@
 			<Item Name="GetUDL_FilePath.vi" Type="VI" URL="../Helpers/GetUDL_FilePath.vi"/>
 			<Item Name="DeleteRequestTable.vi" Type="VI" URL="../Helpers/DeleteRequestTable.vi"/>
 			<Item Name="DeleteRequestRow.vi" Type="VI" URL="../Helpers/DeleteRequestRow.vi"/>
+			<Item Name="BuildRequestFilter.vi" Type="VI" URL="../Helpers/BuildRequestFilter.vi"/>
+			<Item Name="Database_String_Converter_LV86.vi" Type="VI" URL="../Helpers/Database_String_Converter_LV86.vi"/>
 		</Item>
 		<Item Name="TypeDef" Type="Folder">
 			<Item Name="RequestsTableColumnNames.ctl" Type="VI" URL="../TypeDef/RequestsTableColumnNames.ctl"/>
