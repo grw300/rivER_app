@@ -34,6 +34,10 @@
 			<Item Name="RoomsFGVLocalErrorH.vi" Type="VI" URL="../../../../LVRestAPI/RoomsFGVLocalErrorH.vi"/>
 			<Item Name="GedBedsStatus.vi" Type="VI" URL="../../../../NurseStation/Helpers/GedBedsStatus.vi"/>
 			<Item Name="PersonnelUIDtoIndex.vi" Type="VI" URL="../Helpers/PersonnelUIDtoIndex.vi"/>
+			<Item Name="PDUsJasonToArray.vi" Type="VI" URL="../Helpers/PDUsJasonToArray.vi"/>
+			<Item Name="PDUJsonToString.vi" Type="VI" URL="../Helpers/PDUJsonToString.vi"/>
+			<Item Name="RequestJsonToString.vi" Type="VI" URL="../Helpers/RequestJsonToString.vi"/>
+			<Item Name="RequestsJasonToArray.vi" Type="VI" URL="../Helpers/RequestsJasonToArray.vi"/>
 		</Item>
 		<Item Name="Tests" Type="Folder">
 			<Item Name="FGV" Type="Folder">
@@ -242,6 +246,9 @@
 			<Item Name="Web Resources" Type="HTTP WebResources Container"/>
 			<Item Name="Startup VIs" Type="Startup VIs Container"/>
 		</Item>
+		<Item Name="RoomRequestsJasonToArray.vi" Type="VI" URL="../Helpers/RoomRequestsJasonToArray.vi"/>
+		<Item Name="RoomPersonnelJasonToArray.vi" Type="VI" URL="../Helpers/RoomPersonnelJasonToArray.vi"/>
+		<Item Name="RoomPersonneltoJsonToString.vi" Type="VI" URL="../Helpers/RoomPersonneltoJsonToString.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
