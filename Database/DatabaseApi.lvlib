@@ -18,11 +18,13 @@
 	</Item>
 	<Item Name="Helpers" Type="Folder">
 		<Property Name="NI.LibItem.Scope" Type="Int">2</Property>
-		<Item Name="BuildRequestFilter.vi" Type="VI" URL="../Helpers/BuildRequestFilter.vi"/>
-		<Item Name="CreateRequestTable.vi" Type="VI" URL="../Helpers/CreateRequestTable.vi"/>
+		<Item Name="Request" Type="Folder">
+			<Item Name="BuildRequestFilter.vi" Type="VI" URL="../Helpers/Request/BuildRequestFilter.vi"/>
+			<Item Name="CreateRequestTable.vi" Type="VI" URL="../Helpers/Request/CreateRequestTable.vi"/>
+			<Item Name="DeleteRequestRow.vi" Type="VI" URL="../Helpers/Request/DeleteRequestRow.vi"/>
+			<Item Name="DeleteRequestTable.vi" Type="VI" URL="../Helpers/Request/DeleteRequestTable.vi"/>
+		</Item>
 		<Item Name="Database_String_Converter_LV86.vi" Type="VI" URL="../Helpers/Database_String_Converter_LV86.vi"/>
-		<Item Name="DeleteRequestRow.vi" Type="VI" URL="../Helpers/DeleteRequestRow.vi"/>
-		<Item Name="DeleteRequestTable.vi" Type="VI" URL="../Helpers/DeleteRequestTable.vi"/>
 		<Item Name="GetUDL_FilePath.vi" Type="VI" URL="../Helpers/GetUDL_FilePath.vi"/>
 	</Item>
 	<Item Name="TypeDef" Type="Folder">
