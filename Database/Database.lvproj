@@ -11,37 +11,11 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
-		<Item Name="API" Type="Folder">
-			<Item Name="Request" Type="Folder">
-				<Property Name="NI.SortType" Type="Int">0</Property>
-				<Item Name="FilterRequests.vi" Type="VI" URL="../API/Request/FilterRequests.vi"/>
-				<Item Name="InsertNewRequest.vi" Type="VI" URL="../API/Request/InsertNewRequest.vi"/>
-				<Item Name="ReadRequests.vi" Type="VI" URL="../API/Request/ReadRequests.vi"/>
-				<Item Name="UpdateRequestDescription.vi" Type="VI" URL="../API/Request/UpdateRequestDescription.vi"/>
-				<Item Name="UpdateRequestName.vi" Type="VI" URL="../API/Request/UpdateRequestName.vi"/>
-				<Item Name="UpdateRequestPersonnel.vi" Type="VI" URL="../API/Request/UpdateRequestPersonnel.vi"/>
-				<Item Name="UpdateRequestRaw.vi" Type="VI" URL="../API/Request/UpdateRequestRaw.vi"/>
-				<Item Name="UpdateRequestTime.vi" Type="VI" URL="../API/Request/UpdateRequestTime.vi"/>
-			</Item>
-		</Item>
 		<Item Name="DatabaseFiles" Type="Folder">
 			<Item Name="rivER_Database.mdb" Type="Document" URL="../DatabaseFiles/rivER_Database.mdb"/>
 			<Item Name="rivER_Database.udl" Type="Document" URL="../DatabaseFiles/rivER_Database.udl"/>
 		</Item>
-		<Item Name="Helpers" Type="Folder">
-			<Item Name="CreateRequestTable.vi" Type="VI" URL="../Helpers/CreateRequestTable.vi"/>
-			<Item Name="GetUDL_FilePath.vi" Type="VI" URL="../Helpers/GetUDL_FilePath.vi"/>
-			<Item Name="DeleteRequestTable.vi" Type="VI" URL="../Helpers/DeleteRequestTable.vi"/>
-			<Item Name="DeleteRequestRow.vi" Type="VI" URL="../Helpers/DeleteRequestRow.vi"/>
-			<Item Name="BuildRequestFilter.vi" Type="VI" URL="../Helpers/BuildRequestFilter.vi"/>
-			<Item Name="Database_String_Converter_LV86.vi" Type="VI" URL="../Helpers/Database_String_Converter_LV86.vi"/>
-		</Item>
-		<Item Name="TypeDef" Type="Folder">
-			<Item Name="RequestsTableColumnNames.ctl" Type="VI" URL="../TypeDef/RequestsTableColumnNames.ctl"/>
-			<Item Name="RequestsTableColumnNamesRing.ctl" Type="VI" URL="../TypeDef/RequestsTableColumnNamesRing.ctl"/>
-			<Item Name="RequestsTableDbTableName.ctl" Type="VI" URL="../TypeDef/RequestsTableDbTableName.ctl"/>
-			<Item Name="RequestTableCluster.ctl" Type="VI" URL="../TypeDef/RequestTableCluster.ctl"/>
-		</Item>
+		<Item Name="DatabaseApi.lvlib" Type="Library" URL="../DatabaseApi.lvlib"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="BuildHelpPath.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/BuildHelpPath.vi"/>
