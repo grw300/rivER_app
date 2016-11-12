@@ -160,18 +160,43 @@
 					<Property Name="ws.useStandardURL" Type="Bool">true</Property>
 				</Item>
 				<Item Name="GetPersonnel.vi" Type="VI" URL="../Methods/GetPersonnel.vi">
+					<Property Name="ws.buffered" Type="Bool">true</Property>
+					<Property Name="ws.includeNameInURL" Type="Bool">true</Property>
+					<Property Name="ws.keepInMemory" Type="Bool">true</Property>
+					<Property Name="ws.loadAtStartup" Type="Bool">true</Property>
 					<Property Name="ws.method" Type="Int">1</Property>
+					<Property Name="ws.outputFormat" Type="Int">2</Property>
+					<Property Name="ws.outputType" Type="Int">0</Property>
+					<Property Name="ws.permissions" Type="Str"></Property>
+					<Property Name="ws.requireAPIKey" Type="Bool">false</Property>
 					<Property Name="ws.type" Type="Int">1</Property>
+					<Property Name="ws.uri" Type="Str"></Property>
+					<Property Name="ws.useHeaders" Type="Bool">true</Property>
+					<Property Name="ws.useStandardURL" Type="Bool">true</Property>
 				</Item>
 				<Item Name="PostPersonnel.vi" Type="VI" URL="../Methods/PostPersonnel.vi">
+					<Property Name="ws.buffered" Type="Bool">true</Property>
+					<Property Name="ws.includeNameInURL" Type="Bool">true</Property>
+					<Property Name="ws.keepInMemory" Type="Bool">true</Property>
+					<Property Name="ws.loadAtStartup" Type="Bool">true</Property>
 					<Property Name="ws.method" Type="Int">1</Property>
+					<Property Name="ws.outputFormat" Type="Int">2</Property>
+					<Property Name="ws.outputType" Type="Int">0</Property>
+					<Property Name="ws.permissions" Type="Str"></Property>
+					<Property Name="ws.requireAPIKey" Type="Bool">false</Property>
 					<Property Name="ws.type" Type="Int">1</Property>
+					<Property Name="ws.uri" Type="Str"></Property>
+					<Property Name="ws.useHeaders" Type="Bool">true</Property>
+					<Property Name="ws.useStandardURL" Type="Bool">true</Property>
 				</Item>
 			</Item>
 		</Item>
 		<Item Name="TestPFGVPersonnelManagment.vi" Type="VI" URL="../Test/TestPFGVPersonnelManagment.vi"/>
-		<Item Name="PDUsJasonToArray.vi" Type="VI" URL="../Helpers/PDUsJasonToArray.vi"/>
-		<Item Name="PDUJsonToString.vi" Type="VI" URL="../Helpers/PDUJsonToString.vi"/>
+		<Item Name="WebService1" Type="Web Service">
+			<Property Name="ws.guid" Type="Str">{E5817445-91F3-456A-9085-910E9DEF1BE3}</Property>
+			<Item Name="Web Resources" Type="HTTP WebResources Container"/>
+			<Item Name="Startup VIs" Type="Startup VIs Container"/>
+		</Item>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
