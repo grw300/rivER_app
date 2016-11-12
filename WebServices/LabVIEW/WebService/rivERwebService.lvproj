@@ -101,9 +101,13 @@
 					<Item Name="TestPFGVPersonnelManagment.vi" Type="VI" URL="../Test/TestPFGVPersonnelManagment.vi"/>
 				</Item>
 			</Item>
-			<Item Name="RestApi.lvlib" Type="Library" URL="../../../../LVRestAPI/RestApi.lvlib"/>
+			<Item Name="RoomRestApi.lvlib" Type="Library" URL="../../../../LVRestAPI/RoomRestApi.lvlib"/>
 			<Item Name="Personnel API Test.vi" Type="VI" URL="../Test/Personnel API Test.vi"/>
 			<Item Name="Room API Test.vi" Type="VI" URL="../Test/Room API Test.vi"/>
+			<Item Name="PersonnelRestApi.lvlib" Type="Library" URL="../../../../LVRestAPI/PersonnelRestApi.lvlib"/>
+			<Item Name="RoomPersonnelJasonToArray.vi" Type="VI" URL="../Helpers/RoomPersonnelJasonToArray.vi"/>
+			<Item Name="RoomPersonneltoJsonToString.vi" Type="VI" URL="../Helpers/RoomPersonneltoJsonToString.vi"/>
+			<Item Name="RoomRequestsJasonToArray.vi" Type="VI" URL="../Helpers/RoomRequestsJasonToArray.vi"/>
 		</Item>
 		<Item Name="FGV" Type="Folder">
 			<Item Name="RoomsFGV.vi" Type="VI" URL="../RoomsFGV.vi"/>
@@ -246,9 +250,6 @@
 			<Item Name="Web Resources" Type="HTTP WebResources Container"/>
 			<Item Name="Startup VIs" Type="Startup VIs Container"/>
 		</Item>
-		<Item Name="RoomRequestsJasonToArray.vi" Type="VI" URL="../Helpers/RoomRequestsJasonToArray.vi"/>
-		<Item Name="RoomPersonnelJasonToArray.vi" Type="VI" URL="../Helpers/RoomPersonnelJasonToArray.vi"/>
-		<Item Name="RoomPersonneltoJsonToString.vi" Type="VI" URL="../Helpers/RoomPersonneltoJsonToString.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>

@@ -8,13 +8,11 @@
 
 </Property>
 	<Item Name="TypeDef" Type="Folder">
-		<Item Name="GetPersonnelCommands.ctl" Type="VI" URL="../TypeDef/GetPersonnelCommands.ctl"/>
 		<Item Name="GetRoomCommands.ctl" Type="VI" URL="../TypeDef/GetRoomCommands.ctl"/>
-		<Item Name="PostPersonnelCommands.ctl" Type="VI" URL="../TypeDef/PostPersonnelCommands.ctl"/>
 		<Item Name="PostRoomCommands.ctl" Type="VI" URL="../TypeDef/PostRoomCommands.ctl"/>
 	</Item>
-	<Item Name="AddPersonnel.vi" Type="VI" URL="../AddPersonnel.vi"/>
-	<Item Name="AddRequest.vi" Type="VI" URL="../AddRequest.vi"/>
+	<Item Name="AddPersonnel.vi" Type="VI" URL="../Room/AddPersonnel.vi"/>
+	<Item Name="AddRequest.vi" Type="VI" URL="../Room/AddRequest.vi"/>
 	<Item Name="GetRoom.vi" Type="VI" URL="../GetRoom.vi"/>
 	<Item Name="PostRoom.vi" Type="VI" URL="../PostRoom.vi"/>
 	<Item Name="ReadFlag.vi" Type="VI" URL="../ReadFlag.vi"/>
