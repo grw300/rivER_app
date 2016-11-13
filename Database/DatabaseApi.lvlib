@@ -28,10 +28,12 @@
 		<Item Name="GetUDL_FilePath.vi" Type="VI" URL="../Helpers/GetUDL_FilePath.vi"/>
 	</Item>
 	<Item Name="TypeDef" Type="Folder">
-		<Item Name="RequestsFilter.ctl" Type="VI" URL="../TypeDef/RequestsFilter.ctl"/>
-		<Item Name="RequestsTableColumnNames.ctl" Type="VI" URL="../TypeDef/RequestsTableColumnNames.ctl"/>
-		<Item Name="RequestsTableColumnNamesRing.ctl" Type="VI" URL="../TypeDef/RequestsTableColumnNamesRing.ctl"/>
-		<Item Name="RequestsTableDbTableName.ctl" Type="VI" URL="../TypeDef/RequestsTableDbTableName.ctl"/>
-		<Item Name="RequestTableCluster.ctl" Type="VI" URL="../TypeDef/RequestTableCluster.ctl"/>
+		<Item Name="Request" Type="Folder">
+			<Item Name="RequestsFilter.ctl" Type="VI" URL="../TypeDef/Request/RequestsFilter.ctl"/>
+			<Item Name="RequestsTableColumnNames.ctl" Type="VI" URL="../TypeDef/Request/RequestsTableColumnNames.ctl"/>
+			<Item Name="RequestsTableColumnNamesRing.ctl" Type="VI" URL="../TypeDef/Request/RequestsTableColumnNamesRing.ctl"/>
+			<Item Name="RequestsTableDbTableName.ctl" Type="VI" URL="../TypeDef/Request/RequestsTableDbTableName.ctl"/>
+			<Item Name="RequestTableCluster.ctl" Type="VI" URL="../TypeDef/Request/RequestTableCluster.ctl"/>
+		</Item>
 	</Item>
 </Library>
