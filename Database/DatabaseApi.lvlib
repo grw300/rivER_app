@@ -24,6 +24,11 @@
 			<Item Name="DeleteRequestRow.vi" Type="VI" URL="../Helpers/Request/DeleteRequestRow.vi"/>
 			<Item Name="DeleteRequestTable.vi" Type="VI" URL="../Helpers/Request/DeleteRequestTable.vi"/>
 		</Item>
+		<Item Name="Room" Type="Folder">
+			<Item Name="CreateRoomTable.vi" Type="VI" URL="../Helpers/Room/CreateRoomTable.vi"/>
+			<Item Name="DeleteRoomRow.vi" Type="VI" URL="../Helpers/Room/DeleteRoomRow.vi"/>
+			<Item Name="DeleteRoomTable.vi" Type="VI" URL="../Helpers/Room/DeleteRoomTable.vi"/>
+		</Item>
 		<Item Name="Database_String_Converter_LV86.vi" Type="VI" URL="../Helpers/Database_String_Converter_LV86.vi"/>
 		<Item Name="GetUDL_FilePath.vi" Type="VI" URL="../Helpers/GetUDL_FilePath.vi"/>
 	</Item>
@@ -34,6 +39,10 @@
 			<Item Name="RequestsTableColumnNamesRing.ctl" Type="VI" URL="../TypeDef/Request/RequestsTableColumnNamesRing.ctl"/>
 			<Item Name="RequestsTableDbTableName.ctl" Type="VI" URL="../TypeDef/Request/RequestsTableDbTableName.ctl"/>
 			<Item Name="RequestTableCluster.ctl" Type="VI" URL="../TypeDef/Request/RequestTableCluster.ctl"/>
+		</Item>
+		<Item Name="Room" Type="Folder">
+			<Item Name="RoomTableColumnNames.ctl" Type="VI" URL="../TypeDef/Room/RoomTableColumnNames.ctl"/>
+			<Item Name="RoomTableDbTableName.ctl" Type="VI" URL="../TypeDef/Room/RoomTableDbTableName.ctl"/>
 		</Item>
 	</Item>
 </Library>
