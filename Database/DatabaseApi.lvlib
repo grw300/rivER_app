@@ -15,6 +15,10 @@
 			<Item Name="UpdateRequestRaw.vi" Type="VI" URL="../API/Request/UpdateRequestRaw.vi"/>
 			<Item Name="UpdateRequestTime.vi" Type="VI" URL="../API/Request/UpdateRequestTime.vi"/>
 		</Item>
+		<Item Name="Room" Type="Folder">
+			<Item Name="InsertNewRoomEvent.vi" Type="VI" URL="../API/Room/InsertNewRoomEvent.vi"/>
+			<Item Name="ReadRoomEvents.vi" Type="VI" URL="../API/Room/ReadRoomEvents.vi"/>
+		</Item>
 	</Item>
 	<Item Name="Helpers" Type="Folder">
 		<Property Name="NI.LibItem.Scope" Type="Int">2</Property>
@@ -26,8 +30,10 @@
 		</Item>
 		<Item Name="Room" Type="Folder">
 			<Item Name="CreateRoomTable.vi" Type="VI" URL="../Helpers/Room/CreateRoomTable.vi"/>
+			<Item Name="DbRoomClusterToRoom.vi" Type="VI" URL="../Helpers/Room/DbRoomClusterToRoom.vi"/>
 			<Item Name="DeleteRoomRow.vi" Type="VI" URL="../Helpers/Room/DeleteRoomRow.vi"/>
 			<Item Name="DeleteRoomTable.vi" Type="VI" URL="../Helpers/Room/DeleteRoomTable.vi"/>
+			<Item Name="RoomToDbCluster.vi" Type="VI" URL="../Helpers/Room/RoomToDbCluster.vi"/>
 		</Item>
 		<Item Name="Database_String_Converter_LV86.vi" Type="VI" URL="../Helpers/Database_String_Converter_LV86.vi"/>
 		<Item Name="GetUDL_FilePath.vi" Type="VI" URL="../Helpers/GetUDL_FilePath.vi"/>
@@ -41,6 +47,7 @@
 			<Item Name="RequestTableCluster.ctl" Type="VI" URL="../TypeDef/Request/RequestTableCluster.ctl"/>
 		</Item>
 		<Item Name="Room" Type="Folder">
+			<Item Name="RoomTableCluster.ctl" Type="VI" URL="../TypeDef/Room/RoomTableCluster.ctl"/>
 			<Item Name="RoomTableColumnNames.ctl" Type="VI" URL="../TypeDef/Room/RoomTableColumnNames.ctl"/>
 			<Item Name="RoomTableDbTableName.ctl" Type="VI" URL="../TypeDef/Room/RoomTableDbTableName.ctl"/>
 		</Item>

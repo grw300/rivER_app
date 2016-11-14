@@ -15,6 +15,10 @@
 			<Item Name="rivER_Database.mdb" Type="Document" URL="../DatabaseFiles/rivER_Database.mdb"/>
 			<Item Name="rivER_Database.udl" Type="Document" URL="../DatabaseFiles/rivER_Database.udl"/>
 		</Item>
+		<Item Name="Classes" Type="Folder">
+			<Item Name="Room.lvclass" Type="LVClass" URL="../../LVClasses/Room/Room.lvclass"/>
+			<Item Name="Flags.lvclass" Type="LVClass" URL="../../LVClasses/Flags/Flags.lvclass"/>
+		</Item>
 		<Item Name="DatabaseApi.lvlib" Type="Library" URL="../DatabaseApi.lvlib"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
@@ -58,6 +62,7 @@
 				<Item Name="ex_CorrectErrorChain.vi" Type="VI" URL="/&lt;vilib&gt;/express/express shared/ex_CorrectErrorChain.vi"/>
 				<Item Name="subDisplayMessage.vi" Type="VI" URL="/&lt;vilib&gt;/express/express output/DisplayMessageBlock.llb/subDisplayMessage.vi"/>
 			</Item>
+			<Item Name="SelectedRoom.ctl" Type="VI" URL="../../NurseStation/TypeDef/SelectedRoom.ctl"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
