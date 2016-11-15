@@ -12,20 +12,21 @@ using System.Collections;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Collections.ObjectModel;
 
 namespace rivER
 {
     public class RoomsViewModel : BaseViewModel
     {
-        public Room currentRoom = new Room();
+        public RoomViewModel currentRoom;
 
-        private List<Room> nextRooms;
+        private ObservableCollection<Room> nextRooms;
 
         private IRivERWebService rivERWebService;
         private IBeaconRangingService beaconRangingService;
         private CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
 
-        public Room CurrentRoom
+        public RoomViewModel CurrentRoom
         {
             get
             {
@@ -41,7 +42,7 @@ namespace rivER
             }
         }
 
-        public List<Room> NextRooms
+        public ObservableCollection<Room> NextRooms
         {
             get
             {
@@ -60,12 +61,14 @@ namespace rivER
         public RoomsViewModel(INavigation navigation) : base(navigation)
         {
             rivERWebService = new RivERWebService();
-
             beaconRangingService = DependencyService.Get<IBeaconRangingService>();
+            currentRoom = new RoomViewModel(navigation);
+
             beaconRangingService.DidRangeBeacons += Beacon_DidRangeBeacons;
 
             //beaconRangingService.StartMonitoring("B9407F30-F5F8-466E-AFF9-25556B57FE6D", "ER-Rooms");
             beaconRangingService.StartMonitoring("487C659C-1FE2-4D2A-A289-130BBD7E534F", "ER-Rooms");
+
         }
 
         async Task OnBeaconDidRangeBeaconsAsync(BeaconRangedEventArgs e)
@@ -75,7 +78,7 @@ namespace rivER
             if (roomNumber.HasValue)
             {
                 await rivERWebService.PostPersonnelIntoRoom(roomNumber.Value, Helpers.Settings.PersonnelID);
-                this.CurrentRoom = await rivERWebService.GetRoomReadRoom(roomNumber.Value);
+                this.CurrentRoom.Room = await rivERWebService.GetRoomReadRoom(roomNumber.Value);
                 GetBedVacantAsync();
             }
             else
@@ -84,7 +87,7 @@ namespace rivER
                 {
                     await rivERWebService.PostPersonnelOutOfRoom(this.CurrentRoom.RoomNumber.Value, Helpers.Settings.PersonnelID);
                     cancellationTokenSource.Cancel();
-                    this.CurrentRoom = new Room();
+                    this.CurrentRoom.Room = new Room();
                 }
             }
         }

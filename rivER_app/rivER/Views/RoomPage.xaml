@@ -8,8 +8,8 @@
 	ControlTemplate="{StaticResource TitleTemplate}">
 	<ContentPage.Resources>
 		<ResourceDictionary>
-			<local:FlagColorToColorConverter
-				x:Key="flagColorToColorConverter" />
+            <local:FlagsToColorsConverter
+                x:Key="flagsToColorsConverter" />
 			<local:BedVacantToColorConverter
 				x:Key="bedVacantToColorConverter" />
 		</ResourceDictionary>
@@ -76,7 +76,7 @@
 					RowHeight="20"
 					SeparatorVisibility="None"
 					ItemTapped="HandleItemTapped"
-					ItemsSource="{Binding CurrentRoom.FlagColors}">
+					ItemsSource="{Binding CurrentRoom.Flags, Converter={StaticResource flagsToColorsConverter}}">
 					<ListView.ItemTemplate>
 						<DataTemplate>
 							<ViewCell
@@ -84,7 +84,7 @@
 								<BoxView
 									Margin="1"
 									VerticalOptions="Center"
-									BackgroundColor="{Binding Color, Converter={StaticResource flagColorToColorConverter}}">
+									BackgroundColor="{Binding Path=.}">
 								</BoxView>
 							</ViewCell>
 						</DataTemplate>

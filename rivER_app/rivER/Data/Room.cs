@@ -22,15 +22,6 @@ namespace rivER
 			this.Flags.State = new bool[] { false, false, false, false };
 			this.Flags.Color = new int[] { -1, -1, -1, -1 };
 		}
-
-		[JsonIgnore]
-		public IEnumerable<FlagColor> FlagColors
-		{
-			get
-			{
-				return Flags.State.Zip(Flags.Color, (s, c) => new FlagColor(s, c));
-			}
-		}
 	}
 }
 
