@@ -80,6 +80,7 @@ namespace rivER
                 await rivERWebService.PostPersonnelIntoRoom(roomNumber.Value, Helpers.Settings.PersonnelID);
                 this.CurrentRoom.Room = await rivERWebService.GetRoomReadRoom(roomNumber.Value);
                 GetBedVacantAsync();
+                GetFlagsAsync();
             }
             else
             {
@@ -95,23 +96,65 @@ namespace rivER
         async void GetBedVacantAsync()
         {
             var token = cancellationTokenSource.Token;
-            var client = new HttpClient();
 
-            await Task.Factory.StartNew(async () =>
+            try
             {
-                while (true)
+                await Task.Factory.StartNew(async () =>
                 {
-                    var bedVacant = await client.GetStringAsync(this.CurrentRoom.BedURL);
-                    this.CurrentRoom.BedVacant = (bedVacant == "1");
+                    while (true)
+                    {
+                        if (this.CurrentRoom.RoomNumber.HasValue)
+                        {
+                            var bedVacant = await rivERWebService.GetRoomReadBedVacant(this.CurrentRoom.RoomNumber.Value);
+                            if (bedVacant != this.CurrentRoom.BedVacant)
+                            {
+                                this.CurrentRoom.BedVacant = bedVacant;
+                            }
+                        }
 
-                    await Task.Delay(1000);
+                        await Task.Delay(1000);
 
-                    if (token.IsCancellationRequested)
-                        break;
-                }
-            }, token, TaskCreationOptions.LongRunning, TaskScheduler.Default);
+                        if (token.IsCancellationRequested)
+                            break;
+                    }
+                }, token, TaskCreationOptions.LongRunning, TaskScheduler.Default);
+            }
+            catch (OperationCanceledException e)
+            {
+                System.Diagnostics.Debug.WriteLine("Cancel GetBedVacantAsync ex {0}", e.Message);
+            }
+        }
 
-            client.Dispose();
+        async void GetFlagsAsync()
+        {
+            var token = cancellationTokenSource.Token;
+
+            try
+            {
+                await Task.Factory.StartNew(async () =>
+                {
+                    while (true)
+                    {
+                        if (this.CurrentRoom.RoomNumber.HasValue)
+                        {
+                            var flags = await rivERWebService.GetRoomReadFlags(this.CurrentRoom.RoomNumber.Value);
+                            if (flags != this.CurrentRoom.Flags)
+                            {
+                                this.CurrentRoom.Flags = flags;
+                            }
+                        }
+
+                        await Task.Delay(1000);
+
+                        if (token.IsCancellationRequested)
+                            break;
+                    }
+                }, token, TaskCreationOptions.LongRunning, TaskScheduler.Default);
+            }
+            catch (OperationCanceledException e)
+            {
+                System.Diagnostics.Debug.WriteLine("Cancel GetBedVacantAsync ex {0}", e.Message);
+            }
         }
 
         async void Beacon_DidRangeBeacons(object sender, BeaconRangedEventArgs e)

@@ -3,6 +3,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace rivER
 {
@@ -14,6 +15,30 @@ namespace rivER
         public async Task<string> GetPersonnelReadRequest(string personnelID)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<bool> GetRoomReadBedVacant(int roomNumber)
+        {
+            string[] urlStringParams = {
+                Helpers.Settings.ServerAddress,
+                "RivERWebService",
+                string.Format("GetRoom?Room={0}&Command=ReadBedVacant",  roomNumber)};
+            string urlString = string.Format(RIVER_WEBSERVICE_URL_FORMAT, urlStringParams);
+
+            var token = await GetAsync(urlString);
+            return (bool)token.SelectToken("BedVacant");
+        }
+
+        public async Task<bool> GetRoomReadFlags(int roomNumber)
+        {
+            string[] urlStringParams = {
+                Helpers.Settings.ServerAddress,
+                "RivERWebService",
+                string.Format("GetRoom?Room={0}&Command=ReadFlags",  roomNumber)};
+            string urlString = string.Format(RIVER_WEBSERVICE_URL_FORMAT, urlStringParams);
+
+            var token = await GetAsync(urlString);
+            return (bool)token.SelectToken("Flags");
         }
 
         public async Task<Room> GetRoomReadRoom(int roomNumber)
@@ -60,6 +85,19 @@ namespace rivER
                                            JsonConvert.SerializeObject(personnelID));
 
             return await PostAsync(urlString, postString);
+        }
+
+        async Task<JToken> GetAsync(string urlString)
+        {
+            using (HttpResponseMessage response = await RivERWebService.Client.GetAsync(urlString))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    var t = await response.Content.ReadAsStringAsync();
+                    return JObject.Parse(t);
+                }
+                throw new HttpRequestException("GET went wrong");
+            }
         }
 
         async Task<T> GetAsync<T>(string urlString)
