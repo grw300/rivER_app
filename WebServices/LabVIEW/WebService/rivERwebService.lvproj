@@ -20,6 +20,7 @@
 			<Item Name="FGVAction.ctl" Type="VI" URL="../../../../LVRestAPI/TypeDef/FGVAction.ctl"/>
 			<Item Name="BedStateCluster.ctl" Type="VI" URL="../TypeDef/BedStateCluster.ctl"/>
 			<Item Name="PersonnelState.ctl" Type="VI" URL="../TypeDef/PersonnelState.ctl"/>
+			<Item Name="PersonnelAndTime.ctl" Type="VI" URL="../TypeDef/PersonnelAndTime.ctl"/>
 		</Item>
 		<Item Name="Classes" Type="Folder">
 			<Item Name="Flags.lvclass" Type="LVClass" URL="../../../../LVClasses/Flags/Flags.lvclass"/>
@@ -36,8 +37,13 @@
 			<Item Name="PersonnelUIDtoIndex.vi" Type="VI" URL="../Helpers/PersonnelUIDtoIndex.vi"/>
 			<Item Name="PDUsJasonToArray.vi" Type="VI" URL="../Helpers/PDUsJasonToArray.vi"/>
 			<Item Name="PDUJsonToString.vi" Type="VI" URL="../Helpers/PDUJsonToString.vi"/>
+			<Item Name="RoomPersonnelJasonToArray.vi" Type="VI" URL="../Helpers/RoomPersonnelJasonToArray.vi"/>
+			<Item Name="RoomPersonneltoJsonToString.vi" Type="VI" URL="../Helpers/RoomPersonneltoJsonToString.vi"/>
+			<Item Name="RoomRequestsJasonToArray.vi" Type="VI" URL="../Helpers/RoomRequestsJasonToArray.vi"/>
 			<Item Name="RequestJsonToString.vi" Type="VI" URL="../Helpers/RequestJsonToString.vi"/>
 			<Item Name="RequestsJasonToArray.vi" Type="VI" URL="../Helpers/RequestsJasonToArray.vi"/>
+			<Item Name="StringToTimeStamp.vi" Type="VI" URL="../../../../LVClasses/Request/StringToTimeStamp.vi"/>
+			<Item Name="TimeStampToString.vi" Type="VI" URL="../../../../LVClasses/Request/TimeStampToString.vi"/>
 		</Item>
 		<Item Name="Tests" Type="Folder">
 			<Item Name="FGV" Type="Folder">
@@ -100,14 +106,19 @@
 					</Item>
 					<Item Name="TestPFGVPersonnelManagment.vi" Type="VI" URL="../Test/TestPFGVPersonnelManagment.vi"/>
 				</Item>
+				<Item Name="Requests" Type="Folder">
+					<Item Name="TestRFGVRequestManagment.lvtest" Type="TestItem" URL="../Test/TestRFGVRequestManagment.lvtest">
+						<Property Name="utf.test.bind" Type="Str">TestRFGVRequestManagment.vi</Property>
+						<Property Name="utf.vector.test.bind" Type="Str">DCBA6A96-E900-3424-FAFD-04EA88D36D57</Property>
+					</Item>
+					<Item Name="TestRFGVRequestManagment.vi" Type="VI" URL="../Test/TestRFGVRequestManagment.vi"/>
+					<Item Name="TestTimetoString.vi" Type="VI" URL="../../../../LVClasses/Request/TestTimetoString.vi"/>
+				</Item>
 			</Item>
 			<Item Name="RoomRestApi.lvlib" Type="Library" URL="../../../../LVRestAPI/RoomRestApi.lvlib"/>
 			<Item Name="Personnel API Test.vi" Type="VI" URL="../Test/Personnel API Test.vi"/>
 			<Item Name="Room API Test.vi" Type="VI" URL="../Test/Room API Test.vi"/>
 			<Item Name="PersonnelRestApi.lvlib" Type="Library" URL="../../../../LVRestAPI/PersonnelRestApi.lvlib"/>
-			<Item Name="RoomPersonnelJasonToArray.vi" Type="VI" URL="../Helpers/RoomPersonnelJasonToArray.vi"/>
-			<Item Name="RoomPersonneltoJsonToString.vi" Type="VI" URL="../Helpers/RoomPersonneltoJsonToString.vi"/>
-			<Item Name="RoomRequestsJasonToArray.vi" Type="VI" URL="../Helpers/RoomRequestsJasonToArray.vi"/>
 		</Item>
 		<Item Name="FGV" Type="Folder">
 			<Item Name="RoomsFGV.vi" Type="VI" URL="../RoomsFGV.vi"/>
@@ -245,11 +256,8 @@
 				</Item>
 			</Item>
 		</Item>
-		<Item Name="WebService1" Type="Web Service">
-			<Property Name="ws.guid" Type="Str">{E5817445-91F3-456A-9085-910E9DEF1BE3}</Property>
-			<Item Name="Web Resources" Type="HTTP WebResources Container"/>
-			<Item Name="Startup VIs" Type="Startup VIs Container"/>
-		</Item>
+		<Item Name="RequestIDtoIndex.vi" Type="VI" URL="../Helpers/RequestIDtoIndex.vi"/>
+		<Item Name="RequestsJasonToRequestObjectArray.vi" Type="VI" URL="../Helpers/RequestsJasonToRequestObjectArray.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
