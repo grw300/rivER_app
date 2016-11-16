@@ -6,6 +6,9 @@
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">false</Property>
 	<Item Name="GetPersonnel.vi" Type="VI" URL="../Personnel/GetPersonnel.vi"/>
 	<Item Name="GetPersonnelCommands.ctl" Type="VI" URL="../TypeDef/GetPersonnelCommands.ctl"/>
+	<Item Name="IntoRoom.vi" Type="VI" URL="../Personnel/IntoRoom.vi"/>
+	<Item Name="OutOfRoom.vi" Type="VI" URL="../Personnel/OutOfRoom.vi"/>
+	<Item Name="PostPersonnel.vi" Type="VI" URL="../Personnel/PostPersonnel.vi"/>
 	<Item Name="PostPersonnelCommands.ctl" Type="VI" URL="../TypeDef/PostPersonnelCommands.ctl"/>
 	<Item Name="ReadPersonnel.vi" Type="VI" URL="../Personnel/ReadPersonnel.vi"/>
 </Library>

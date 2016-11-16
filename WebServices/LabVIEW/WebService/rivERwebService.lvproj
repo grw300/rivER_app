@@ -38,12 +38,14 @@
 			<Item Name="PDUsJasonToArray.vi" Type="VI" URL="../Helpers/PDUsJasonToArray.vi"/>
 			<Item Name="PDUJsonToString.vi" Type="VI" URL="../Helpers/PDUJsonToString.vi"/>
 			<Item Name="RoomPersonnelJasonToArray.vi" Type="VI" URL="../Helpers/RoomPersonnelJasonToArray.vi"/>
+			<Item Name="RequestIDtoIndex.vi" Type="VI" URL="../Helpers/RequestIDtoIndex.vi"/>
 			<Item Name="RoomPersonneltoJsonToString.vi" Type="VI" URL="../Helpers/RoomPersonneltoJsonToString.vi"/>
 			<Item Name="RoomRequestsJasonToArray.vi" Type="VI" URL="../Helpers/RoomRequestsJasonToArray.vi"/>
 			<Item Name="RequestJsonToString.vi" Type="VI" URL="../Helpers/RequestJsonToString.vi"/>
 			<Item Name="RequestsJasonToArray.vi" Type="VI" URL="../Helpers/RequestsJasonToArray.vi"/>
 			<Item Name="StringToTimeStamp.vi" Type="VI" URL="../../../../LVClasses/Request/StringToTimeStamp.vi"/>
 			<Item Name="TimeStampToString.vi" Type="VI" URL="../../../../LVClasses/Request/TimeStampToString.vi"/>
+			<Item Name="RequestsJasonToRequestObjectArray.vi" Type="VI" URL="../Helpers/RequestsJasonToRequestObjectArray.vi"/>
 		</Item>
 		<Item Name="Tests" Type="Folder">
 			<Item Name="FGV" Type="Folder">
@@ -112,13 +114,28 @@
 						<Property Name="utf.vector.test.bind" Type="Str">DCBA6A96-E900-3424-FAFD-04EA88D36D57</Property>
 					</Item>
 					<Item Name="TestRFGVRequestManagment.vi" Type="VI" URL="../Test/TestRFGVRequestManagment.vi"/>
+					<Item Name="TestRFGVSummary.lvtest" Type="TestItem" URL="../Test/TestRFGVSummary.lvtest">
+						<Property Name="utf.test.bind" Type="Str">TestRFGVSummary.vi</Property>
+						<Property Name="utf.vector.test.bind" Type="Str">258E0ABD-544D-6349-C92D-B1F3F1BC8CA2</Property>
+					</Item>
+					<Item Name="TestRFGVSummary.vi" Type="VI" URL="../Test/TestRFGVSummary.vi"/>
+					<Item Name="TestRFGVAck.lvtest" Type="TestItem" URL="../Test/TestRFGVAck.lvtest">
+						<Property Name="utf.test.bind" Type="Str">TestRFGVAck.vi</Property>
+						<Property Name="utf.vector.test.bind" Type="Str">A8EF5653-BBC7-F314-4C7F-BDB1B6961AF3</Property>
+					</Item>
+					<Item Name="TestRFGVAck.vi" Type="VI" URL="../Test/TestRFGVAck.vi"/>
+					<Item Name="TestRFGVComplete.lvtest" Type="TestItem" URL="../Test/TestRFGVComplete.lvtest">
+						<Property Name="utf.test.bind" Type="Str">TestRFGVComplete.vi</Property>
+						<Property Name="utf.vector.test.bind" Type="Str">79343F3E-58BD-33F8-55DE-CE8D3C515E5B</Property>
+					</Item>
+					<Item Name="TestRFGVComplete.vi" Type="VI" URL="../Test/TestRFGVComplete.vi"/>
 					<Item Name="TestTimetoString.vi" Type="VI" URL="../../../../LVClasses/Request/TestTimetoString.vi"/>
 				</Item>
 			</Item>
 			<Item Name="RoomRestApi.lvlib" Type="Library" URL="../../../../LVRestAPI/RoomRestApi.lvlib"/>
+			<Item Name="PersonnelRestApi.lvlib" Type="Library" URL="../../../../LVRestAPI/PersonnelRestApi.lvlib"/>
 			<Item Name="Personnel API Test.vi" Type="VI" URL="../Test/Personnel API Test.vi"/>
 			<Item Name="Room API Test.vi" Type="VI" URL="../Test/Room API Test.vi"/>
-			<Item Name="PersonnelRestApi.lvlib" Type="Library" URL="../../../../LVRestAPI/PersonnelRestApi.lvlib"/>
 		</Item>
 		<Item Name="FGV" Type="Folder">
 			<Item Name="RoomsFGV.vi" Type="VI" URL="../RoomsFGV.vi"/>
@@ -127,7 +144,7 @@
 		</Item>
 		<Item Name="RivERWebService" Type="Web Service">
 			<Property Name="Bld_buildSpecName" Type="Str"></Property>
-			<Property Name="Bld_version.build" Type="Int">26</Property>
+			<Property Name="Bld_version.build" Type="Int">29</Property>
 			<Property Name="ws.autoIncrementVersion" Type="Bool">true</Property>
 			<Property Name="ws.disconnectInline" Type="Bool">true</Property>
 			<Property Name="ws.disconnectTypeDefs" Type="Bool">false</Property>
@@ -139,7 +156,7 @@
 			<Property Name="ws.serveDefaultDoc" Type="Bool">true</Property>
 			<Property Name="ws.SSE2" Type="Bool">true</Property>
 			<Property Name="ws.static_permissions" Type="Str"></Property>
-			<Property Name="ws.version.build" Type="Int">26</Property>
+			<Property Name="ws.version.build" Type="Int">29</Property>
 			<Property Name="ws.version.fix" Type="Int">0</Property>
 			<Property Name="ws.version.major" Type="Int">1</Property>
 			<Property Name="ws.version.minor" Type="Int">0</Property>
@@ -244,7 +261,7 @@
 					<Property Name="ws.includeNameInURL" Type="Bool">true</Property>
 					<Property Name="ws.keepInMemory" Type="Bool">true</Property>
 					<Property Name="ws.loadAtStartup" Type="Bool">true</Property>
-					<Property Name="ws.method" Type="Int">1</Property>
+					<Property Name="ws.method" Type="Int">3</Property>
 					<Property Name="ws.outputFormat" Type="Int">2</Property>
 					<Property Name="ws.outputType" Type="Int">0</Property>
 					<Property Name="ws.permissions" Type="Str"></Property>
@@ -256,9 +273,8 @@
 				</Item>
 			</Item>
 		</Item>
-		<Item Name="RequestIDtoIndex.vi" Type="VI" URL="../Helpers/RequestIDtoIndex.vi"/>
-		<Item Name="RequestsJasonToRequestObjectArray.vi" Type="VI" URL="../Helpers/RequestsJasonToRequestObjectArray.vi"/>
-		<Item Name="RequestType.ctl" Type="VI" URL="../../../../LVClasses/Request/RequestType.ctl"/>
+		<Item Name="NameJSONtoPersonnelJSON.vi" Type="VI" URL="../Helpers/NameJSONtoPersonnelJSON.vi"/>
+		<Item Name="FindRequestBySummary.vi" Type="VI" URL="../Helpers/FindRequestBySummary.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
