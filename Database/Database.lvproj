@@ -18,6 +18,7 @@
 		<Item Name="Classes" Type="Folder">
 			<Item Name="Room.lvclass" Type="LVClass" URL="../../LVClasses/Room/Room.lvclass"/>
 			<Item Name="Flags.lvclass" Type="LVClass" URL="../../LVClasses/Flags/Flags.lvclass"/>
+			<Item Name="Request.lvclass" Type="LVClass" URL="../../LVClasses/Request/Request.lvclass"/>
 		</Item>
 		<Item Name="DatabaseApi.lvlib" Type="Library" URL="../DatabaseApi.lvlib"/>
 		<Item Name="Dependencies" Type="Dependencies">
@@ -63,6 +64,9 @@
 				<Item Name="subDisplayMessage.vi" Type="VI" URL="/&lt;vilib&gt;/express/express output/DisplayMessageBlock.llb/subDisplayMessage.vi"/>
 			</Item>
 			<Item Name="SelectedRoom.ctl" Type="VI" URL="../../NurseStation/TypeDef/SelectedRoom.ctl"/>
+			<Item Name="RequestType.ctl" Type="VI" URL="../../LVClasses/Request/RequestType.ctl"/>
+			<Item Name="StringToTimeStamp.vi" Type="VI" URL="../../LVClasses/Request/StringToTimeStamp.vi"/>
+			<Item Name="TimeStampToString.vi" Type="VI" URL="../../LVClasses/Request/TimeStampToString.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
