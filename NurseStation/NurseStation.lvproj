@@ -35,7 +35,7 @@
 			<Item Name="State Cluster.ctl" Type="VI" URL="../TypeDef/State Cluster.ctl"/>
 		</Item>
 		<Item Name="NurseStationMain.vi" Type="VI" URL="../NurseStationMain.vi"/>
-		<Item Name="RestApi.lvlib" Type="Library" URL="../../LVRestAPI/RestApi.lvlib"/>
+		<Item Name="RoomRestApi.lvlib" Type="Library" URL="../../LVRestAPI/RoomRestApi.lvlib"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="BuildHelpPath.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/BuildHelpPath.vi"/>
