@@ -19,7 +19,7 @@ namespace rivER
              * 'unoccupied' (false) as Gray.
              */
             var valueAsBool = (bool?)value;
-			return valueAsBool.HasValue ? (valueAsBool.Value ? Color.Green : Color.Red) : Color.Gray ;
+			return valueAsBool.HasValue ? (valueAsBool.Value ? Color.Green : Color.Red) : Color.Gray;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

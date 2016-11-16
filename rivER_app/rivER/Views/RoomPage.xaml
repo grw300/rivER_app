@@ -44,7 +44,7 @@
 				<Label
 					Grid.Row="0"
 					Grid.Column="1"
-					Text="{Binding CurrentRoom.RoomNumber}"
+					Text="{Binding RoomNumber}"
 					Margin="10"
 					FontSize="50"
 					Style="{DynamicResource TitleStyle}"
@@ -66,7 +66,7 @@
 					Grid.Column="2"
 					HorizontalOptions="Fill"
 					VerticalOptions="Fill"
-					Color="{Binding CurrentRoom.BedVacant, Converter={StaticResource bedVacantToColorConverter}}" />
+					Color="{Binding BedVacant, Converter={StaticResource bedVacantToColorConverter}}" />
 				<ListView
 					Grid.Row="0"
 					Grid.Column="3"
@@ -76,7 +76,7 @@
 					RowHeight="20"
 					SeparatorVisibility="None"
 					ItemTapped="HandleItemTapped"
-					ItemsSource="{Binding CurrentRoom.Flags, Converter={StaticResource flagsToColorsConverter}}">
+					ItemsSource="{Binding Flags, Converter={StaticResource flagsToColorsConverter}}">
 					<ListView.ItemTemplate>
 						<DataTemplate>
 							<ViewCell

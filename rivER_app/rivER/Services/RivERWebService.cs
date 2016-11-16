@@ -29,7 +29,7 @@ namespace rivER
             return (bool)token.SelectToken("BedVacant");
         }
 
-        public async Task<bool> GetRoomReadFlags(int roomNumber)
+        public async Task<Flags> GetRoomReadFlags(int roomNumber)
         {
             string[] urlStringParams = {
                 Helpers.Settings.ServerAddress,
@@ -37,8 +37,7 @@ namespace rivER
                 string.Format("GetRoom?Room={0}&Command=ReadFlags",  roomNumber)};
             string urlString = string.Format(RIVER_WEBSERVICE_URL_FORMAT, urlStringParams);
 
-            var token = await GetAsync(urlString);
-            return (bool)token.SelectToken("Flags");
+            return await GetAsync<Flags>(urlString);
         }
 
         public async Task<Room> GetRoomReadRoom(int roomNumber)
@@ -57,17 +56,18 @@ namespace rivER
             throw new NotImplementedException();
         }
 
-        public async Task<bool> PostPersonnelIntoRoom(int roomNumber, string personnelID)
-        {
-            string[] urlStringParams = {
-                Helpers.Settings.ServerAddress,
-                "RivERWebService",
-                "PostPersonnel"};
+		public async Task<bool> PostPersonnelIntoRoom(int roomNumber, string personnelID)
+		{
+			string[] urlStringParams = {
+				Helpers.Settings.ServerAddress,
+				"RivERWebService",
+				"PostPersonnel"};
 
-            string urlString = string.Format(RIVER_WEBSERVICE_URL_FORMAT, urlStringParams);
-            var postString = string.Format("Room={0}&Data={1}&Command=IntoRoom",
-                                           roomNumber,
-                                           JsonConvert.SerializeObject(personnelID));
+			string urlString = string.Format(RIVER_WEBSERVICE_URL_FORMAT, urlStringParams);
+			var room = new { Room = roomNumber };
+			var postString = string.Format("UID={0}&Data={1}&Command=IntoRoom",
+                                           personnelID,
+                                           JsonConvert.SerializeObject(room));
 
             return await PostAsync(urlString, postString);
         }
@@ -80,9 +80,10 @@ namespace rivER
                 "PostPersonnel"};
 
             string urlString = string.Format(RIVER_WEBSERVICE_URL_FORMAT, urlStringParams);
-            var postString = string.Format("Room={0}&Data={1}&Command=OutOfRoom",
-                                           roomNumber,
-                                           JsonConvert.SerializeObject(personnelID));
+			var room = new { Room = roomNumber };
+            var postString = string.Format("UID={0}&Data={1}&Command=OutOfRoom",
+                                           personnelID,
+                                           JsonConvert.SerializeObject(room));
 
             return await PostAsync(urlString, postString);
         }
@@ -96,7 +97,7 @@ namespace rivER
                     var t = await response.Content.ReadAsStringAsync();
                     return JObject.Parse(t);
                 }
-                throw new HttpRequestException("GET went wrong");
+                throw new HttpRequestException(string.Format("GET went wrong: {0}", urlString));
             }
         }
 
@@ -109,23 +110,25 @@ namespace rivER
                     var t = await response.Content.ReadAsStringAsync();
                     return JsonConvert.DeserializeObject<T>(t);
                 }
-                throw new HttpRequestException("GET went wrong");
+				throw new HttpRequestException(string.Format("GET went wrong: {0}", urlString));
             }
+			//return (T)new object();
         }
 
         async Task<bool> PostAsync(string urlString, string postString)
         {
             var postContent = new StringContent(postString, Encoding.UTF8, "application/x-www-form-urlencoded");
 
-            using (HttpResponseMessage response = await RivERWebService.Client.PostAsync(urlString, postContent))
+			using (HttpResponseMessage response = RivERWebService.Client.PostAsync(urlString, postContent).Result)
             {
                 if (response.IsSuccessStatusCode)
                 {
                     await response.Content.ReadAsStringAsync();
                     return true;
                 }
-                throw new HttpRequestException("POST went wrong");
+				//throw new HttpRequestException(string.Format("POST went wrong: {0} {1}", urlString, postString));
             }
+			return false;
         }
     }
 }
