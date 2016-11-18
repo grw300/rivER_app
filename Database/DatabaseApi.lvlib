@@ -14,6 +14,7 @@
 			<Item Name="UpdateRequestTime.vi" Type="VI" URL="../API/Request/UpdateRequestTime.vi"/>
 		</Item>
 		<Item Name="Room" Type="Folder">
+			<Item Name="FilterRoomEvents.vi" Type="VI" URL="../API/Room/FilterRoomEvents.vi"/>
 			<Item Name="InsertNewRoomEvent.vi" Type="VI" URL="../API/Room/InsertNewRoomEvent.vi"/>
 			<Item Name="ReadRoomEvents.vi" Type="VI" URL="../API/Room/ReadRoomEvents.vi"/>
 		</Item>
@@ -28,6 +29,8 @@
 			<Item Name="UpdateRequestRaw.vi" Type="VI" URL="../Helpers/Request/UpdateRequestRaw.vi"/>
 		</Item>
 		<Item Name="Room" Type="Folder">
+			<Item Name="BuildRoomFilter.vi" Type="VI" URL="../Helpers/Room/BuildRoomFilter.vi"/>
+			<Item Name="ClusterToFlags.vi" Type="VI" URL="../Helpers/Room/ClusterToFlags.vi"/>
 			<Item Name="CreateRoomTable.vi" Type="VI" URL="../Helpers/Room/CreateRoomTable.vi"/>
 			<Item Name="DbRoomClusterToRoom.vi" Type="VI" URL="../Helpers/Room/DbRoomClusterToRoom.vi"/>
 			<Item Name="DeleteRoomRow.vi" Type="VI" URL="../Helpers/Room/DeleteRoomRow.vi"/>
@@ -45,9 +48,11 @@
 			<Item Name="RequestsTableDbTableName.ctl" Type="VI" URL="../TypeDef/Request/RequestsTableDbTableName.ctl"/>
 		</Item>
 		<Item Name="Room" Type="Folder">
+			<Item Name="RoomFilter.ctl" Type="VI" URL="../TypeDef/Room/RoomFilter.ctl"/>
 			<Item Name="RoomTableCluster.ctl" Type="VI" URL="../TypeDef/Room/RoomTableCluster.ctl"/>
 			<Item Name="RoomTableColumnNames.ctl" Type="VI" URL="../TypeDef/Room/RoomTableColumnNames.ctl"/>
 			<Item Name="RoomTableDbTableName.ctl" Type="VI" URL="../TypeDef/Room/RoomTableDbTableName.ctl"/>
+			<Item Name="RoomTableFilterRing.ctl" Type="VI" URL="../TypeDef/Room/RoomTableFilterRing.ctl"/>
 		</Item>
 	</Item>
 </Library>
