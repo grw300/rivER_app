@@ -64,7 +64,6 @@
 				<Item Name="subDisplayMessage.vi" Type="VI" URL="/&lt;vilib&gt;/express/express output/DisplayMessageBlock.llb/subDisplayMessage.vi"/>
 			</Item>
 			<Item Name="SelectedRoom.ctl" Type="VI" URL="../../NurseStation/TypeDef/SelectedRoom.ctl"/>
-			<Item Name="RequestType.ctl" Type="VI" URL="../../LVClasses/Request/RequestType.ctl"/>
 			<Item Name="StringToTimeStamp.vi" Type="VI" URL="../../LVClasses/Request/StringToTimeStamp.vi"/>
 			<Item Name="TimeStampToString.vi" Type="VI" URL="../../LVClasses/Request/TimeStampToString.vi"/>
 		</Item>

@@ -9,10 +9,8 @@
 			<Item Name="FilterRequests.vi" Type="VI" URL="../API/Request/FilterRequests.vi"/>
 			<Item Name="InsertNewRequest.vi" Type="VI" URL="../API/Request/InsertNewRequest.vi"/>
 			<Item Name="ReadRequests.vi" Type="VI" URL="../API/Request/ReadRequests.vi"/>
-			<Item Name="UpdateRequestDescription.vi" Type="VI" URL="../API/Request/UpdateRequestDescription.vi"/>
+			<Item Name="UpdateRequestAlarm.vi" Type="VI" URL="../API/Request/UpdateRequestAlarm.vi"/>
 			<Item Name="UpdateRequestName.vi" Type="VI" URL="../API/Request/UpdateRequestName.vi"/>
-			<Item Name="UpdateRequestPersonnel.vi" Type="VI" URL="../API/Request/UpdateRequestPersonnel.vi"/>
-			<Item Name="UpdateRequestRaw.vi" Type="VI" URL="../API/Request/UpdateRequestRaw.vi"/>
 			<Item Name="UpdateRequestTime.vi" Type="VI" URL="../API/Request/UpdateRequestTime.vi"/>
 		</Item>
 		<Item Name="Room" Type="Folder">
@@ -27,6 +25,7 @@
 			<Item Name="CreateRequestTable.vi" Type="VI" URL="../Helpers/Request/CreateRequestTable.vi"/>
 			<Item Name="DeleteRequestRow.vi" Type="VI" URL="../Helpers/Request/DeleteRequestRow.vi"/>
 			<Item Name="DeleteRequestTable.vi" Type="VI" URL="../Helpers/Request/DeleteRequestTable.vi"/>
+			<Item Name="UpdateRequestRaw.vi" Type="VI" URL="../Helpers/Request/UpdateRequestRaw.vi"/>
 		</Item>
 		<Item Name="Room" Type="Folder">
 			<Item Name="CreateRoomTable.vi" Type="VI" URL="../Helpers/Room/CreateRoomTable.vi"/>
@@ -44,7 +43,6 @@
 			<Item Name="RequestsTableColumnNames.ctl" Type="VI" URL="../TypeDef/Request/RequestsTableColumnNames.ctl"/>
 			<Item Name="RequestsTableColumnNamesRing.ctl" Type="VI" URL="../TypeDef/Request/RequestsTableColumnNamesRing.ctl"/>
 			<Item Name="RequestsTableDbTableName.ctl" Type="VI" URL="../TypeDef/Request/RequestsTableDbTableName.ctl"/>
-			<Item Name="RequestTableCluster.ctl" Type="VI" URL="../TypeDef/Request/RequestTableCluster.ctl"/>
 		</Item>
 		<Item Name="Room" Type="Folder">
 			<Item Name="RoomTableCluster.ctl" Type="VI" URL="../TypeDef/Room/RoomTableCluster.ctl"/>
