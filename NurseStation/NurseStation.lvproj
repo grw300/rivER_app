@@ -16,6 +16,7 @@
 			<Item Name="Room.lvclass" Type="LVClass" URL="../../LVClasses/Room/Room.lvclass"/>
 		</Item>
 		<Item Name="Helpers" Type="Folder">
+			<Item Name="Add New Request.vi" Type="VI" URL="../Helpers/Add New Request.vi"/>
 			<Item Name="Add Request To Server.vi" Type="VI" URL="../Helpers/Add Request To Server.vi"/>
 			<Item Name="BundleFlagRoomNumber.vi" Type="VI" URL="../Helpers/BundleFlagRoomNumber.vi"/>
 			<Item Name="CreateEvents.vi" Type="VI" URL="../Helpers/CreateEvents.vi"/>
@@ -31,7 +32,6 @@
 			<Item Name="EventsReference.ctl" Type="VI" URL="../TypeDef/EventsReference.ctl"/>
 			<Item Name="Flags_RoomNumber.ctl" Type="VI" URL="../TypeDef/Flags_RoomNumber.ctl"/>
 			<Item Name="RoomSelFromMap.ctl" Type="VI" URL="../TypeDef/RoomSelFromMap.ctl"/>
-			<Item Name="SelectedRoom.ctl" Type="VI" URL="../TypeDef/SelectedRoom.ctl"/>
 			<Item Name="State Cluster.ctl" Type="VI" URL="../TypeDef/State Cluster.ctl"/>
 		</Item>
 		<Item Name="DatabaseApi.lvlib" Type="Library" URL="../../Database/DatabaseApi.lvlib"/>
@@ -87,10 +87,7 @@
 				<Item Name="VariantType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/VariantDataType/VariantType.lvlib"/>
 				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
 			</Item>
-			<Item Name="FGVAction.ctl" Type="VI" URL="../../LVRestAPI/TypeDef/FGVAction.ctl"/>
 			<Item Name="Request.lvclass" Type="LVClass" URL="../../LVClasses/Request/Request.lvclass"/>
-			<Item Name="StringToTimeStamp.vi" Type="VI" URL="../../LVClasses/Request/StringToTimeStamp.vi"/>
-			<Item Name="TimeStampToString.vi" Type="VI" URL="../../LVClasses/Request/TimeStampToString.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
