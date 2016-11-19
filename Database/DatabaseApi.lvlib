@@ -5,6 +5,9 @@
 	<Property Name="NI.Lib.Version" Type="Str">1.0.0.0</Property>
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">false</Property>
 	<Item Name="API" Type="Folder">
+		<Item Name="Reports" Type="Folder">
+			<Item Name="GetAvgFulfillmentTime.vi" Type="VI" URL="../API/Reports/GetAvgFulfillmentTime.vi"/>
+		</Item>
 		<Item Name="Request" Type="Folder">
 			<Item Name="FilterRequests.vi" Type="VI" URL="../API/Request/FilterRequests.vi"/>
 			<Item Name="InsertNewRequest.vi" Type="VI" URL="../API/Request/InsertNewRequest.vi"/>
