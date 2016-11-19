@@ -8,6 +8,7 @@
 
 </Property>
 	<Item Name="TypeDef" Type="Folder">
+		<Item Name="FGVAction.ctl" Type="VI" URL="../TypeDef/FGVAction.ctl"/>
 		<Item Name="GetRoomCommands.ctl" Type="VI" URL="../TypeDef/GetRoomCommands.ctl"/>
 		<Item Name="PostRoomCommands.ctl" Type="VI" URL="../TypeDef/PostRoomCommands.ctl"/>
 	</Item>

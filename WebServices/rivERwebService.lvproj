@@ -43,8 +43,6 @@
 			<Item Name="RoomRequestsJasonToArray.vi" Type="VI" URL="../Helpers/RoomRequestsJasonToArray.vi"/>
 			<Item Name="RequestJsonToString.vi" Type="VI" URL="../Helpers/RequestJsonToString.vi"/>
 			<Item Name="RequestsJasonToArray.vi" Type="VI" URL="../Helpers/RequestsJasonToArray.vi"/>
-			<Item Name="StringToTimeStamp.vi" Type="VI" URL="../../LVClasses/Request/StringToTimeStamp.vi"/>
-			<Item Name="TimeStampToString.vi" Type="VI" URL="../../LVClasses/Request/TimeStampToString.vi"/>
 			<Item Name="RequestsJasonToRequestObjectArray.vi" Type="VI" URL="../Helpers/RequestsJasonToRequestObjectArray.vi"/>
 			<Item Name="NameJSONtoPersonnelJSON.vi" Type="VI" URL="../Helpers/NameJSONtoPersonnelJSON.vi"/>
 		</Item>
@@ -130,6 +128,11 @@
 						<Property Name="utf.vector.test.bind" Type="Str">79343F3E-58BD-33F8-55DE-CE8D3C515E5B</Property>
 					</Item>
 					<Item Name="TestRFGVComplete.vi" Type="VI" URL="../Test/TestRFGVComplete.vi"/>
+					<Item Name="TestRFGVCheckAlarm.lvtest" Type="TestItem" URL="../Test/TestRFGVCheckAlarm.lvtest">
+						<Property Name="utf.test.bind" Type="Str">TestRFGVCheckAlarm.vi</Property>
+						<Property Name="utf.vector.test.bind" Type="Str">711C65F1-C2D9-CF3F-19A7-464BF6D83A0B</Property>
+					</Item>
+					<Item Name="TestRFGVCheckAlarm.vi" Type="VI" URL="../Test/TestRFGVCheckAlarm.vi"/>
 				</Item>
 			</Item>
 			<Item Name="RoomRestApi.lvlib" Type="Library" URL="../../LVRestAPI/RoomRestApi.lvlib"/>
@@ -236,6 +239,10 @@
 				</Item>
 			</Item>
 		</Item>
+		<Item Name="RequestHandlerCommands.ctl" Type="VI" URL="../TypeDef/RequestHandlerCommands.ctl"/>
+		<Item Name="RequestHandlerQueueCluster.ctl" Type="VI" URL="../TypeDef/RequestHandlerQueueCluster.ctl"/>
+		<Item Name="SendCommnad.vi" Type="VI" URL="../Helpers/SendCommnad.vi"/>
+		<Item Name="CheckAlarms.vi" Type="VI" URL="../Helpers/CheckAlarms.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
@@ -251,8 +258,6 @@
 			<Item Name="ws_runtime.dll" Type="Document" URL="ws_runtime.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="SelectedRoom.ctl" Type="VI" URL="../../NurseStation/TypeDef/SelectedRoom.ctl"/>
-			<Item Name="FGVAction.ctl" Type="VI" URL="../../LVRestAPI/TypeDef/FGVAction.ctl"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
