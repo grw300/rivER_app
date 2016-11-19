@@ -4,6 +4,7 @@
 	<Property Name="NI.Lib.SourceVersion" Type="Int">352354304</Property>
 	<Property Name="NI.Lib.Version" Type="Str">1.0.0.0</Property>
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">false</Property>
+	<Item Name="AckRequest.vi" Type="VI" URL="../Personnel/AckRequest.vi"/>
 	<Item Name="GetPersonnel.vi" Type="VI" URL="../Personnel/GetPersonnel.vi"/>
 	<Item Name="GetPersonnelCommands.ctl" Type="VI" URL="../TypeDef/GetPersonnelCommands.ctl"/>
 	<Item Name="IntoRoom.vi" Type="VI" URL="../Personnel/IntoRoom.vi"/>
