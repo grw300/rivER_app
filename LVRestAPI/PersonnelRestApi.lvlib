@@ -12,4 +12,5 @@
 	<Item Name="PostPersonnel.vi" Type="VI" URL="../Personnel/PostPersonnel.vi"/>
 	<Item Name="PostPersonnelCommands.ctl" Type="VI" URL="../TypeDef/PostPersonnelCommands.ctl"/>
 	<Item Name="ReadPersonnel.vi" Type="VI" URL="../Personnel/ReadPersonnel.vi"/>
+	<Item Name="ReadPUIDs.vi" Type="VI" URL="../Personnel/ReadPUIDs.vi"/>
 </Library>
