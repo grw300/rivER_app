@@ -150,6 +150,7 @@
 			<Item Name="RequestFGV.vi" Type="VI" URL="../FGV/RequestFGV.vi"/>
 			<Item Name="PersonnelFGV.vi" Type="VI" URL="../FGV/PersonnelFGV.vi"/>
 		</Item>
+		<Item Name="DatabaseApi.lvlib" Type="Library" URL="../../Database/DatabaseApi.lvlib"/>
 		<Item Name="RivERWebService" Type="Web Service">
 			<Property Name="Bld_buildSpecName" Type="Str"></Property>
 			<Property Name="Bld_version.build" Type="Int">32</Property>
@@ -266,7 +267,6 @@
 				</Item>
 			</Item>
 		</Item>
-		<Item Name="DatabaseApi.lvlib" Type="Library" URL="../../Database/DatabaseApi.lvlib"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
