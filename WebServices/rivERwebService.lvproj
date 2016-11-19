@@ -22,6 +22,7 @@
 			<Item Name="PersonnelAndTime.ctl" Type="VI" URL="../TypeDef/PersonnelAndTime.ctl"/>
 			<Item Name="RequestHandlerCommands.ctl" Type="VI" URL="../TypeDef/RequestHandlerCommands.ctl"/>
 			<Item Name="RequestHandlerQueueCluster.ctl" Type="VI" URL="../TypeDef/RequestHandlerQueueCluster.ctl"/>
+			<Item Name="Limits.ctl" Type="VI" URL="../TypeDef/Limits.ctl"/>
 		</Item>
 		<Item Name="Classes" Type="Folder">
 			<Item Name="Flags.lvclass" Type="LVClass" URL="../../LVClasses/Flags/Flags.lvclass"/>
