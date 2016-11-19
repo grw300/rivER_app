@@ -11,5 +11,7 @@
 	<Item Name="OutOfRoom.vi" Type="VI" URL="../Personnel/OutOfRoom.vi"/>
 	<Item Name="PostPersonnel.vi" Type="VI" URL="../Personnel/PostPersonnel.vi"/>
 	<Item Name="PostPersonnelCommands.ctl" Type="VI" URL="../TypeDef/PostPersonnelCommands.ctl"/>
+	<Item Name="ReadAllPersonnel.vi" Type="VI" URL="../Personnel/ReadAllPersonnel.vi"/>
 	<Item Name="ReadPersonnel.vi" Type="VI" URL="../Personnel/ReadPersonnel.vi"/>
+	<Item Name="ReadPUIDs.vi" Type="VI" URL="../Personnel/ReadPUIDs.vi"/>
 </Library>
