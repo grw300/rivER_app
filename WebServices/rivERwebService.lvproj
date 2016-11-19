@@ -130,7 +130,6 @@
 						<Property Name="utf.vector.test.bind" Type="Str">79343F3E-58BD-33F8-55DE-CE8D3C515E5B</Property>
 					</Item>
 					<Item Name="TestRFGVComplete.vi" Type="VI" URL="../Test/TestRFGVComplete.vi"/>
-					<Item Name="TestTimetoString.vi" Type="VI" URL="../../../../LVClasses/Request/TestTimetoString.vi"/>
 				</Item>
 			</Item>
 			<Item Name="RoomRestApi.lvlib" Type="Library" URL="../../LVRestAPI/RoomRestApi.lvlib"/>
@@ -253,13 +252,6 @@
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
 			<Item Name="SelectedRoom.ctl" Type="VI" URL="../../NurseStation/TypeDef/SelectedRoom.ctl"/>
-			<Item Name="Request.ctl" Type="VI" URL="../../../../LVClasses/Request/Request.lvclass/Request.ctl"/>
-			<Item Name="Read Summary.vi" Type="VI" URL="../../../../LVClasses/Request/Read Summary.vi"/>
-			<Item Name="FromJSON.vi" Type="VI" URL="../../../../LVClasses/Request/FromJSON.vi"/>
-			<Item Name="PersonnelType.ctl" Type="VI" URL="../../../../LVClasses/Request/PersonnelType.ctl"/>
-			<Item Name="ToJson.vi" Type="VI" URL="../../../../LVClasses/Request/ToJson.vi"/>
-			<Item Name="Create Request.vi" Type="VI" URL="../../../../LVClasses/Request/Create Request.vi"/>
-			<Item Name="JsonCluster.ctl" Type="VI" URL="../../../../LVClasses/Request/JsonCluster.ctl"/>
 			<Item Name="FGVAction.ctl" Type="VI" URL="../../LVRestAPI/TypeDef/FGVAction.ctl"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
