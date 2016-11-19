@@ -17,7 +17,6 @@
 			<Item Name="RoomsActionEnum.ctl" Type="VI" URL="../TypeDef/RoomsActionEnum.ctl"/>
 			<Item Name="RequestActionEnum.ctl" Type="VI" URL="../TypeDef/RequestActionEnum.ctl"/>
 			<Item Name="PersonnelActions.ctl" Type="VI" URL="../TypeDef/PersonnelActions.ctl"/>
-			<Item Name="FGVAction.ctl" Type="VI" URL="../../../../LVRestAPI/TypeDef/FGVAction.ctl"/>
 			<Item Name="BedStateCluster.ctl" Type="VI" URL="../TypeDef/BedStateCluster.ctl"/>
 			<Item Name="PersonnelState.ctl" Type="VI" URL="../TypeDef/PersonnelState.ctl"/>
 			<Item Name="PersonnelAndTime.ctl" Type="VI" URL="../TypeDef/PersonnelAndTime.ctl"/>
@@ -32,9 +31,9 @@
 			<Item Name="FindRequestBySummary.vi" Type="VI" URL="../Helpers/FindRequestBySummary.vi"/>
 			<Item Name="GetBedStatus.vi" Type="VI" URL="../Helpers/GetBedStatus.vi"/>
 			<Item Name="RoomNumbertoIndex.vi" Type="VI" URL="../Helpers/RoomNumbertoIndex.vi"/>
-			<Item Name="RoomBeaconToIndex.vi" Type="VI" URL="../../../../LVClasses/Room/RoomBeaconToIndex.vi"/>
+			<Item Name="RoomBeaconToIndex.vi" Type="VI" URL="../../LVClasses/Room/RoomBeaconToIndex.vi"/>
 			<Item Name="RoomsFGVLocalErrorH.vi" Type="VI" URL="../../LVRestAPI/RoomsFGVLocalErrorH.vi"/>
-			<Item Name="GedBedsStatus.vi" Type="VI" URL="../../../../NurseStation/Helpers/GedBedsStatus.vi"/>
+			<Item Name="GedBedsStatus.vi" Type="VI" URL="../../NurseStation/Helpers/GedBedsStatus.vi"/>
 			<Item Name="PersonnelUIDtoIndex.vi" Type="VI" URL="../Helpers/PersonnelUIDtoIndex.vi"/>
 			<Item Name="PDUsJasonToArray.vi" Type="VI" URL="../Helpers/PDUsJasonToArray.vi"/>
 			<Item Name="PDUJsonToString.vi" Type="VI" URL="../Helpers/PDUJsonToString.vi"/>
@@ -257,55 +256,11 @@
 			<Item Name="Request.ctl" Type="VI" URL="../../../../LVClasses/Request/Request.lvclass/Request.ctl"/>
 			<Item Name="Read Summary.vi" Type="VI" URL="../../../../LVClasses/Request/Read Summary.vi"/>
 			<Item Name="FromJSON.vi" Type="VI" URL="../../../../LVClasses/Request/FromJSON.vi"/>
-			<Item Name="ColorFlags.ctl" Type="VI" URL="../../../../LVClasses/Flags/ColorFlags.ctl"/>
-			<Item Name="FromJson.vi" Type="VI" URL="../../../../LVClasses/Flags/FromJson.vi"/>
-			<Item Name="StateToColor.vi" Type="VI" URL="../../../../LVClasses/Flags/StateToColor.vi"/>
-			<Item Name="FromJson.vi" Type="VI" URL="../../../../LVClasses/Room/FromJson.vi"/>
-			<Item Name="RoomStateToUI.vi" Type="VI" URL="../../../../LVClasses/Room/RoomStateToUI.vi"/>
 			<Item Name="PersonnelType.ctl" Type="VI" URL="../../../../LVClasses/Request/PersonnelType.ctl"/>
 			<Item Name="ToJson.vi" Type="VI" URL="../../../../LVClasses/Request/ToJson.vi"/>
 			<Item Name="Create Request.vi" Type="VI" URL="../../../../LVClasses/Request/Create Request.vi"/>
-			<Item Name="RestURLFGV.vi" Type="VI" URL="../../../../LVRestAPI/RestURLFGV.vi"/>
-			<Item Name="ReadPersonnel.vi" Type="VI" URL="../../../../LVRestAPI/Personnel/ReadPersonnel.vi"/>
-			<Item Name="IntoRoom.vi" Type="VI" URL="../../../../LVRestAPI/Personnel/IntoRoom.vi"/>
-			<Item Name="OutOfRoom.vi" Type="VI" URL="../../../../LVRestAPI/Personnel/OutOfRoom.vi"/>
-			<Item Name="RequestType.ctl" Type="VI" URL="../../../../LVClasses/Request/RequestType.ctl"/>
-			<Item Name="ReadFlag.vi" Type="VI" URL="../../../../LVRestAPI/ReadFlag.vi"/>
-			<Item Name="UpdateFlagState.vi" Type="VI" URL="../../../../LVRestAPI/UpdateFlagState.vi"/>
-			<Item Name="AddRequest.vi" Type="VI" URL="../../../../LVRestAPI/Room/AddRequest.vi"/>
-			<Item Name="RemoveRequest.vi" Type="VI" URL="../../../../LVRestAPI/RemoveRequest.vi"/>
-			<Item Name="Room.lvclass" Type="LVClass" URL="../../../../LVClasses/Room/Room.lvclass"/>
-			<Item Name="Request.lvclass" Type="LVClass" URL="../../../../LVClasses/Request/Request.lvclass"/>
-			<Item Name="SelectedRoom.ctl" Type="VI" URL="../../../../NurseStation/TypeDef/SelectedRoom.ctl"/>
-			<Item Name="FGVAction.ctl" Type="VI" URL="../../LVRestAPI/TypeDef/FGVAction.ctl"/>
-			<Item Name="JsonCluster.ctl" Type="VI" URL="../../../../LVClasses/Personnel/JsonCluster.ctl"/>
 			<Item Name="JsonCluster.ctl" Type="VI" URL="../../../../LVClasses/Request/JsonCluster.ctl"/>
-			<Item Name="Read AckName.vi" Type="VI" URL="../../../../LVClasses/Request/Read AckName.vi"/>
-			<Item Name="Read AckTime.vi" Type="VI" URL="../../../../LVClasses/Request/Read AckTime.vi"/>
-			<Item Name="TimeStampToString.vi" Type="VI" URL="../../../../LVClasses/Request/TimeStampToString.vi"/>
-			<Item Name="Read RequestID.vi" Type="VI" URL="../../../../LVClasses/Request/Read RequestID.vi"/>
-			<Item Name="Write AckName.vi" Type="VI" URL="../../../../LVClasses/Request/Write AckName.vi"/>
-			<Item Name="Write AckTime.vi" Type="VI" URL="../../../../LVClasses/Request/Write AckTime.vi"/>
-			<Item Name="Write FulfilledName.vi" Type="VI" URL="../../../../LVClasses/Request/Write FulfilledName.vi"/>
-			<Item Name="Write FulfilledTime.vi" Type="VI" URL="../../../../LVClasses/Request/Write FulfilledTime.vi"/>
-			<Item Name="Read FulfilledName.vi" Type="VI" URL="../../../../LVClasses/Request/Read FulfilledName.vi"/>
-			<Item Name="Read FulfilledTime.vi" Type="VI" URL="../../../../LVClasses/Request/Read FulfilledTime.vi"/>
-			<Item Name="Room.ctl" Type="VI" URL="../../../../LVClasses/Room/Room.lvclass/Room.ctl"/>
-			<Item Name="Read Flags.lvclass.vi" Type="VI" URL="../../../../LVClasses/Room/Read Flags.lvclass.vi"/>
-			<Item Name="Flags.lvclass" Type="LVClass" URL="../../../../LVClasses/Flags/Flags.lvclass"/>
-			<Item Name="Personnel.lvclass" Type="LVClass" URL="../../../../LVClasses/Personnel/Personnel.lvclass"/>
-			<Item Name="Personnel.ctl" Type="VI" URL="../../../../LVClasses/Personnel/Personnel.lvclass/Personnel.ctl"/>
-			<Item Name="Read UniqueID.vi" Type="VI" URL="../../../../LVClasses/Personnel/Read UniqueID.vi"/>
-			<Item Name="PersonnelType.ctl" Type="VI" URL="../../../../LVClasses/Personnel/PersonnelType.ctl"/>
-			<Item Name="Read Name.vi" Type="VI" URL="../../../../LVClasses/Personnel/Read Name.vi"/>
-			<Item Name="Read Role.vi" Type="VI" URL="../../../../LVClasses/Personnel/Read Role.vi"/>
-			<Item Name="Read Requests.vi" Type="VI" URL="../../../../LVClasses/Personnel/Read Requests.vi"/>
-			<Item Name="Write Requests.vi" Type="VI" URL="../../../../LVClasses/Personnel/Write Requests.vi"/>
-			<Item Name="Write Name.vi" Type="VI" URL="../../../../LVClasses/Personnel/Write Name.vi"/>
-			<Item Name="Write Role.vi" Type="VI" URL="../../../../LVClasses/Personnel/Write Role.vi"/>
-			<Item Name="CreatePersonnel.vi" Type="VI" URL="../../../../LVClasses/Personnel/CreatePersonnel.vi"/>
-			<Item Name="ToJson.vi" Type="VI" URL="../../../../LVClasses/Personnel/ToJson.vi"/>
-			<Item Name="FromJson.vi" Type="VI" URL="../../../../LVClasses/Personnel/FromJson.vi"/>
+			<Item Name="FGVAction.ctl" Type="VI" URL="../../LVRestAPI/TypeDef/FGVAction.ctl"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
