@@ -17,7 +17,6 @@
 		</Item>
 		<Item Name="Helpers" Type="Folder">
 			<Item Name="Add New Request.vi" Type="VI" URL="../Helpers/Add New Request.vi"/>
-			<Item Name="Add Request To Server.vi" Type="VI" URL="../Helpers/Add Request To Server.vi"/>
 			<Item Name="BundleFlagRoomNumber.vi" Type="VI" URL="../Helpers/BundleFlagRoomNumber.vi"/>
 			<Item Name="CreateEvents.vi" Type="VI" URL="../Helpers/CreateEvents.vi"/>
 			<Item Name="Get Clicked Array Index.vi" Type="VI" URL="../Helpers/Get Clicked Array Index.vi"/>
@@ -27,6 +26,11 @@
 			<Item Name="Update Flags To Server.vi" Type="VI" URL="../Helpers/Update Flags To Server.vi"/>
 			<Item Name="Update Room From Server.vi" Type="VI" URL="../Helpers/Update Room From Server.vi"/>
 		</Item>
+		<Item Name="Libraries" Type="Folder">
+			<Item Name="DatabaseApi.lvlib" Type="Library" URL="../../Database/DatabaseApi.lvlib"/>
+			<Item Name="PersonnelRestApi.lvlib" Type="Library" URL="../../LVRestAPI/PersonnelRestApi.lvlib"/>
+			<Item Name="RoomRestApi.lvlib" Type="Library" URL="../../LVRestAPI/RoomRestApi.lvlib"/>
+		</Item>
 		<Item Name="Tests" Type="Folder"/>
 		<Item Name="TypeDef" Type="Folder">
 			<Item Name="EventsReference.ctl" Type="VI" URL="../TypeDef/EventsReference.ctl"/>
@@ -34,9 +38,7 @@
 			<Item Name="RoomSelFromMap.ctl" Type="VI" URL="../TypeDef/RoomSelFromMap.ctl"/>
 			<Item Name="State Cluster.ctl" Type="VI" URL="../TypeDef/State Cluster.ctl"/>
 		</Item>
-		<Item Name="DatabaseApi.lvlib" Type="Library" URL="../../Database/DatabaseApi.lvlib"/>
 		<Item Name="NurseStationMain.vi" Type="VI" URL="../NurseStationMain.vi"/>
-		<Item Name="RoomRestApi.lvlib" Type="Library" URL="../../LVRestAPI/RoomRestApi.lvlib"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="BuildHelpPath.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/BuildHelpPath.vi"/>
