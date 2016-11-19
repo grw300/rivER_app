@@ -243,6 +243,7 @@
 		<Item Name="RequestHandlerQueueCluster.ctl" Type="VI" URL="../TypeDef/RequestHandlerQueueCluster.ctl"/>
 		<Item Name="SendCommnad.vi" Type="VI" URL="../Helpers/SendCommnad.vi"/>
 		<Item Name="CheckAlarms.vi" Type="VI" URL="../Helpers/CheckAlarms.vi"/>
+		<Item Name="AsignRequestToPersonnel.vi" Type="VI" URL="../Test/AsignRequestToPersonnel.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
