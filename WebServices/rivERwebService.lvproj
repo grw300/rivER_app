@@ -22,6 +22,7 @@
 			<Item Name="PersonnelAndTime.ctl" Type="VI" URL="../TypeDef/PersonnelAndTime.ctl"/>
 			<Item Name="RequestHandlerCommands.ctl" Type="VI" URL="../TypeDef/RequestHandlerCommands.ctl"/>
 			<Item Name="RequestHandlerQueueCluster.ctl" Type="VI" URL="../TypeDef/RequestHandlerQueueCluster.ctl"/>
+			<Item Name="Limits.ctl" Type="VI" URL="../TypeDef/Limits.ctl"/>
 		</Item>
 		<Item Name="Classes" Type="Folder">
 			<Item Name="Flags.lvclass" Type="LVClass" URL="../../LVClasses/Flags/Flags.lvclass"/>
@@ -50,6 +51,7 @@
 			<Item Name="SendCommand.vi" Type="VI" URL="../Helpers/SendCommand.vi"/>
 			<Item Name="CheckAlarms.vi" Type="VI" URL="../Helpers/CheckAlarms.vi"/>
 			<Item Name="AsignRequestToPersonnel.vi" Type="VI" URL="../Test/AsignRequestToPersonnel.vi"/>
+			<Item Name="RefreshRequestSummaryinRoom.vi" Type="VI" URL="../Helpers/RefreshRequestSummaryinRoom.vi"/>
 		</Item>
 		<Item Name="Tests" Type="Folder">
 			<Item Name="FGV" Type="Folder">
@@ -267,6 +269,7 @@
 				</Item>
 			</Item>
 		</Item>
+		<Item Name="RefreshRequestSummaryinPersonnal.vi" Type="VI" URL="../Helpers/RefreshRequestSummaryinPersonnal.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
