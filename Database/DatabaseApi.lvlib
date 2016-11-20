@@ -7,6 +7,9 @@
 	<Item Name="API" Type="Folder">
 		<Item Name="Reports" Type="Folder">
 			<Item Name="GetAvgFulfillmentTime.vi" Type="VI" URL="../API/Reports/GetAvgFulfillmentTime.vi"/>
+			<Item Name="GetAvgPatientStayTimeMultipleRooms.vi" Type="VI" URL="../API/Reports/GetAvgPatientStayTimeMultipleRooms.vi"/>
+			<Item Name="GetAvgPatientStayTimeSingleRoom.vi" Type="VI" URL="../API/Reports/GetAvgPatientStayTimeSingleRoom.vi"/>
+			<Item Name="GetPersonAvgTime.vi" Type="VI" URL="../API/Reports/GetPersonAvgTime.vi"/>
 		</Item>
 		<Item Name="Request" Type="Folder">
 			<Item Name="FilterRequests.vi" Type="VI" URL="../API/Request/FilterRequests.vi"/>
@@ -24,6 +27,9 @@
 	</Item>
 	<Item Name="Helpers" Type="Folder">
 		<Property Name="NI.LibItem.Scope" Type="Int">2</Property>
+		<Item Name="Reports" Type="Folder">
+			<Item Name="FlagIsOn.vi" Type="VI" URL="../Helpers/Reports/FlagIsOn.vi"/>
+		</Item>
 		<Item Name="Request" Type="Folder">
 			<Item Name="BuildRequestFilter.vi" Type="VI" URL="../Helpers/Request/BuildRequestFilter.vi"/>
 			<Item Name="CreateRequestTable.vi" Type="VI" URL="../Helpers/Request/CreateRequestTable.vi"/>
