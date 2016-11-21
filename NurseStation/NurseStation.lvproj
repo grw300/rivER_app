@@ -17,10 +17,13 @@
 		</Item>
 		<Item Name="Helpers" Type="Folder">
 			<Item Name="Reports" Type="Folder">
+				<Item Name="GeneratePersonnelReport.vi" Type="VI" URL="../Helpers/Reports/GeneratePersonnelReport.vi"/>
+				<Item Name="GenerateRoomReport.vi" Type="VI" URL="../Helpers/Reports/GenerateRoomReport.vi"/>
 				<Item Name="GetPersonnelReportData.vi" Type="VI" URL="../Helpers/Reports/GetPersonnelReportData.vi"/>
 				<Item Name="GetRoomReportData.vi" Type="VI" URL="../Helpers/Reports/GetRoomReportData.vi"/>
 			</Item>
 			<Item Name="Add New Request.vi" Type="VI" URL="../Helpers/Add New Request.vi"/>
+			<Item Name="BuildPersonnelNameEnum.vi" Type="VI" URL="../Helpers/BuildPersonnelNameEnum.vi"/>
 			<Item Name="BundleFlagRoomNumber.vi" Type="VI" URL="../Helpers/BundleFlagRoomNumber.vi"/>
 			<Item Name="CreateEvents.vi" Type="VI" URL="../Helpers/CreateEvents.vi"/>
 			<Item Name="Get Clicked Array Index.vi" Type="VI" URL="../Helpers/Get Clicked Array Index.vi"/>
