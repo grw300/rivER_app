@@ -16,6 +16,10 @@
 			<Item Name="Room.lvclass" Type="LVClass" URL="../../LVClasses/Room/Room.lvclass"/>
 		</Item>
 		<Item Name="Helpers" Type="Folder">
+			<Item Name="Reports" Type="Folder">
+				<Item Name="GetPersonnelReportData.vi" Type="VI" URL="../Helpers/Reports/GetPersonnelReportData.vi"/>
+				<Item Name="GetRoomReportData.vi" Type="VI" URL="../Helpers/Reports/GetRoomReportData.vi"/>
+			</Item>
 			<Item Name="Add New Request.vi" Type="VI" URL="../Helpers/Add New Request.vi"/>
 			<Item Name="BundleFlagRoomNumber.vi" Type="VI" URL="../Helpers/BundleFlagRoomNumber.vi"/>
 			<Item Name="CreateEvents.vi" Type="VI" URL="../Helpers/CreateEvents.vi"/>
@@ -35,6 +39,8 @@
 		<Item Name="TypeDef" Type="Folder">
 			<Item Name="EventsReference.ctl" Type="VI" URL="../TypeDef/EventsReference.ctl"/>
 			<Item Name="Flags_RoomNumber.ctl" Type="VI" URL="../TypeDef/Flags_RoomNumber.ctl"/>
+			<Item Name="PersonnelReport.ctl" Type="VI" URL="../TypeDef/PersonnelReport.ctl"/>
+			<Item Name="RoomReport.ctl" Type="VI" URL="../TypeDef/RoomReport.ctl"/>
 			<Item Name="RoomSelFromMap.ctl" Type="VI" URL="../TypeDef/RoomSelFromMap.ctl"/>
 			<Item Name="State Cluster.ctl" Type="VI" URL="../TypeDef/State Cluster.ctl"/>
 		</Item>
