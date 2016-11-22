@@ -52,6 +52,7 @@
 			<Item Name="CheckAlarms.vi" Type="VI" URL="../Helpers/CheckAlarms.vi"/>
 			<Item Name="AsignRequestToPersonnel.vi" Type="VI" URL="../Test/AsignRequestToPersonnel.vi"/>
 			<Item Name="RefreshRequestSummaryinRoom.vi" Type="VI" URL="../Helpers/RefreshRequestSummaryinRoom.vi"/>
+			<Item Name="RefreshRequestSummaryinPersonnal.vi" Type="VI" URL="../Helpers/RefreshRequestSummaryinPersonnal.vi"/>
 		</Item>
 		<Item Name="Tests" Type="Folder">
 			<Item Name="FGV" Type="Folder">
@@ -155,7 +156,7 @@
 		<Item Name="DatabaseApi.lvlib" Type="Library" URL="../../Database/DatabaseApi.lvlib"/>
 		<Item Name="RivERWebService" Type="Web Service">
 			<Property Name="Bld_buildSpecName" Type="Str"></Property>
-			<Property Name="Bld_version.build" Type="Int">32</Property>
+			<Property Name="Bld_version.build" Type="Int">35</Property>
 			<Property Name="ws.autoIncrementVersion" Type="Bool">true</Property>
 			<Property Name="ws.disconnectInline" Type="Bool">true</Property>
 			<Property Name="ws.disconnectTypeDefs" Type="Bool">false</Property>
@@ -167,7 +168,7 @@
 			<Property Name="ws.serveDefaultDoc" Type="Bool">true</Property>
 			<Property Name="ws.SSE2" Type="Bool">true</Property>
 			<Property Name="ws.static_permissions" Type="Str"></Property>
-			<Property Name="ws.version.build" Type="Int">32</Property>
+			<Property Name="ws.version.build" Type="Int">35</Property>
 			<Property Name="ws.version.fix" Type="Int">0</Property>
 			<Property Name="ws.version.major" Type="Int">1</Property>
 			<Property Name="ws.version.minor" Type="Int">0</Property>
@@ -269,7 +270,6 @@
 				</Item>
 			</Item>
 		</Item>
-		<Item Name="RefreshRequestSummaryinPersonnal.vi" Type="VI" URL="../Helpers/RefreshRequestSummaryinPersonnal.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
