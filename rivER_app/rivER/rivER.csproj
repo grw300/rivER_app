@@ -33,7 +33,7 @@
     <EmbeddedResource Include="Views\RoomPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\PagerPage.xaml">
+    <EmbeddedResource Include="Views\PersonnelPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\TimerPage.xaml">
@@ -44,9 +44,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\Page.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\RoomViewModel.cs" />
     <Compile Include="Views\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -54,8 +52,8 @@
       <DependentUpon>RoomPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\RoomsViewModel.cs" />
-    <Compile Include="Views\PagerPage.xaml.cs">
-      <DependentUpon>PagerPage.xaml</DependentUpon>
+    <Compile Include="Views\PersonnelPage.xaml.cs">
+      <DependentUpon>PersonnelPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TimerPage.xaml.cs">
       <DependentUpon>TimerPage.xaml</DependentUpon>
@@ -65,7 +63,7 @@
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\SettingsViewModel.cs" />
-    <Compile Include="ViewModels\PagerViewModel.cs" />
+    <Compile Include="ViewModels\PersonnelViewModel.cs" />
     <Compile Include="Data\FlagColor.cs" />
     <Compile Include="Data\Flags.cs" />
     <Compile Include="Data\Room.cs" />
@@ -78,6 +76,8 @@
     <Compile Include="Services\RivERWebService.cs" />
     <Compile Include="Services\BeaconRangedEventArgs.cs" />
     <Compile Include="Services\IBeaconRangingService.cs" />
+    <Compile Include="Data\Personnel.cs" />
+    <Compile Include="Data\Request.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

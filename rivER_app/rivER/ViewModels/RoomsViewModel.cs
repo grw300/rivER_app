@@ -1,31 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Threading.Tasks;
-using System.Threading;
-using Xamarin.Forms;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System.Collections;
-using System.Linq;
-using System.Net;
-using System.Text;
 using System.Collections.ObjectModel;
+using System.Threading;
+using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace rivER
 {
-    public class RoomsViewModel : BaseViewModel
-    {
+	public class RoomsViewModel : BaseViewModel
+	{
+		Room currentRoom;
+		ObservableCollection<Room> nextRooms;
 
-        private ObservableCollection<Room> nextRooms;
+		IBeaconRangingService beaconRangingService;
+		IRivERWebService rivERWebService;
+		CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
 
-        private IRivERWebService rivERWebService;
-        private IBeaconRangingService beaconRangingService;
-        private CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
-
-		private Room currentRoom;
 		public Room CurrentRoom
 		{
 			get
@@ -37,13 +27,13 @@ namespace rivER
 				if (currentRoom != value)
 				{
 					//TODO: This is silly, there must be a better way.
-					this.Flags = value.Flags;
-					this.BedVacant = value.BedVacant;
-					this.InRoomPersonnel = value.InRoomPersonnel;
-					this.RoomRequests = value.RoomRequests;
-					this.BeaconId = value.BeaconId;
-					this.BedURL = value.BedURL;
-					this.RoomNumber = value.RoomNumber;
+					Flags = value.Flags;
+					BedVacant = value.BedVacant;
+					InRoomPersonnel = value.InRoomPersonnel;
+					RoomRequests = value.RoomRequests;
+					BeaconId = value.BeaconId;
+					BedURL = value.BedURL;
+					RoomNumber = value.RoomNumber;
 
 					currentRoom = value;
 					OnPropertyChanged("Room");
@@ -159,140 +149,133 @@ namespace rivER
 
 
 		public ObservableCollection<Room> NextRooms
-        {
-            get
-            {
-                return nextRooms;
-            }
-            set
-            {
-                if (nextRooms != value)
-                {
-                    nextRooms = value;
-                    OnPropertyChanged("NextRooms");
-                }
-            }
-        }
+		{
+			get
+			{
+				return nextRooms;
+			}
+			set
+			{
+				if (nextRooms != value)
+				{
+					nextRooms = value;
+					OnPropertyChanged("NextRooms");
+				}
+			}
+		}
 
-        public RoomsViewModel(INavigation navigation) : base(navigation)
-        {
-            rivERWebService = new RivERWebService();
-            beaconRangingService = DependencyService.Get<IBeaconRangingService>();
+		public RoomsViewModel(INavigation navigation) : base(navigation)
+		{
+			rivERWebService = new RivERWebService();
+			beaconRangingService = DependencyService.Get<IBeaconRangingService>();
 			currentRoom = new Room();
 
-            beaconRangingService.DidRangeBeacons += Beacon_DidRangeBeacons;
+			beaconRangingService.DidRangeBeacons += Beacon_DidRangeBeacons;
 
-            beaconRangingService.StartMonitoring("B9407F30-F5F8-466E-AFF9-25556B57FE6D", "ER-Rooms");
-            //beaconRangingService.StartMonitoring("487C659C-1FE2-4D2A-A289-130BBD7E534F", "ER-Rooms");
+			beaconRangingService.StartMonitoring("B9407F30-F5F8-466E-AFF9-25556B57FE6D", "ER-Rooms");
+			//beaconRangingService.StartMonitoring("487C659C-1FE2-4D2A-A289-130BBD7E534F", "ER-Rooms");
 
-        }
+		}
 
-        async Task OnBeaconDidRangeBeaconsAsync(BeaconRangedEventArgs e)
-        {
-            var roomNumber = e.beaconMinorID;
+		async Task OnBeaconDidRangeBeaconsAsync(BeaconRangedEventArgs e)
+		{
+			var newRoomNumber = e.beaconMinorID;
 
-
-
-			if (roomNumber.HasValue)
-            {
+			if (newRoomNumber.HasValue)
+			{
 				try
 				{
-					if (this.RoomNumber.HasValue)
+					if (RoomNumber.HasValue)
 					{
-						await rivERWebService.PostPersonnelOutOfRoom(this.RoomNumber.Value, Helpers.Settings.PersonnelID);
+						await rivERWebService.PostPersonnelOutOfRoom(RoomNumber.Value, Helpers.Settings.PersonnelID);
 					}
-					await rivERWebService.PostPersonnelIntoRoom(roomNumber.Value, Helpers.Settings.PersonnelID);
-					this.CurrentRoom = await rivERWebService.GetRoomReadRoom(roomNumber.Value);
+					await rivERWebService.PostPersonnelIntoRoom(newRoomNumber.Value, Helpers.Settings.PersonnelID);
+					CurrentRoom = await rivERWebService.GetRoomReadRoom(newRoomNumber.Value);
 				}
 				catch (Exception ex)
 				{
 					System.Diagnostics.Debug.WriteLine(ex.Message);
 				}
-                GetBedVacantAsync();
-                GetFlagsAsync();
-            }
-            else
-            {
-                if (this.CurrentRoom.RoomNumber.HasValue)
-                {
+				GetBedVacantAsync();
+				GetFlagsAsync();
+			}
+			else
+			{
+				if (RoomNumber.HasValue)
+				{
 					try
 					{
-						await rivERWebService.PostPersonnelOutOfRoom(this.CurrentRoom.RoomNumber.Value, Helpers.Settings.PersonnelID);
+						await rivERWebService.PostPersonnelOutOfRoom(RoomNumber.Value, Helpers.Settings.PersonnelID);
 					}
 					catch (Exception ex)
 					{
 						System.Diagnostics.Debug.WriteLine(ex.Message);
 					}
 					cancellationTokenSource.Cancel();
-                    this.CurrentRoom = new Room();
-                }
-            }
-        }
+					CurrentRoom = new Room();
+				}
+			}
+		}
 
-        async void GetBedVacantAsync()
-        {
-            var token = cancellationTokenSource.Token;
+		async void GetBedVacantAsync()
+		{
+			var token = cancellationTokenSource.Token;
 
-            try
-            {
-                await Task.Factory.StartNew(async () =>
-                {
-                    while (true)
-                    {
-                        if (this.CurrentRoom.RoomNumber.HasValue)
-                        {
-                            var bedVacant = await rivERWebService.GetRoomReadBedVacant(this.RoomNumber.Value);
-							this.BedVacant = bedVacant;
+			try
+			{
+				await Task.Factory.StartNew(async () =>
+				{
+					while (true)
+					{
+						if (RoomNumber.HasValue)
+						{
+							BedVacant = await rivERWebService.GetRoomReadBedVacant(RoomNumber.Value);
 						}
 
-                        await Task.Delay(1000);
+						await Task.Delay(1000);
 
-                        if (token.IsCancellationRequested)
-                            break;
-                    }
-                }, token, TaskCreationOptions.LongRunning, TaskScheduler.Default);
-            }
-            catch (OperationCanceledException e)
-            {
-                System.Diagnostics.Debug.WriteLine("Cancel GetBedVacantAsync ex {0}", e.Message);
-            }
-        }
+						if (token.IsCancellationRequested)
+							break;
+					}
+				}, token, TaskCreationOptions.LongRunning, TaskScheduler.Default);
+			}
+			catch (OperationCanceledException e)
+			{
+				System.Diagnostics.Debug.WriteLine("Cancel GetBedVacantAsync ex {0}", e.Message);
+			}
+		}
 
-        async void GetFlagsAsync()
-        {
-            var token = cancellationTokenSource.Token;
+		async void GetFlagsAsync()
+		{
+			var token = cancellationTokenSource.Token;
 
-            try
-            {
-                await Task.Factory.StartNew(async () =>
-                {
-                    while (true)
-                    {
-                        if (this.CurrentRoom.RoomNumber.HasValue)
-                        {
-                            var flags = await rivERWebService.GetRoomReadFlags(this.CurrentRoom.RoomNumber.Value);
-                            if (flags != this.CurrentRoom.Flags)
-                            {
-                                this.CurrentRoom.Flags = flags;
-                            }
-                        }
+			try
+			{
+				await Task.Factory.StartNew(async () =>
+				{
+					while (true)
+					{
+						if (RoomNumber.HasValue)
+						{
+							Flags = await rivERWebService.GetRoomReadFlags(RoomNumber.Value);
+						}
 
-                        await Task.Delay(1000);
+						await Task.Delay(1000);
 
-                        if (token.IsCancellationRequested)
-                            break;
-                    }
-                }, token, TaskCreationOptions.LongRunning, TaskScheduler.Default);
-            }
-            catch (OperationCanceledException e)
-            {
-                System.Diagnostics.Debug.WriteLine("Cancel GetBedVacantAsync ex {0}", e.Message);
-            }
-        }
+						if (token.IsCancellationRequested)
+							break;
+					}
+				}, token, TaskCreationOptions.LongRunning, TaskScheduler.Default);
+			}
+			catch (OperationCanceledException e)
+			{
+				System.Diagnostics.Debug.WriteLine("Cancel GetBedVacantAsync ex {0}", e.Message);
+			}
+		}
 
-        async void Beacon_DidRangeBeacons(object sender, BeaconRangedEventArgs e)
-        {
-            await OnBeaconDidRangeBeaconsAsync(e);
-        }
-    }
+		async void Beacon_DidRangeBeacons(object sender, BeaconRangedEventArgs e)
+		{
+			await OnBeaconDidRangeBeaconsAsync(e);
+		}
+	}
 }

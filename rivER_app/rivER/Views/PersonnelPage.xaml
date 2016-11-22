@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:local="clr-namespace:rivER;assembly=rivER"
+	x:Class="rivER.PersonnelPage"
+	BackgroundColor="White"
+	ControlTemplate="{StaticResource TitleTemplate}">
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<local:BedVacantToColorConverter
+				x:Key="bedVacantToColorConverter" />
+		</ResourceDictionary>
+	</ContentPage.Resources>
+	<ContentPage.Content>
+		<StackLayout
+			VerticalOptions="StartAndExpand">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition
+						Width="5" />
+					<ColumnDefinition
+						Width="*" />
+					<ColumnDefinition
+						Width="5" />
+				</Grid.ColumnDefinitions>
+				<ListView
+					Grid.Column="1"
+					x:Name="requestsListView"
+					ItemsSource="{Binding Requests}">
+					<ListView.ItemTemplate>
+						<DataTemplate>
+							<ViewCell
+								x:Name="requestViewCell">
+								<ViewCell.ContextActions>
+									<MenuItem
+										x:Name="ACK"
+										Command="{Binding Source={x:Reference requestsListView}, Path=BindingContext.Commands[AcknowledgeCommand]}"
+										CommandParameter="{Binding .}"
+										Text="Acknowledge" />
+								</ViewCell.ContextActions>
+								<Label
+									BackgroundColor="{Binding State, Converter={StaticResource bedVacantToColorConverter}}}"
+									VerticalOptions="FillAndExpand"
+									Text="{Binding Description}">
+								</Label>
+							</ViewCell>
+						</DataTemplate>
+					</ListView.ItemTemplate>
+				</ListView>
+			</Grid>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>
