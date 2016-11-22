@@ -48,6 +48,7 @@
 		</Item>
 		<Item Name="Database_String_Converter_LV86.vi" Type="VI" URL="../Helpers/Database_String_Converter_LV86.vi"/>
 		<Item Name="GetUDL_FilePath.vi" Type="VI" URL="../Helpers/GetUDL_FilePath.vi"/>
+		<Item Name="ReadAllTableData.vi" Type="VI" URL="/&lt;resource&gt;/dialog/NewProjectWizard/ReadAllTableData.vi"/>
 	</Item>
 	<Item Name="TypeDef" Type="Folder">
 		<Item Name="Request" Type="Folder">
