@@ -21,6 +21,7 @@
 				<Item Name="GenerateRoomReport.vi" Type="VI" URL="../Helpers/Reports/GenerateRoomReport.vi"/>
 				<Item Name="GetPersonnelReportData.vi" Type="VI" URL="../Helpers/Reports/GetPersonnelReportData.vi"/>
 				<Item Name="GetRoomReportData.vi" Type="VI" URL="../Helpers/Reports/GetRoomReportData.vi"/>
+				<Item Name="RoomReportDataToGraph.vi" Type="VI" URL="../Helpers/Reports/RoomReportDataToGraph.vi"/>
 			</Item>
 			<Item Name="Add New Request.vi" Type="VI" URL="../Helpers/Add New Request.vi"/>
 			<Item Name="BuildPersonnelNameEnum.vi" Type="VI" URL="../Helpers/BuildPersonnelNameEnum.vi"/>
@@ -44,6 +45,7 @@
 			<Item Name="Flags_RoomNumber.ctl" Type="VI" URL="../TypeDef/Flags_RoomNumber.ctl"/>
 			<Item Name="PersonnelReport.ctl" Type="VI" URL="../TypeDef/PersonnelReport.ctl"/>
 			<Item Name="RoomReport.ctl" Type="VI" URL="../TypeDef/RoomReport.ctl"/>
+			<Item Name="RoomReportGraphs.ctl" Type="VI" URL="../TypeDef/RoomReportGraphs.ctl"/>
 			<Item Name="RoomSelFromMap.ctl" Type="VI" URL="../TypeDef/RoomSelFromMap.ctl"/>
 			<Item Name="State Cluster.ctl" Type="VI" URL="../TypeDef/State Cluster.ctl"/>
 		</Item>
