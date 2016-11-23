@@ -9,10 +9,30 @@ namespace rivER
 		[JsonIgnore]
 		private bool? state;
 
-		public string RequestID { get; set; }
+        [JsonIgnore]
+        private bool alarm;
+
+
+        public string RequestID { get; set; }
 		public int EnlapsedTime { get; set; }
 		public string Description { get; set; }
-		public bool Alarm { get; set; }
+		public bool Alarm {
+            get
+            {
+                return alarm;
+            }
+            set
+            {
+                if (alarm != value)
+                {
+                    alarm = value;
+                }
+                if (alarm)
+                {
+                    State = false;
+                }
+            }
+        }
 
 		[JsonIgnore]
 		public bool? State

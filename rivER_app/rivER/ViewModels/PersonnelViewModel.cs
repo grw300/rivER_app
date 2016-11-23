@@ -55,6 +55,8 @@ namespace rivER
 							{
 								Requests.Add(request);
 							}
+                            Requests.Where(r => r.RequestID == request.RequestID)
+                                .Select(r => { r.Alarm = request.Alarm; return r; });
 						}
 
 						await Task.Delay(3000);

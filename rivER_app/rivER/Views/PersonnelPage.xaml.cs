@@ -14,17 +14,20 @@ namespace rivER
 			BindingContext = new PersonnelViewModel(Navigation);
 		}
 
-		//public void OnAcknowledge(object sender, EventArgs e)
-		//{
-		//	var mi = ((MenuItem)sender);
-		//	var request = (Request)mi.CommandParameter;
-		//	request.State = true;
-		//}
+        public void OnStateChange(object sender, EventArgs e)
+        {
+            var viewCell = ((ViewCell)sender);
+            var request = (Request)viewCell.BindingContext;
+            if (request.State.HasValue)
+            {
+                viewCell.ContextActions.RemoveAt(0);
+            }
+        }
 
-		//TODO: Figure out how to disable the menu item from here.
-		//void Handle_Clicked(object sender, System.EventArgs e)
-		//{
-		//	var menuItem = (MenuItem)sender;
-		//}
-	}
+        //TODO: Figure out how to disable the menu item from here.
+        //void Handle_Clicked(object sender, System.EventArgs e)
+        //{
+        //	var menuItem = (MenuItem)sender;
+        //}
+    }
 }

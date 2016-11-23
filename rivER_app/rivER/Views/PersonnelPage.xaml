@@ -8,8 +8,8 @@
 	ControlTemplate="{StaticResource TitleTemplate}">
 	<ContentPage.Resources>
 		<ResourceDictionary>
-			<local:BedVacantToColorConverter
-				x:Key="bedVacantToColorConverter" />
+			<local:StateToColorConverter
+				x:Key="stateToColorConverter" />
 		</ResourceDictionary>
 	</ContentPage.Resources>
 	<ContentPage.Content>
@@ -31,7 +31,8 @@
 					<ListView.ItemTemplate>
 						<DataTemplate>
 							<ViewCell
-								x:Name="requestViewCell">
+								x:Name="requestViewCell"
+                                BindingContextChanged="OnStateChange">
 								<ViewCell.ContextActions>
 									<MenuItem
 										x:Name="ACK"
@@ -40,7 +41,7 @@
 										Text="Acknowledge" />
 								</ViewCell.ContextActions>
 								<Label
-									BackgroundColor="{Binding State, Converter={StaticResource bedVacantToColorConverter}}}"
+									BackgroundColor="{Binding State, Converter={StaticResource stateToColorConverter}}}"
 									VerticalOptions="FillAndExpand"
 									Text="{Binding Description}">
 								</Label>
