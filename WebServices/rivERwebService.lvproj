@@ -53,6 +53,8 @@
 			<Item Name="AsignRequestToPersonnel.vi" Type="VI" URL="../Test/AsignRequestToPersonnel.vi"/>
 			<Item Name="RefreshRequestSummaryinRoom.vi" Type="VI" URL="../Helpers/RefreshRequestSummaryinRoom.vi"/>
 			<Item Name="RefreshRequestSummaryinPersonnal.vi" Type="VI" URL="../Helpers/RefreshRequestSummaryinPersonnal.vi"/>
+			<Item Name="Message Buffer.vi" Type="VI" URL="../Helpers/Message Buffer.vi"/>
+			<Item Name="CompleteRequest.vi" Type="VI" URL="../Helpers/CompleteRequest.vi"/>
 		</Item>
 		<Item Name="Tests" Type="Folder">
 			<Item Name="FGV" Type="Folder">
@@ -270,8 +272,6 @@
 				</Item>
 			</Item>
 		</Item>
-		<Item Name="CompleteRequest.vi" Type="VI" URL="../Helpers/CompleteRequest.vi"/>
-		<Item Name="Message Buffer.vi" Type="VI" URL="../Helpers/Message Buffer.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
