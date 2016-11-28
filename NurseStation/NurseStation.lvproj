@@ -50,6 +50,7 @@
 			<Item Name="State Cluster.ctl" Type="VI" URL="../TypeDef/State Cluster.ctl"/>
 		</Item>
 		<Item Name="NurseStationMain.vi" Type="VI" URL="../NurseStationMain.vi"/>
+		<Item Name="PersonnelReportDataToGraph.vi" Type="VI" URL="../Helpers/Reports/PersonnelReportDataToGraph.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="BuildHelpPath.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/BuildHelpPath.vi"/>
