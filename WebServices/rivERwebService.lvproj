@@ -271,6 +271,7 @@
 			</Item>
 		</Item>
 		<Item Name="CompleteRequest.vi" Type="VI" URL="../Helpers/CompleteRequest.vi"/>
+		<Item Name="Message Buffer.vi" Type="VI" URL="../Helpers/Message Buffer.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
