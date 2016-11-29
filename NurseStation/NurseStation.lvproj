@@ -52,6 +52,7 @@
 			<Item Name="State Cluster.ctl" Type="VI" URL="../TypeDef/State Cluster.ctl"/>
 		</Item>
 		<Item Name="NurseStationMain.vi" Type="VI" URL="../NurseStationMain.vi"/>
+		<Item Name="RoomReportDataToGraph3d.vi" Type="VI" URL="../Helpers/Reports/RoomReportDataToGraph3d.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="3D Bar Datatype.lvclass" Type="LVClass" URL="/&lt;vilib&gt;/Math Plots/3D Math Plots/3D Bar/3D Bar Datatype/3D Bar Datatype.lvclass"/>
