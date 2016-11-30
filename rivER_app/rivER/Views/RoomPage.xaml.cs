@@ -18,14 +18,17 @@ namespace rivER
 			BindingContext = new RoomsViewModel(Navigation);
 		}
 
-        public void OnStateChange(object sender, EventArgs e)
-        {
-            var viewCell = ((ViewCell)sender);
-            var request = (Request)viewCell.BindingContext;
-            if (request.State.HasValue)
-            {
-                viewCell.ContextActions.RemoveAt(0);
-            }
-        }
-    }
+		//public void OnStateChange(object sender, EventArgs e)
+		//{
+		//	var viewCell = ((ViewCell)sender);
+		//	var request = (Request)viewCell.BindingContext;
+		//	var menuItem = (MenuItem)sender;
+		//	var request = (Request)menuItem.CommandParameter;
+
+		//	if (request.State.HasValue)
+		//	{
+		//		this.requestsListView....
+		//	}
+		//}
+	}
 }
