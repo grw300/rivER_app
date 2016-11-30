@@ -6,42 +6,44 @@
 	BackgroundColor="White"
 	x:Class="rivER.RoomPage"
 	ControlTemplate="{StaticResource TitleTemplate}">
-	<ContentPage.Resources>
-		<ResourceDictionary>
+    <ContentPage.Resources>
+        <ResourceDictionary>
             <local:FlagsToColorsConverter
                 x:Key="flagsToColorsConverter" />
-			<local:BedVacantToColorConverter
+            <local:BedVacantToColorConverter
 				x:Key="bedVacantToColorConverter" />
-		</ResourceDictionary>
-	</ContentPage.Resources>
-	<ContentPage.Content>
-		<StackLayout
-			VerticalOptions="FillAndExpand">
-			<Grid>
-				<Grid.RowDefinitions>
-					<RowDefinition
+            <local:StateToColorConverter
+                x:Key="stateToColorConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout
+			VerticalOptions="StartAndExpand">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition
 						Height="80" />
-				</Grid.RowDefinitions>
-				<Grid.ColumnDefinitions>
-					<ColumnDefinition
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
 						Width="5" />
-					<ColumnDefinition
+                    <ColumnDefinition
 						Width="4*" />
-					<ColumnDefinition
+                    <ColumnDefinition
 						Width="*" />
-					<ColumnDefinition
+                    <ColumnDefinition
 						Width="*" />
-					<ColumnDefinition
+                    <ColumnDefinition
 						Width="5" />
-				</Grid.ColumnDefinitions>
-				<BoxView
+                </Grid.ColumnDefinitions>
+                <BoxView
 					Grid.Row="0"
 					Grid.Column="1"
 					Color="Aqua"
 					Opacity="0.75"
 					HorizontalOptions="FillAndExpand"
 					VerticalOptions="FillAndExpand" />
-				<Label
+                <Label
 					Grid.Row="0"
 					Grid.Column="1"
 					Text="{Binding RoomNumber}"
@@ -51,7 +53,7 @@
 					VerticalTextAlignment="Center"
 					HorizontalOptions="StartAndExpand"
 					VerticalOptions="StartAndExpand">
-<!--					<Label.Triggers>
+                    <!--					<Label.Triggers>
 						<DataTrigger
 							TargetType="Label"
 							Binding="{Binding CurrentRoomName}"
@@ -60,14 +62,14 @@
 								Property="Text"></Setter>
 						</DataTrigger>
 					</Label.Triggers>-->
-				</Label>
-				<BoxView
+                </Label>
+                <BoxView
 					Grid.Row="0"
 					Grid.Column="2"
 					HorizontalOptions="Fill"
 					VerticalOptions="Fill"
 					Color="{Binding BedVacant, Converter={StaticResource bedVacantToColorConverter}}" />
-				<ListView
+                <ListView
 					Grid.Row="0"
 					Grid.Column="3"
 					HorizontalOptions="StartAndExpand"
@@ -77,36 +79,55 @@
 					SeparatorVisibility="None"
 					ItemTapped="HandleItemTapped"
 					ItemsSource="{Binding Flags, Converter={StaticResource flagsToColorsConverter}}">
-					<ListView.ItemTemplate>
-						<DataTemplate>
-							<ViewCell
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell
 								Height="19">
-								<BoxView
+                                <BoxView
 									Margin="1"
 									VerticalOptions="Center"
 									BackgroundColor="{Binding Path=.}">
-								</BoxView>
-							</ViewCell>
-						</DataTemplate>
-					</ListView.ItemTemplate>
-				</ListView>
-			</Grid>
-			<ListView
-				x:Name="roomView"
-				ItemsSource="{Binding NextRooms}"
-				SeparatorVisibility="None">
-				<ListView.ItemTemplate>
-					<DataTemplate>
-						<Frame
-							OutlineColor="Silver">
-							<TextCell
-								Text="{Binding Name}"
-								Detail="{Binding State}">
-							</TextCell>
-						</Frame>
-					</DataTemplate>
-				</ListView.ItemTemplate>
-			</ListView>
-		</StackLayout>
-	</ContentPage.Content>
+                                </BoxView>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+						Width="5" />
+                    <ColumnDefinition
+						Width="*" />
+                    <ColumnDefinition
+						Width="5" />
+                </Grid.ColumnDefinitions>
+                <ListView
+                        Grid.Column="1"
+                        x:Name="requestsListView"
+                        ItemsSource="{Binding Requests}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell
+                                x:Name="requestViewCell"
+                                BindingContextChanged="OnStateChange">
+                                <ViewCell.ContextActions>
+                                    <MenuItem
+                                        x:Name="ACK"
+                                        Command="{Binding Source={x:Reference requestsListView}, Path=BindingContext.Commands[AcknowledgeCommand]}"
+                                        CommandParameter="{Binding .}"
+                                        Text="Acknowledge" />
+                                </ViewCell.ContextActions>
+                                <Label
+                                    BackgroundColor="{Binding State, Converter={StaticResource stateToColorConverter}}}"
+                                    VerticalOptions="FillAndExpand"
+                                    Text="{Binding Description}">
+                                </Label>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

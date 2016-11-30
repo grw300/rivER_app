@@ -15,7 +15,7 @@ namespace rivER
 		readonly IRivERWebService rivERWebService;
 		readonly CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
 
-		public ObservableCollection<Request> requests;
+		ObservableCollection<Request> requests;
 
 		public ObservableCollection<Request> Requests { get { return requests; } }
 

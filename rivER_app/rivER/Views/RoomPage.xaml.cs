@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using Xamarin.Forms;
 
 namespace rivER
 {
@@ -16,5 +17,15 @@ namespace rivER
 
 			BindingContext = new RoomsViewModel(Navigation);
 		}
-	}
+
+        public void OnStateChange(object sender, EventArgs e)
+        {
+            var viewCell = ((ViewCell)sender);
+            var request = (Request)viewCell.BindingContext;
+            if (request.State.HasValue)
+            {
+                viewCell.ContextActions.RemoveAt(0);
+            }
+        }
+    }
 }
