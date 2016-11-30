@@ -272,6 +272,7 @@
 				</Item>
 			</Item>
 		</Item>
+		<Item Name="FlagStateCluster.ctl" Type="VI" URL="../TypeDef/FlagStateCluster.ctl"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
