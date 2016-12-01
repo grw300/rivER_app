@@ -1,5 +1,4 @@
 ﻿using System;
-using BottomBar.XamarinForms;
 using Xamarin.Forms;
 
 namespace rivER

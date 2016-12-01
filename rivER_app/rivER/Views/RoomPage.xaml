@@ -1,145 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage
-    xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:rivER;assembly=rivER"
-    BackgroundColor="White"
-    x:Class="rivER.RoomPage"
-    ControlTemplate="{StaticResource TitleTemplate}">
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <local:FlagsToColorsConverter
-                x:Key="flagsToColorsConverter" />
-            <local:BedVacantToColorConverter
-                x:Key="bedVacantToColorConverter" />
-            <local:StateToColorConverter
-                x:Key="stateToColorConverter" />
-            <local:StateToEnabledConverter
-                x:Key="stateToEnabledConverter" />
-        </ResourceDictionary>
-    </ContentPage.Resources>
-    <ContentPage.Content>
-        <StackLayout
-            VerticalOptions="StartAndExpand">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition
-                        Height="80" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition
-                        Width="5" />
-                    <ColumnDefinition
-                        Width="4*" />
-                    <ColumnDefinition
-                        Width="*" />
-                    <ColumnDefinition
-                        Width="*" />
-                    <ColumnDefinition
-                        Width="5" />
-                </Grid.ColumnDefinitions>
-                <BoxView
-                    Grid.Row="0"
-                    Grid.Column="1"
-                    Color="Aqua"
-                    Opacity="0.75"
-                    HorizontalOptions="FillAndExpand"
-                    VerticalOptions="FillAndExpand" />
-                <Label
-                    Grid.Row="0"
-                    Grid.Column="1"
-                    Text="{Binding RoomNumber}"
-                    Margin="10"
-                    FontSize="50"
-                    Style="{DynamicResource TitleStyle}"
-                    VerticalTextAlignment="Center"
-                    HorizontalOptions="StartAndExpand"
-                    VerticalOptions="StartAndExpand">
-                    <!--					<Label.Triggers>
-						<DataTrigger
-							TargetType="Label"
-							Binding="{Binding CurrentRoomName}"
-							Value=" ">
-							<Setter
-								Property="Text"></Setter>
-						</DataTrigger>
-					</Label.Triggers>-->
-                </Label>
-                <BoxView
-                    Grid.Row="0"
-                    Grid.Column="2"
-                    HorizontalOptions="Fill"
-                    VerticalOptions="Fill"
-                    Color="{Binding BedVacant, Converter={StaticResource bedVacantToColorConverter}}" />
-                <ListView
-                    Grid.Row="0"
-                    Grid.Column="3"
-                    HorizontalOptions="StartAndExpand"
-                    VerticalOptions="CenterAndExpand"
-                    HeightRequest="80"
-                    RowHeight="20"
-                    SeparatorVisibility="None"
-                    ItemTapped="HandleItemTapped"
-                    ItemsSource="{Binding Flags, Converter={StaticResource flagsToColorsConverter}}">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell
-                                Height="19">
-                                <BoxView
-                                    Margin="1"
-                                    VerticalOptions="Center"
-                                    BackgroundColor="{Binding Path=.}">
-                                </BoxView>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </Grid>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition
-                        Width="5" />
-                    <ColumnDefinition
-                        Width="*" />
-                    <ColumnDefinition
-                        Width="5" />
-                </Grid.ColumnDefinitions>
-                <ListView
-                    Grid.Column="1"
-                    x:Name="requestsListView"
-                    ItemTapped="HandleItemTapped"
-                    ItemsSource="{Binding Requests}">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell
-                                x:Name="requestViewCell">
-                                <!--<ViewCell.ContextActions>
-									<MenuItem
-										x:Name="ACK"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:local="clr-namespace:rivER;assembly=rivER"
+	x:Class="rivER.RoomPage"
+	ControlTemplate="{StaticResource TitleTemplate}">
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<local:FlagsToColorsConverter
+				x:Key="flagsToColorsConverter" />
+			<local:BedVacantToColorConverter
+				x:Key="bedVacantToColorConverter" />
+			<local:StateToColorConverter
+				x:Key="stateToColorConverter" />
+			<local:StateToEnabledConverter
+				x:Key="stateToEnabledConverter" />
+		</ResourceDictionary>
+	</ContentPage.Resources>
+	<ContentPage.Content>
+		<StackLayout
+			VerticalOptions="StartAndExpand">
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition
+						Height="80" />
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition
+						Width="5" />
+					<ColumnDefinition
+						Width="4*" />
+					<ColumnDefinition
+						Width="*" />
+					<ColumnDefinition
+						Width="*" />
+					<ColumnDefinition
+						Width="5" />
+				</Grid.ColumnDefinitions>
+				<BoxView
+					Grid.Row="0"
+					Grid.Column="1"
+					Color="Aqua"
+					Opacity="0.75"
+					HorizontalOptions="FillAndExpand"
+					VerticalOptions="FillAndExpand" />
+				<Label
+					Grid.Row="0"
+					Grid.Column="1"
+					Text="{Binding RoomNumber}"
+					Margin="10"
+					FontSize="50"
+					Style="{DynamicResource TitleStyle}"
+					VerticalTextAlignment="Center"
+					HorizontalOptions="StartAndExpand"
+					VerticalOptions="StartAndExpand">
+				</Label>
+				<BoxView
+					Grid.Row="0"
+					Grid.Column="2"
+					HorizontalOptions="Fill"
+					VerticalOptions="Fill"
+					Color="{Binding BedVacant, Converter={StaticResource bedVacantToColorConverter}}" />
+				<ListView
+					Grid.Row="0"
+					Grid.Column="3"
+					HorizontalOptions="StartAndExpand"
+					VerticalOptions="CenterAndExpand"
+					HeightRequest="80"
+					RowHeight="20"
+					SeparatorVisibility="None"
+					ItemTapped="HandleItemTapped"
+					ItemsSource="{Binding Flags, Converter={StaticResource flagsToColorsConverter}}">
+					<ListView.ItemTemplate>
+						<DataTemplate>
+							<ViewCell
+								Height="19">
+								<BoxView
+									Margin="1"
+									VerticalOptions="Center"
+									BackgroundColor="{Binding .}">
+								</BoxView>
+							</ViewCell>
+						</DataTemplate>
+					</ListView.ItemTemplate>
+				</ListView>
+			</Grid>
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition
+						Width="5" />
+					<ColumnDefinition
+						Width="*" />
+					<ColumnDefinition
+						Width="5" />
+				</Grid.ColumnDefinitions>
+				<ListView
+					Grid.Column="1"
+					x:Name="requestsListView"
+					ItemTapped="HandleItemTapped"
+					ItemsSource="{Binding Requests}">
+					<ListView.ItemTemplate>
+						<DataTemplate>
+							<ViewCell
+								x:Name="requestViewCell">
+								<StackLayout
+									Orientation="Horizontal"
+									HorizontalOptions="FillAndExpand">
+									<Label
+										BackgroundColor="{Binding State, Converter={StaticResource stateToColorConverter}}"
+										VerticalOptions="FillAndExpand"
+										Text="{Binding Description}">
+									</Label>
+									<Button
+										HorizontalOptions="EndAndExpand"
+										IsEnabled="{Binding State, Converter={StaticResource stateToEnabledConverter}}"
 										Command="{Binding Source={x:Reference requestsListView}, Path=BindingContext.Commands[AcknowledgeCommand]}"
 										CommandParameter="{Binding .}"
 										Text="Acknowledge" />
-								</ViewCell.ContextActions>-->
-                                <StackLayout
-                                    Orientation="Horizontal"
-                                    HorizontalOptions="FillAndExpand">
-                                    <Label
-                                        BackgroundColor="{Binding State, Converter={StaticResource stateToColorConverter}}"
-                                        VerticalOptions="FillAndExpand"
-                                        Text="{Binding Description}">
-                                    </Label>
-                                    <Button
-                                        HorizontalOptions="EndAndExpand"
-                                        IsEnabled="{Binding State, Converter={StaticResource stateToEnabledConverter}}"
-                                        Command="{Binding Source={x:Reference requestsListView}, Path=BindingContext.Commands[AcknowledgeCommand]}"
-                                        CommandParameter="{Binding .}"
-                                        Text="Acknowledge" />
-                                </StackLayout>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </Grid>
-        </StackLayout>
-    </ContentPage.Content>
+								</StackLayout>
+							</ViewCell>
+						</DataTemplate>
+					</ListView.ItemTemplate>
+				</ListView>
+			</Grid>
+		</StackLayout>
+	</ContentPage.Content>
 </ContentPage>
