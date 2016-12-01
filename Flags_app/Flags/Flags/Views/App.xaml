@@ -23,14 +23,15 @@
                     </Grid.ColumnDefinitions>
                     <Label
 						Grid.Column="0"
-						Text="Flags"
+            FontSize="20"
+						Text="rivER Flags"
 						VerticalOptions="Center"
 						HorizontalOptions="CenterAndExpand"/>
                     <Button
 							Grid.Column="1"
 							Image="settings.png"
-							BackgroundColor="White"
-							BorderColor="White"
+							BackgroundColor="Transparent"
+							BorderColor="Transparent"
 							Command="{TemplateBinding SettingsCommand}"
 							VerticalOptions="CenterAndExpand"
 							HorizontalOptions="CenterAndExpand"/>
